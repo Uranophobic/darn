@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<link rel="stylesheet" href="../css/stylesheet.css">
+	<title>Privacy Literacy - Favole</title>
+</head>
+
+<body>
+	<div th:insert="~{fragments/header::header}"></div>
+	<br>
+
+	<!--	<a type="button" th:if="${!session.isEmpty()} and ${session.userSession.email.equals('admin@gmail.com')}"
+		class="button" th:href="@{/admin/createFavola}"> Aggiungi </a>
+	<div class="background">
+		<div class="box-titolo">
+			<div class="titolo">Favole</div>
+		</div>
+
+		<!-- CONTROLLO SE L'UTENTE SIA ADMIN
+		<th:block th:if="${!session.isEmpty()} and ${session.userSession.email.equals('admin@gmail.com')}"
+			th:each="favola : ${tutteFavole}">
+			<fieldset>
+				<legend th:text="${favola.meta_info}">Meta-Info</legend>
+				<div class="box-argomento">
+					<h3 style="font-family: 'Tempus Sans ITC'; color: purple;" th:text="${favola.titolofavola}">Titolo
+						Favola</h3>
+					<p style="font-family: 'Segoe Print'; font-size: x-small;"
+						th:text="${favola.getTestofavola().substring(0,200).concat('...')}">
+						Contenuto piccolo della favola</p>
+				</div>
+				<a class="button" type="submit"
+					th:href="@{/favole/favolaView/{id}(id=${favola.id_favola})}">Continua</a>
+				<a class=button type="submit"
+					th:href="@{/admin/fixedFavola/{id}(id=${favola.getId_favola()})}">Modifica</a>
+				<a class=button type="submit"
+					th:href="@{/admin/deleteFavola/{id}(id=${favola.getId_favola()})}">Elimina</a>
+			</fieldset>
+		</th:block>
+
+	  ALTRIMENTI -->
+		<!--<th:block th:if="${session.isEmpty()} or ${!(session.userSession.email.equals('admin@gmail.com'))}">
+			<div class="grid-container">
+				<th:block th:each="favola : ${tutteFavole}">
+					<div class="grid-item">
+						<a th:href="@{/favole/favolaView/{id}(id=${favola.id_favola})}">
+							<div class="titolo" th:text="${favola.titolofavola}">titolo</div>
+							<hr class="riga2">
+							<div class="hashtag">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+									class="bi bi-bookmarks" viewBox="0 0 16 16">
+									<path
+										d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4zm2-1a1 1 0 0 0-1 1v10.566l3.723-2.482a.5.5 0 0 1 .554 0L11 14.566V4a1 1 0 0 0-1-1H4z" />
+									<path
+										d="M4.268 1H12a1 1 0 0 1 1 1v11.768l.223.148A.5.5 0 0 0 14 13.5V2a2 2 0 0 0-2-2H6a2 2 0 0 0-1.732 1z" />
+								</svg>
+								<p> </p>
+								<p class="meta-info" th:text="'#' + ${favola.meta_info}"></p>
+							</div>
+							<div class=" grid">
+								<figure class="effect-lily">
+									<img th:src="${favola.image_path}" alt="img9">
+									<figcaption>
+										<h2 th:text="${favola.titolofavola}">Titolo Favola</h2>
+										<p style="font-family: 'Segoe Print'; font-size: x-small;"
+											th:text="${favola.getTestofavola().substring(0,200).concat('...')}">
+											Contenuto piccolo della favola</p>
+									</figcaption>
+								</figure>
+							</div>
+						</a>
+
+								<a class="button" style="color: white;" type="submit"
+								th:href="@{/favole/favolaView/{id}(id=${favola.id_favola})}">Continua</a>
+					</div>
+
+				</th:block>
+			</div>
+		</th:block>-->
+	<style>
+
+ .absolute-bg {
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 z-index: 0;
+	 height: 100%;
+	 width: 100%;
+	 background-position: 50%;
+	 background-repeat: no-repeat;
+	 background-size: cover;
+	 overflow: hidden;
+}
+ .home-mast {
+	 height: 100vh;
+}
+ .home-mast__container {
+	 display: flex;
+	 height: 100%;
+}
+ .home-mast__container > * {
+	 position: relative;
+	 flex-grow: 1;
+	 padding: 1em;
+	 transition: flex-grow 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+}
+ .home-mast__container > *:hover {
+	 flex-grow: 3;
+}
+
+ .img-favola:after {
+	 content: "";
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 z-index: 0;
+	 height: 100%;
+	 width: 100%;
+	 background-color: #00a19b;
+	 opacity: 0;
+	 transition: opacity 0.4s ease-in-out;
+}
+
+ .img-favola:hover:after {
+	 opacity: 0.65;
+	 transition-delay: 0.6s;
+}
+
+ 
+	</style>	
+		<div class="titolo" >Che favola leggerai oggi?</div>
+		<hr class="riga2">
+		<br>
+		<section class="home-mast">
+  <div class="home-mast__container">
+    <div class="img-favola">
+      <div class="absolute-bg" style="background-image: url('https://source.unsplash.com/3IEZsaXmzzs/1500x1200');"></div>
+    </div>
+    <div class="img-favola">
+      <div class="absolute-bg" style="background-image: url('https://source.unsplash.com/BIZv8MWH00s/1500x1200');"></div>
+    </div>
+    <div class="img-favola">
+      <div class="absolute-bg" style="background-image: url('https://source.unsplash.com/z55CR_d0ayg/1500x1200');"></div>
+    </div>
+    <div class="img-favola">
+      <div class="absolute-bg" style="background-image: url('https://source.unsplash.com/-FgZlbzZ0R8/1500x1200');"></div>
+    </div>
+  </div>
+</section>
+
+		
+		
+
+
+	</div>
+	</div>
+	<div th:insert="fragments/footer::footer"></div>
+</body>
+
+</html>
