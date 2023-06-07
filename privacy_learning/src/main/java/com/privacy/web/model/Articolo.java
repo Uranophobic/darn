@@ -23,11 +23,8 @@ public class Articolo {
 	private String titolo;
 	@Column(name="meta_info")
 	private String metaInfo;
+	@Column(name="cnds")
+	private String cnds;
 
-	public Articolo(String link, String titolo, String metaInfo) {
-		this.link = link;
-		this.titolo = titolo;
-		this.metaInfo = metaInfo;
-	}
 	
 }

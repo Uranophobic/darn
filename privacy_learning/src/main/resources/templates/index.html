@@ -51,9 +51,9 @@
 
 	<nav class="navbar">
 		<div class="max-width">
-			<div class="titolo">
-				<a>Darn: look at your privacy!</a>
-				<a href="#"><span class="typing"></span></a>
+			<div class="logo">
+				<a>Darn: </a>
+				<a class="typing"></a>
 			</div>
 			<ul class="menu">
 				<li><a th:href="@{/homepage}" class="active">Home</a></li>
@@ -86,60 +86,99 @@
 		</div>
 	</nav>
 
-	<!-- titolo e immagine DEVI METTERE IL CSS
-	-->
+	<!-- titolo e immagine-->
 	<section class="home" id="home">
 		<div class="home-perfil">
-			<div>
-				 Quanto ti proteggi online? 
-			
+			<!-- prima domanda-->
+			<div class="questionBox">
+				<p class="question" id="first-quest"> Quanto ti proteggi online ? </p>
+				<div class="umbrella">
+					<span id="ans1"><i class="bi bi-circle"></i><i class="bi bi-umbrella"></i></span>
+					<span id="ans2"><i class="bi bi-circle"></i><i class="bi bi-umbrella"></i><i
+							class="bi bi-umbrella"></i></span>
+					<span id="ans3"><i class="bi bi-circle"></i><i class="bi bi-umbrella"></i><i
+							class="bi bi-umbrella"></i><i class="bi bi-umbrella"></i></span>
+				</div>
 			</div>
-			<div> 1</div>
-			<div> 1</div>
+
+			<!-- seconda domanda-->
+			<div class="questionBox right">
+				<p class="question" id="second-quest">Dove salvi le tue password ?</p>
+				<span id="ans4" class="answer"> su foglio di carta <i class="bi bi-x-lg"></i> </span>
+				<span id="ans5" class="answer"> nel mio diario segreto... <i class="bi bi-x-lg"></i></span>
+				<span id="ans6" class="answer"> un gruppo whatsapp in cui ci sono solo io <i
+						class="bi bi-x-lg"></i></span>
+			</div>
+
+			<!-- terza domanda-->
+			<div class="questionBox left">
+				<p class="question" id="third-quest"> Cos'è l 'autenticazione a due fattori ?</p>
+				<span id="ans7" class="answer2"><i class="bi bi-x-lg"></i> ... un particolare tipo di pizza Hawuaiana!
+				</span>
+				<span id="ans8" class="answer2"><i class="bi bi-x-lg"></i> mhhhh l'autenticazione facciale dell'Iphone
+				</span>
+				<span id="ans9" class="answer2"><i class="bi bi-check-lg"></i> uno strumento di protezione online!?!
+				</span>
+			</div>
+
 		</div>
 		<div class="max-width">
 			<div class="home-content">
-				<div class="text-1">il portale della</div>
-				<div class="text-fe">Privacy</div>
-				<div class="button-text-3"><a class="btn" href="#contacto"><i class="far fa-paper-plane"></i></i>
+				<div class="text-1">
+					<p> Sei in difficoltà?</p>
+					<p>Questo argomento ti è nuovo?</p>
+				</div>
+				<div class="titolo">Darn ! Look at your privacy!!! </div>
+				<div class="button-text-3"><a class="btn" href="#contacto">
 						Compila il tuo primo test</a></div>
-				<!-- <div class="home-social">
-          <a href="#" target="_blank" class="linkedin" title="Linkedin"><i class="fab fa-linkedin"></i>
-            <div class="esconder">Linkedin</div>
-          </a>
-          <a href="#" target="_blank" class="github" title="Github"><i class="fab fa-github"></i>
-            <div class="esconder2">GitHub</div>
-          </a>
-          <a href="#" target="_blank" class="codepen" title="CodePen"><i class="fab fa-codepen"></i>
-            <div class="esconder3">CodePen</div>
-          </a>
-        </div>-->
+
 
 			</div>
 		</div>
 
 	</section>
 	<!-- argomenti -->
-	<section class="about" id="about">
-		<div class="max-width">
-			<h2 class="title">ARGOMENTI</h2>
-			<span class="subtitle">Qui potrai esplorare una vasta gamma di temi legati alla
-				privacy e alla sicurezza dei dati. Abbiamo selezionato con cura
-				questi argomenti per offrire una panoramica completa delle
-				questioni pi&ugrave; rilevanti in questo ambito. Siamo certi
-				che troverai materiale interessante e informativo per
-				approfondire le tue conoscenze. Scegli l'argomento che ti
-				interessa di pi&ugrave; e lascia che il tuo percorso di
-				apprendimento inizi! </span>
-			<div class="about-content">
-				<span>corpo</span>
-			</div>
-		</div>
+	<section class="category">
+		
+			<h2 class="title">ARGOMENTI<i class="bi bi-file-text"></i> </h2>
+
+				<span class="subtitle">Qui potrai esplorare una vasta gamma di temi legati alla
+					privacy e alla sicurezza dei dati. Abbiamo selezionato con cura
+					questi argomenti per offrire una panoramica completa delle
+					questioni pi&ugrave; rilevanti in questo ambito. Siamo certi
+					che troverai materiale interessante e informativo per
+					approfondire le tue conoscenze. Scegli l'argomento che ti
+					interessa di pi&ugrave; e lascia che il tuo percorso di
+					apprendimento inizi! </span>
+		<div class="about-content">
+
+
+				<th:block th:each="arg : ${argomentiView}" th:if="${arg.getId_studio()>(argomentiView.size()-3)}">
+					<div class="col-md-6 col-lg-4 col-sm-12">
+						<a th:href="@{/argomenti/argomentoView/{id}(id=${arg.id_studio})}">
+							<div class="single_service hvr-curl-top-right">
+								<div class="single_service-left">
+									<div class="icon">
+										<scan th:text="${arg.meta_info}"></scan>
+									</div>
+								</div>
+								<div class="single_service-body">
+									<h4 class="single_service-heading" th:text="${arg.titolo}">Nome</h4>
+									<p th:text="${arg.getDescrizione().substring(0,200).concat('...')}">Testo
+										dell'argomento</p>
+								</div>
+							</div>
+						</a>
+					</div>
+				</th:block>
+		
+</div>
+	
 	</section>
 
 	<!-- favole -->
-	<section class="skills" id="skills">
-		<div class="max-width">
+	<section class="category">
+		
 			<h2 class="title">FAVOLE</h2>
 			<span class="subtitle">Scopri il nostro vasto assortimento di favole incentrate sulla
 				privacy per bambini! Leggendo queste storie, i tuoi bambini
@@ -149,16 +188,34 @@
 				educativo efficace. Dai un'occhiata alla nostra collezione e
 				scegli la favola perfetta per la tua famiglia! </span>
 			<div class="about-content">
-				<span>corpo</span>
+				<div class="tab-fav">
+						<th:block th:each="favola : ${tutteFavole}"
+							th:if="${favola.getId_favola() > tutteFavole.size()-3}">
+
+							<div class="grid">
+								<figure class="effect-lily">
+									<img th:src="${favola.image_path}" alt="img9">
+									<figcaption>
+										<h2 th:text="${favola.titolofavola}">Titolo Favola</h2>
+										<p th:text="${favola.getTestofavola().substring(0,80).concat('...')}">Contenuto
+											favola</p>
+										<a th:href="@{/favole/favolaView/{id}(id=${favola.id_favola})}">View
+											more</a>
+									</figcaption>
+								</figure>
+							</div>
+
+						</th:block>
+					</div>
 			</div>
 
 
-		</div>
+	
 	</section>
 
 	<!-- articoli -->
-	<section class="proyects" id="proyects">
-		<div class="max-width">
+	<section class="category">
+		
 			<h2 class="title">ARTICOLI</h2>
 			<span class="subtitle">La tua sicurezza e la protezione dei tuoi dati personali
 				sono al centro delle nostre preoccupazioni e per questo motivo,
@@ -169,14 +226,26 @@
 				gli eventi più importanti legati alla protezione dei tuoi dati
 				personali.</span>
 			<div class="about-content">
-				<span>corpo</span>
+				<div class="tab-fav">
+						<th:block th:each="art : ${tuttiArticoli}"
+							th:if="${art.getId_articolo() > (tuttiArticoli.size()-3)}">
+							<fieldset>
+								<legend th:text="${art.getMetaInfo()}"></legend>
+								<h2 th:text="${art.getTitolo()}">Titolo Favola</h2>
+
+								<a style="color: wheat;" th:href="${art.getLink()}"
+									th:value="${art.getLink()}">Contenuto articolo</a>
+							</fieldset>
+
+						</th:block>
+					</div>
 			</div>
-		</div>
+	
 	</section>
 
 
 	<!-- test  -->
-	<section class="contacto" id="contacto">
+	<section class="category">
 		<div class="max-width">
 			<h2 class="title">TEST</h2>
 			<span class="subtitle">testo testo testo </span>
@@ -186,6 +255,24 @@
 		</div>
 	</section>
 
+	<!-- ANIMAZIONI GSAP -->
+	<script>
+		gsap.to("#first-quest", {x: -50, duration: 3, delay: 0.3, opacity: 1, ease: Power3.easeOut}); //domanda tre home
+		gsap.to("#second-quest", {x: 50, duration: 4, delay: 0.7, opacity: 1, ease: Power3.easeOut});  //domanda uno home
+		gsap.to("#third-quest ", {x: -50, duration: 5, delay: 1, opacity: 1, ease: Power3.easeOut});		//domanda due home
+
+		gsap.to("#ans1", {x: 10, duration: 3, delay: 0.4, opacity: 1, ease: Power1.easeOut});
+		gsap.to("#ans2", {x: 10, duration: 3, delay: 0.5, opacity: 1, ease: Power1.easeOut});
+		gsap.to("#ans3", {x: 10, duration: 3, delay: 0.6, opacity: 1, ease: Power1.easeOut});
+
+		gsap.to("#ans4", {x: 10, duration: 3, delay: 0.7, opacity: 1, ease: Power1.easeOut});
+		gsap.to("#ans5", {x: 10, duration: 3, delay: 0.8, opacity: 1, ease: Power1.easeOut});
+		gsap.to("#ans6", {x: 10, duration: 3, delay: 0.9, opacity: 1, ease: Power1.easeOut});
+
+		gsap.to("#ans7", {x: 10, duration: 3, delay: 1, opacity: 1, ease: Power1.easeOut});
+		gsap.to("#ans8", {x: 10, duration: 3, delay: 1.1, opacity: 1, ease: Power1.easeOut});
+		gsap.to("#ans9", {x: 10, duration: 3, delay: 1.2, opacity: 1, ease: Power1.easeOut});
+	</script>
 	<script>
 
 		$(window).on("load", function () {
@@ -194,13 +281,13 @@
 
 
 
-		/*typing animation script//
+		//typing animation script
 		var typed = new Typed(".typing", {
-			strings: ["Education Data Privacy"],
+			strings: ["look at your privacy!!!"],
 			typeSpeed: 120,
 			backSpeed: 80,
 			loop: true
-		});*/
+		});
 		//toggle menu/ navbar active//
 		$(".menu-btn").click(function () {
 			$(".navbar .menu").addClass("active");

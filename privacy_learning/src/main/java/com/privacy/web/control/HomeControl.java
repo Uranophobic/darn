@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.privacy.web.model.ArgomentoStudio;
+import com.privacy.web.model.MetaInfo;
 import com.privacy.web.model.Salvataggio;
 import com.privacy.web.model.Utente;
 import com.privacy.web.service.ArgomentoStudioService;
@@ -20,6 +21,7 @@ import com.privacy.web.service.FavolaService;
 import com.privacy.web.service.ProgressoService;
 import com.privacy.web.service.SalvataggioService;
 import com.privacy.web.service.UtenteService;
+import com.privacy.web.service.MetaInfoService;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -39,6 +41,8 @@ public class HomeControl {
 	private ArgomentoStudioService argServ;
 	@Autowired
 	private ProgressoService progServ;
+	@Autowired
+	private MetaInfoService metaServ;
 
 	
 	@GetMapping("/icon")
@@ -46,9 +50,24 @@ public class HomeControl {
 		return "prova";
 	}
 	
+	@GetMapping("/prove")
+	public String icon2(Model model) {
+		List<ArgomentoStudio> allarg= argServ.findAllArgomenti();
+		model.addAttribute("allarg", allarg);
+		return "prove";
+	}
+	
 	@GetMapping("/index")
 	public String scroll(Model model) {
 		return "index";
+	}
+	@GetMapping("/index2")
+	public String scroll2(Model model) {
+		model.addAttribute("allmeta", metaServ.findAll());
+		model.addAttribute("argomentiView", argServ.findAllArgomenti());
+		model.addAttribute("tutteFavole", favServ.findAllFavole());
+		model.addAttribute("tuttiArticoli", artServ.findAllArticoli());
+		return "index2";
 	}
 
 	@GetMapping("/login")
@@ -65,14 +84,23 @@ public class HomeControl {
 	public String registrazione(Model model) {
 		return "forward:/utente/registrati";
 	}
-
+	
 	@GetMapping("/homepage")
+	public String argomenti2(Model model, HttpSession session) {
+		model.addAttribute("argomentiView", argServ.findAllArgomenti());
+		model.addAttribute("tutteFavole", favServ.findAllFavole());
+		model.addAttribute("tuttiArticoli", artServ.findAllArticoli());
+		// System.out.println(argServ.findAll());
+		return "homepage";
+	}
+
+	@GetMapping("/")
 	public String argomenti(Model model, HttpSession session) {
 		model.addAttribute("argomentiView", argServ.findAllArgomenti());
 		model.addAttribute("tutteFavole", favServ.findAllFavole());
 		model.addAttribute("tuttiArticoli", artServ.findAllArticoli());
 		// System.out.println(argServ.findAll());
-		return "HomePage";
+		return "index";
 	}
 
 	@GetMapping("/profilo/{email}")

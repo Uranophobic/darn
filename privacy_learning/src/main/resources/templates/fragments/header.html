@@ -3,75 +3,86 @@
 
 <head>
 	<meta charset="ISO-8859-1">
-	<link rel="stylesheet" href="../css/stylesheet.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-	<link rel="stylesheet" href="https://www.ionos.it/digitalguide/path/to/font-awesome/css/font-awesome.min.css">
-	<title>Insert title here</title>
+	<link rel="stylesheet" href="../css/style3.css">
+	
+		<!-- libreria per il typed jq-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.js"
+		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+	<title>Darn</title>
 </head>
 
 <body th:fragment="header">
-	<div class="container">
-		<div class="header">
-			<div class="logo-container">
-				<a th:href="@{/homepage}"><img class="logo" th:src="@{/images/logobuono.png}" alt="logo"></a>
+	<div class="navbar">
+		<div class="max-width">
+			<div class="logo">
+				<a class="darn">DARN</a><i class="bi bi-exclamation-triangle-fill"></i>
+				<a class="typing"></a>
 			</div>
+			<ul class="menu">
+				<li><a th:href="@{/homepage}" class="active">Home</a></li>
+				<li><a th:href="@{/argomenti/studia-con-noi}">Studia con noi</a></li>
+				<li><a th:href="@{/favole/leggi-una-favola}">Leggi una favola</a></li>
+				<li><a th:href="@{/article/leggi-un-articolo}">Notizie di attualità</a></li>
+				<li><a th:if="${session.isEmpty()}" th:href="@{/login}">Ettettua il test</a></li>
+				<li><a th:if="${!session.isEmpty()}" th:href="@{/test}">Effettua il test</a></li>
+				<th:block th:if="${!session.isEmpty()} and (${session.userSession.email.equals('admin@gmail.com')})">
+					<a th:href="@{/admin/lista-utenti}">Utenti</a>
+					<a th:href="@{/admin/lista-meta_info}"> MetaInfo </a>
+				</th:block>
 
-			<div class="center-container">
-				<a th:href="@{/homepage}"><div class="titolo"> PRIVACY FOR YOU </div></a>
-				<div class="header-menu">
-					<a th:href="@{/homepage}">Home</a>
-					<a th:href="@{/article/leggi-un-articolo}">Articoli &amp; News</a>
-					<a th:href="@{/favole/leggi-una-favola}">Favole</a>
-					<a th:href="@{/argomenti/studia-con-noi}">Studia con noi</a>
-					<a th:if="${session.isEmpty()}" th:href="@{/login}">Test</a>
-					<a th:if="${!session.isEmpty()}" th:href="@{/test}">Test</a>
-					<th:block
-						th:if="${!session.isEmpty()} and (${session.userSession.email.equals('admin@gmail.com')})">
-						<a th:href="@{/admin/lista-utenti}">Utenti</a>
-						<a th:href="@{/admin/lista-meta_info}"> MetaInfo </a>
-					</th:block>
-				</div>
-			</div>
-			<!-- cambiamo il tasto login con l'omino del profilo solo dopo che l'utente ha effettuato l'accesso-->
-			<div class="header-icons">
+
 				<th:block th:if="${session.isEmpty()}">
-					<div class="login"><a type="submit" class="button" th:href="@{/login}"> LOGIN </a></div>
-					<div class="login">
-						<!-- 	<a href="login"><img th:src="@{images/login.png}" alt="login" width=60px height=60px></a>  -->
-					</div>
+					<li><a type="submit" th:href="@{/login}"> Login </a></li>
 				</th:block>
 
 				<th:block th:unless="${session.isEmpty()}">
-					<div class="pulsanti">
-						<div class="login">
-							<a class="icon" type="submit"
-								th:href="@{/profilo/{email} (email=${session.userSession.email})}"> <svg
-									xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-									class="bi bi-person-fill" viewBox="0 0 16 16">
-									<path
-										d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
-										</svg></a>
-						</div>
-						<div class="login">
-							<a class="icon" type="submit" th:href="@{/users/logout}"><svg
-									xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-									class="bi bi-box-arrow-right" viewBox="0 0 16 16">
-									<path fill-rule="evenodd"
-										d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
-									<path fill-rule="evenodd"
-										d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
-								</svg></a>
-						</div>
-					</div>
+					<li><a class="icon" type="submit"
+							th:href="@{/profilo/{email} (email=${session.userSession.email})}"> Area Personale </a></li>
+					<li><a class="icon" type="submit" th:href="@{/users/logout}"> Logout</a></li>
 				</th:block>
-
-				<!--<div class="search-bar">
-  			<input type="text" placeholder="Cerca...">
- 		</div>-->
+				<i class="fas fa-times-circle menu-close" id="menu-close">
+				</i>
+			</ul>
+			<div class="menu-btn">
+				<i class="fas fa-bars" id="burger"></i>
 			</div>
 		</div>
 	</div>
+<script>
 
+						$(window).on("load", function () {
+							$("#page-loader").fadeOut("slow");
+						});
+
+
+
+						//typing animation script
+						var typed = new Typed(".typing", {
+							strings: ["look at your privacy!!!"],
+							typeSpeed: 120,
+							backSpeed: 80,
+							loop: true
+						});
+						//toggle menu/ navbar active//
+						$(".menu-btn").click(function () {
+							$(".navbar .menu").addClass("active");
+							$("#burger").hide();
+						});
+
+						//nav menu close//
+						$("#menu-close").click(function () {
+							$(".navbar .menu").removeClass("active");
+							$("#burger").show();
+						});
+						//nav menu close icons//
+						$(".nav_link").click(function () {
+							$(".navbar .menu").removeClass("active");
+							$("#burger").show();
+						});
+
+
+					</script>
 </body>
 
 </html>
