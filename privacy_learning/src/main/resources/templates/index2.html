@@ -53,8 +53,8 @@
 	<!-- titolo e domande -->
 	<section class="category">
 		<div class="home">
-			<div class="domande">
-				<div class="domande-fill">
+			<div class="domande" id="rem">
+				<div class="domande-fill" >
 					<!-- prima domanda -->
 					<div class="questionBox">
 						<p class="question" id="first-quest"> Quanto ti proteggi online? </p>
@@ -93,10 +93,23 @@
 
 				<div class="home-content">
 					<div class="text-1">
-						<p> Sei in difficoltà?</p>
-						<p>Questo argomento ti è nuovo?</p>
+						<p id="rem"> Sei in difficoltà?</p>
+						<p id="rem">Questo argomento ti è nuovo?</p>
+					
+						<div class="quote0">
+							<div id="text2"><span> Non lasciare che</span><span class="underline"
+									id="underline1"></span></div><br>
+							<div id="text2"><span> la tua privacy sia</span><span class="underline"
+									id="underline2"></span></div><br>
+							<div id="text2"><span> il tuo punto debole</span><span class="underline"
+									id="underline3"></span></div><br>
+						</div>
+						<br>
+						<br>
+
+						Unisciti a noi per un test sulla privacy <br>
+						Scopri le migliori pratiche per mantenere i tuoi dati al sicuro
 					</div>
-					<div class="titolo">Darn ! Look at your privacy!!! </div>
 					<div class="button-test"><a class="btn" href="#contacto">
 							Compila il tuo primo test</a></div>
 				</div>
@@ -119,10 +132,14 @@
 
 
 				<div class="quote">
-					<div class="line"></div>
-					<p class="quote-privacy">La privacy è un diritto fondamentale che tutti dovremmo comprendere e
-						difendere.</p>
-					<div class="line"></div>
+					<hr>
+					<blockquote class="quote-privacy" contenteditable="true">
+						<q> La privacy è <br>
+							un diritto fondamentale <br>
+							che tutti dovremmo comprendere e <br>
+							soprattutto difendere.</q>
+					</blockquote>
+					<hr>
 				</div>
 
 			</div>
@@ -171,21 +188,42 @@
 	</section>
 
 	<!-- favole -->
-	<section class="category">
+	<section class="category ">
 
-		<div class="home-argomenti">
+		<div class="home-favole">
 
-			<div class"argomenti-sx">
-				<p> La privacy è un diritto fondamentale che riguarda tutti, indipendentemente dall'età!
-					Scopri il nostro assortimento di <span>Favole</span></p>
+			<!-- RIGA FORMATA DA DUE COLONNE-->
+			<div class="argomenti-sx-fav">
+
+				<div class="text-fav">
+					<h2>
+						<span><span class="create">E' importante educare i </span></span><br>
+						<span><span class="create">bambini sui temi della </span></span><br>
+						<span><span class="create">privacy in modo divertente </span></span>
+						<span><span class="create">e coinvolgente.</span></span>
+					</h2>
+				</div>
+				
+				<div class="quote2">
+					<hr>
+					<blockquote class="quote-privacy" contenteditable="true">
+						<q> La privacy è <br>
+							un diritto fondamentale <br>
+							che riguarda tutti, <br>
+							indipendentemente dall'età!</q>
+					</blockquote>
+					<hr>
+				</div>
+
 			</div>
-			<div class"argomenti-dx">
 
-				<span class="subtitle">Sappiamo quanto sia importante educare i bambini sui temi della privacy in modo
-					divertente e coinvolgente. Abbiamo creato una sezione speciale con favole e storie che insegnano ai
-					bambini i concetti fondamentali della privacy in un modo adatto alla loro età. Con personaggi
-					affascinanti e avventure emozionanti, i nostri racconti offrono un modo divertente per imparare
-					l'importanza di proteggere la propria privacy.</span>
+			<!-- RIGA -->
+			<div class="argomenti-dx-fav">
+
+
+
+				<span><span class="quote2">Dai un un'occhiata alle <span class="fav-text">FAVOLE</span> </span></span>
+
 			</div>
 
 
@@ -193,95 +231,65 @@
 
 		</div>
 	</section>
-	<!-- articoli -->
-	<section class="category">
-		I nostri articoli di attualità ti terranno aggiornato sulle ultime notizie, tendenze e sfide nel campo della
-		privacy. Affronteremo temi come la protezione dei dati personali, la navigazione sicura su Internet, le truffe
-		online e molto altro ancora. Ci impegniamo a fornire informazioni accurate, pratiche e facilmente comprensibili,
-		per aiutarti a prendere decisioni consapevoli sulla tua privacy.
-		<h2 class="title">ARGOMENTI<i class="bi bi-file-text"></i> </h2>
 
-		<span class="subtitle">sottotitolo</span>
-		<div class="about-content">
-
-
-		</div>
-	</section>
 	<!-- test  -->
 	<section class="category">
-		E se desideri valutare la tua preparazione personale in merito alla privacy, abbiamo una sezione di test
-		appositamente progettata. I nostri quiz interattivi ti permettono di valutare le tue conoscenze sulla privacy,
-		fornendoti un feedback immediato e suggerimenti per migliorare. È un modo divertente e informativo per misurare
-		il tuo livello di alfabetizzazione sulla privacy.
-		<h2 class="title">ARGOMENTI<i class="bi bi-file-text"></i> </h2>
 
-		<span class="subtitle">sottotitolo</span>
-		<div class="about-content">
 
+
+	</section>
+
+	<!-- articoli -->
+	<section class="category">
+		
+		<div class="home-articoli">
+<p class="ph2">Resta informato, resta al sicuro</p>
+<div class="tab-articoli">
+			<th:block th:each="art, artStat : ${tuttiArticoli}">
+				<div th:if="${artStat.count<=2}">
+					<fieldset>
+						<legend th:text="${art.getMetaInfo()}"></legend>
+						<h2 th:text="${art.getTitolo()}">Titolo Favola</h2>
+
+						<a style="color: wheat;" th:href="${art.getLink()}" th:value="${art.getLink()}">Contenuto
+							articolo</a>
+					</fieldset>
+				</div>
+			</th:block>
 
 		</div>
+</div>
+
 	</section>
+
+
+
+
 	<!-- ANIMAZIONI GSAP -->
 	<script>
 		gsap.registerPlugin(ScrollTrigger);
 
-		gsap.to("#first-quest", {x: -50, duration: 3, delay: 0.3, opacity: 1, ease: Power3.easeOut}); //domanda tre home
-		gsap.to("#second-quest", {x: 50, duration: 4, delay: 0.7, opacity: 1, ease: Power3.easeOut});  //domanda uno home
-		gsap.to("#third-quest ", {x: -50, duration: 5, delay: 1, opacity: 1, ease: Power3.easeOut});		//domanda due home
+		gsap.to("#first-quest", {x: -50, duration: 1, delay: 0.3, opacity: 1, ease: Power3.easeOut}); //domanda tre home
+		gsap.to("#second-quest", {x: 50, duration: 2, delay: 0.7, opacity: 1, ease: Power3.easeOut});  //domanda uno home
+		gsap.to("#third-quest ", {x: -50, duration: 3, delay: 1, opacity: 1, ease: Power3.easeOut});		//domanda due home
 
-		gsap.to("#ans1", {x: 10, duration: 3, delay: 0.4, opacity: 1, ease: Power1.easeOut});
-		gsap.to("#ans2", {x: 10, duration: 3, delay: 0.5, opacity: 1, ease: Power1.easeOut});
-		gsap.to("#ans3", {x: 10, duration: 3, delay: 0.6, opacity: 1, ease: Power1.easeOut});
+		gsap.to("#ans1", {x: 10, duration: 2, delay: 0.4, opacity: 1, ease: Power1.easeOut});
+		gsap.to("#ans2", {x: 10, duration: 2, delay: 0.5, opacity: 1, ease: Power1.easeOut});
+		gsap.to("#ans3", {x: 10, duration: 2, delay: 0.6, opacity: 1, ease: Power1.easeOut});
 
-		gsap.to("#ans4", {x: 10, duration: 3, delay: 0.7, opacity: 1, ease: Power1.easeOut});
-		gsap.to("#ans5", {x: 10, duration: 3, delay: 0.8, opacity: 1, ease: Power1.easeOut});
-		gsap.to("#ans6", {x: 10, duration: 3, delay: 0.9, opacity: 1, ease: Power1.easeOut});
+		gsap.to("#ans4", {x: 10, duration: 2, delay: 0.7, opacity: 1, ease: Power1.easeOut});
+		gsap.to("#ans5", {x: 10, duration: 2, delay: 0.8, opacity: 1, ease: Power1.easeOut});
+		gsap.to("#ans6", {x: 10, duration: 2, delay: 0.9, opacity: 1, ease: Power1.easeOut});
 
-		gsap.to("#ans7", {x: 10, duration: 3, delay: 1, opacity: 1, ease: Power1.easeOut});
-		gsap.to("#ans8", {x: 10, duration: 3, delay: 1.1, opacity: 1, ease: Power1.easeOut});
-		gsap.to("#ans9", {x: 10, duration: 3, delay: 1.2, opacity: 1, ease: Power1.easeOut});
+		gsap.to("#ans7", {x: 10, duration: 2, delay: 1, opacity: 1, ease: Power1.easeOut});
+		gsap.to("#ans8", {x: 10, duration: 2, delay: 1.1, opacity: 1, ease: Power1.easeOut});
+		gsap.to("#ans9", {x: 10, duration: 2, delay: 1.2, opacity: 1, ease: Power1.easeOut});
 
-		gsap.to(".titolo", {duration: 8, delay: 2, opacity: 1, ease: Power1.easeOut});
-		gsap.to(".text-1", {duration: 8, delay: 2, opacity: 1, ease: Power1.easeOut});
-		gsap.to(".button-test", {duration: 8.5, delay: 2.5, opacity: 1, ease: Power1.easeOut});
-		gsap.to(".btn", {duration: 7, delay: 2.5, opacity: 1, ease: Expo.easeOut, y: -500});
+		//	gsap.to(".titolo", {duration: 8, delay: 2, opacity: 1, ease: Power1.easeOut});
+		gsap.to(".text-1", {delay: 2, opacity: 1, ease: Sine.easeOut});
+		gsap.to(".button-test", {duration: 2, delay: 2.5, opacity: 1, ease: Power1.easeOut});
+		gsap.to(".btn", {duration: 2, delay: 2.5, opacity: 1, ease: Expo.easeOut, y: -500});
 
-		gsap.to("#block1", {
-			scrollTrigger: {
-				trigger: "#block1",
-				toggleAction: "restart pause resume none"
-			}, x: 0, duration: 1, opacity: 1, ease: Power0.easeNone, y: -70
-		});
-		gsap.to("#block2", {
-			scrollTrigger: {
-				trigger: "#block2",
-				toggleAction: "restart pause resume none"
-			}, x: 0, duration: 1, delay: 0.5, opacity: 1, ease: Power0.easeNone, y: -70
-		});
-		gsap.to("#block3", {
-			scrollTrigger: {
-				trigger: "#block3",
-				toggleAction: "restart pause resume none"
-			}, x: 0, duration: 1, delay: 1, opacity: 1, ease: Power0.easeNone, y: -70
-		});
-		gsap.to("#block4", {
-			scrollTrigger: {
-				trigger: "#block4",
-				toggleAction: "restart pause resume none"
-			}, x: 0, duration: 1, delay: 1.5, opacity: 1, ease: Power0.easeNone, y: -70
-		});
-		gsap.to("#block5", {
-			scrollTrigger: {
-				trigger: "#block5",
-				toggleAction: "restart pause resume none"
-			}, x: 0, duration: 1, delay: 2, opacity: 1, ease: Power0.easeNone, y: -70
-		});
-		gsap.to("#block6", {
-			scrollTrigger: {
-				trigger: "#block6",
-				toggleAction: "restart pause resume none"
-			}, x: 0, duration: 1, delay: 2.5, opacity: 1, ease: Power0.easeNone, y: -70
-		});
 
 		gsap.to(".quote", {
 			scrollTrigger: {
@@ -289,6 +297,50 @@
 				toggleAction: "restart pause resume none"
 			}, x: 0, duration: 2, delay: 0.8, opacity: 1, ease: Power0.easeNone, y: -70
 		});
+
+		gsap.to("#block1", {
+			scrollTrigger: {
+				trigger: "#block1",
+				toggleAction: "restart pause resume none"
+			}, x: 0, duration: 1, opacity: 1, ease: Power0.easeNone, y: -70
+		});
+
+		gsap.to("#block2", {
+			scrollTrigger: {
+				trigger: "#block2",
+				toggleAction: "restart pause resume none"
+			}, x: 0, duration: 1, delay: 0.5, opacity: 1, ease: Power0.easeNone, y: -70
+		});
+
+		gsap.to("#block3", {
+			scrollTrigger: {
+				trigger: "#block3",
+				toggleAction: "restart pause resume none"
+			}, x: 0, duration: 1, delay: 1, opacity: 1, ease: Power0.easeNone, y: -70
+		});
+
+		gsap.to("#block4", {
+			scrollTrigger: {
+				trigger: "#block4",
+				toggleAction: "restart pause resume none"
+			}, x: 0, duration: 1, delay: 1.5, opacity: 1, ease: Power0.easeNone, y: -70
+		});
+
+		gsap.to("#block5", {
+			scrollTrigger: {
+				trigger: "#block5",
+				toggleAction: "restart pause resume none"
+			}, x: 0, duration: 1, delay: 2, opacity: 1, ease: Power0.easeNone, y: -70
+		});
+
+		gsap.to("#block6", {
+			scrollTrigger: {
+				trigger: "#block6",
+				toggleAction: "restart pause resume none"
+			}, x: 0, duration: 1, delay: 2.5, opacity: 1, ease: Power0.easeNone, y: -70
+		});
+
+
 
 
 
@@ -312,9 +364,37 @@
 				duration: 5,
 				color: color
 			}, (duration + gap) * index);
+			tlHome.to('.fav-text', {
+				duration: 5,
+				color: color
+			}, (duration + gap) * index);
 		});
 
+
+
+		/*testo favole */
+		var tl = gsap.timeline();
+
+		tl.to(".create", {y: "0%", duration: 0.7, stagger: 0.2});
+
+		tl.fromTo(".quote2", {opacity: 0}, {opacity: 1, delay: 0.5});
+
+
+
+		/*UNDERLINE TESTO HOME*/
+		let tl2 = gsap.timeline();
+		tl2.to("#underline1", {
+			width: "100%", duration: 1.5, delay: 2.5
+		})
+		tl2.to("#underline2", {
+			width: "100%", duration: 1.5, delay: 0.1
+		})
+		tl2.to("#underline3", {
+			width: "100%", duration: 1.5, delay: 0.1
+		})
+
 	</script>
+
 
 	<!-- TYPING E MENU BURGER-->
 	<script>
@@ -361,6 +441,7 @@
 			}, 100)
 		}
 	</script>
+	<div th:insert="~{fragments/footer::footer}"></div>
 </body>
 
 </html>
