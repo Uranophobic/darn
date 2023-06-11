@@ -373,10 +373,9 @@
 
 
 		/*testo favole */
-		var tl = gsap.timeline();
+		var tl = gsap.timeline({repeat: 2, repeatDelay: 5});
 
 		tl.to(".create", {y: "0%", duration: 0.7, stagger: 0.2});
-
 		tl.fromTo(".quote2", {opacity: 0}, {opacity: 1, delay: 0.5});
 
 
