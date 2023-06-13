@@ -45,4 +45,9 @@ public class FavolaControl {
 		}
 	return new ModelAndView("HomePage", "listaFavoleHome", favoleHome);
 }
+	
+	@GetMapping("/Lily-e-il-diario-segreto")
+	public String favola1(@ModelAttribute("listaFavoleHome") HttpServletRequest request, HttpServletResponse resp) {
+	 return "favola1";
+	}
 }

@@ -54,7 +54,7 @@ public class HomeControl {
 	public String icon2(Model model) {
 		List<ArgomentoStudio> allarg= argServ.findAllArgomenti();
 		model.addAttribute("allarg", allarg);
-		return "footer";
+		return "prove";
 	}
 	
 	@GetMapping("/index")
