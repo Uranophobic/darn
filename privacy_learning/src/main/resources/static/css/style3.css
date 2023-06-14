@@ -971,19 +971,6 @@ hr {
 	padding: 20px;
 }
 
-.background3 {
-	display: block;
-	height: auto;
-	padding: 20px 5%;
-	margin-bottom: 25px;
-	background-color: rgba(255, 255, 255, 0.8);
-	width: 70%;
-	margin: auto;
-	border: 5px;
-	border: 1px solid #F8C01B;
-	border-radius: 5px;
-	height: auto;
-}
 
 /************************************************ FAVOLE ***************************************/
 .favole-all {
@@ -1143,6 +1130,50 @@ hr {
 	margin-top: 50px;
 	margin-bottom: 50px;
 	padding: 50px;
+}
+
+
+/************************************************* ARTICOLO ******************************/
+.articoli-all {
+	display: flex;
+	position: relative;
+	height: 100vh;
+	background-color: #5e7db0;
+	min-height: 30.25rem;
+	letter-spacing: 1px;
+	margin-top: 74px;
+}
+
+.grid-container-articoli {
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: 33% 33% 33%;
+	/* width: 100%; */
+	/* column-gap: 25px; */
+	/* margin: auto; */
+	margin-top: 25px;
+}
+
+.grid-container-articoli li {
+	list-style-type: none;
+}
+
+.grid-item-articoli {
+	width: 100%;
+}
+
+.arg-sx-favole {
+	display: grid;
+	/* grid-template-columns: 50% 50%; */
+	transition: 0.5s ease;
+	color: var(--bianco);
+	text-decoration: none;
+	padding: 50px;
+	grid-template-columns: auto;
+	/* margin: auto; */
+	/* row-gap: 10px; */
+	width: 60%;
+	grid-template-rows: 30% 30%;
 }
 
 /************************************************ PROFILO ***************************************/
@@ -1496,6 +1527,31 @@ hr {
 		font-size: 3rem;
 
 	}
+
+	/*responsive -articoli*/
+	.articoli-all {
+		display: grid;
+
+		grid-template-columns: 100%;
+	}
+
+	.arg-sx-favole {
+	width: 100%;
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+.grid-container-articoli {
+	display: grid;
+	grid-template-columns: 80%;
+	grid-template-rows: 30% 30% 30%;
+
+	padding: 20px;
+}
+.grid-container-articoli li {
+	list-style-type: none;
+	margin: auto;
+	padding: 30px;
+}
 }
 
 @media screen and (max-width: 768px) {
@@ -1595,6 +1651,13 @@ hr {
 		font-size: 2.5rem;
 
 	}
+	
+	/*articoli-responsive*/
+	.articoli-all {
+
+	height: 110vh;
+
+}
 }
 
 @media screen and (max-width: 450px) {
@@ -1709,14 +1772,14 @@ hr {
 		height: 80vh;
 	}
 
-	
+
 	.titolo-fav {
 		font-size: 45px;
 	}
 
 	.glossario {
 		font-size: 2rem;
-padding: 20px;
+		padding: 20px;
 	}
 }
 
@@ -1808,4 +1871,13 @@ padding: 20px;
 		letter-spacing: 0px;
 		font-family: "Syncopate";
 	}
+	
+	/*articoli responsive*/
+	#maiusc {
+	font-size: 30px;
+}
+.grid-container-articoli {
+
+	 margin-top: 0; 
+}
 }
