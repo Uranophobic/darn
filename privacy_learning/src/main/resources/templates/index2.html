@@ -54,7 +54,7 @@
 	<section class="category">
 		<div class="home">
 			<div class="domande" id="rem">
-				<div class="domande-fill" >
+				<div class="domande-fill">
 					<!-- prima domanda -->
 					<div class="questionBox">
 						<p class="question" id="first-quest"> Quanto ti proteggi online? </p>
@@ -95,7 +95,7 @@
 					<div class="text-1">
 						<p id="rem"> Sei in difficoltà?</p>
 						<p id="rem">Questo argomento ti è nuovo?</p>
-					
+
 						<div class="quote0">
 							<div id="text2"><span> Non lasciare che</span><span class="underline"
 									id="underline1"></span></div><br>
@@ -203,7 +203,7 @@
 						<span><span class="create">e coinvolgente.</span></span>
 					</h2>
 				</div>
-				
+
 				<div class="quote2">
 					<hr>
 					<blockquote class="quote-privacy" contenteditable="true">
@@ -241,24 +241,34 @@
 
 	<!-- articoli -->
 	<section class="category">
-		
+
 		<div class="home-articoli">
-<p class="ph2">Resta informato, resta al sicuro</p>
-<div class="tab-articoli">
-			<th:block th:each="art, artStat : ${tuttiArticoli}">
-				<div th:if="${artStat.count<=2}">
-					<fieldset>
-						<legend th:text="${art.getMetaInfo()}"></legend>
-						<h2 th:text="${art.getTitolo()}">Titolo Favola</h2>
-
-						<a style="color: wheat;" th:href="${art.getLink()}" th:value="${art.getLink()}">Contenuto
-							articolo</a>
-					</fieldset>
+			<p class="ph2">Resta informato, resta al sicuro</p>
+			<div class="tab-articoli">
+				<script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
+				<div class="iframely-embed">
+					<div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a
+							href="https://mondoprivacy.it/news-dpo-e-legge-privacy/"
+							data-iframely-url="//cdn.iframe.ly/api/iframe?card=small&url=https%3A%2F%2Fmondoprivacy.it%2Fnews-dpo-e-legge-privacy%2F&key=c1515ef9db35aaba4ab76561af906cc4"></a>
+					</div>
 				</div>
-			</th:block>
-
+				<script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
+				<div class="iframely-embed">
+					<div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a
+							href="https://argomenti.ilsole24ore.com/tag/privacy"
+							data-iframely-url="//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fargomenti.ilsole24ore.com%2Ftag%2Fprivacy&key=c1515ef9db35aaba4ab76561af906cc4"></a>
+					</div>
+				</div>
+				<script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
+				<div class="iframely-embed">
+					<div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a
+							href="https://www.ansa.it/"
+							data-iframely-url="//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fwww.ansa.it%2F&key=c1515ef9db35aaba4ab76561af906cc4"></a>
+					</div>
+				</div>
+				<script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
+			</div>
 		</div>
-</div>
 
 	</section>
 

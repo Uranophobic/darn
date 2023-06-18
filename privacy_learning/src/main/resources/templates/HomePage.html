@@ -232,17 +232,8 @@
 
 				<div>
 					<div class="tab-fav">
-						<th:block th:each="art : ${tuttiArticoli}"
-							th:if="${art.getId_articolo() > (tuttiArticoli.size()-3)}">
-							<fieldset>
-								<legend th:text="${art.getMetaInfo()}"></legend>
-								<h2 th:text="${art.getTitolo()}">Titolo Favola</h2>
-
-								<a style="color: wheat;" th:href="${art.getLink()}"
-									th:value="${art.getLink()}">Contenuto articolo</a>
-							</fieldset>
-
-						</th:block>
+						<div class="iframely-embed"><div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a href="https://www.garanteprivacy.it" data-iframely-url="//cdn.iframe.ly/api/iframe?card=small&url=https%3A%2F%2Fwww.garanteprivacy.it%2Fhome&key=c1515ef9db35aaba4ab76561af906cc4"></a></div></div><script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
+					<div class="iframely-embed"><div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a href="https://www.privacyitalia.eu/home/home/" data-iframely-url="//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fwww.privacyitalia.eu%2F&key=c1515ef9db35aaba4ab76561af906cc4"></a></div></div><script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
 					</div>
 
 				</div>
