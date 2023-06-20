@@ -1,11 +1,28 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Nokora');
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
-@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap');
+@import
+	url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap")
+	;
 
+@import
+	url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap")
+	;
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400&display=swap')
+	;
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400&display=swap')
+	;
+
+@import url('https://fonts.googleapis.com/css?family=Nokora');
+
+@import
+	url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css")
+	;
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap')
+	;
 
 @font-face {
 	font-family: "milky";
@@ -27,7 +44,6 @@
 	src: url("../font/sabtu_minggu/Sabtu\ Minggu.otf");
 }
 
-
 @font-face {
 	font-family: "bit";
 	src: url("../font/bit_light10/BitLight10\(sRB\).TTF");
@@ -40,7 +56,8 @@
 
 @font-face {
 	font-family: "made-use";
-	src: url("../font/made_soulmaze/MADE\ Soulmaze\ Outline\ PERSONAL\ USE.otf");
+	src:
+		url("../font/made_soulmaze/MADE\ Soulmaze\ Outline\ PERSONAL\ USE.otf");
 }
 
 * {
@@ -57,14 +74,12 @@
 	--giallo: #fbbc05;
 	--sfondo: #192841;
 	--sfondo2: #5E7DB0;
-
 }
 
 body {
 	background: var(--sfondo);
 	font-family: 'Montserrat', sans-serif;
 }
-
 
 /************************************************ HEADER ***************************************/
 .scroll-up {
@@ -148,8 +163,6 @@ body {
 	display: flex;
 	justify-content: space-between;
 }
-
-
 
 .logo {
 	transition: 0.5s ease;
@@ -237,7 +250,6 @@ body {
 	text-transform: uppercase;
 	letter-spacing: 4px;
 	font-family: "Syncopate";
-
 }
 
 .quote0 {
@@ -347,7 +359,6 @@ body {
 	width: 100%;
 	padding: 20px;
 	margin: 20px;
-
 }
 
 .question {
@@ -385,7 +396,6 @@ body {
 	justify-content: end;
 	display: flex;
 	margin-top: 8px;
-
 }
 
 .answer2 {
@@ -418,7 +428,6 @@ body {
 	text-align: end;
 }
 
-
 .left {
 	display: grid;
 	justify-content: left;
@@ -427,7 +436,6 @@ body {
 
 .bi-x-lg {
 	color: red;
-
 }
 
 .bi-check-lg {
@@ -466,7 +474,6 @@ body {
 }
 
 .box {
-
 	text-align: center;
 	width: 65%;
 	margin: auto;
@@ -490,9 +497,7 @@ body {
 	font-weight: bold;
 	font-family: "Poppins";
 	font-size: 48px;
-
 }
-
 
 /*.lista {
 
@@ -500,7 +505,6 @@ body {
 	margin: auto;
 	padding: 15px;
 }*/
-
 .block {
 	width: 400px;
 	height: 50px;
@@ -524,7 +528,6 @@ body {
 .about .front {
 	animation: absides 0.8s;
 }
-
 
 .face {
 	position: absolute;
@@ -557,7 +560,6 @@ body {
 .block:hover .front {
 	background-color: var(--front-blue);
 }
-
 
 .quote {
 	opacity: 0;
@@ -616,12 +618,10 @@ body {
 	min-height: 30.25rem;
 	letter-spacing: 1px;
 	margin-top: 74px;
-
 	grid-template-rows: 50% 50%;
 }
 
 /*favole hoem*/
-
 .argomenti-sx-fav {
 	display: grid;
 	grid-template-columns: 50% 50%;
@@ -632,23 +632,19 @@ body {
 }
 
 .argomenti-dx-fav {
-
 	display: inline;
 	text-align: center;
 	margin: auto;
-
 }
 
 .text-fav {
 	color: whitesmoke;
-
 	font-size: 1.5rem;
 	font-family: 'Syncopate', sans-serif;
 }
 
 h2>span {
 	display: inline-block;
-
 	overflow: hidden;
 	font-weight: bolder;
 }
@@ -656,7 +652,6 @@ h2>span {
 h2 .create {
 	display: inline-block;
 	transform: translateY(100%);
-
 	text-transform: uppercase;
 	letter-spacing: 3px;
 	/* font-weight: bold; */
@@ -698,8 +693,7 @@ q:after {
 	content: close-quote;
 }
 
-q:before,
-q:after {
+q:before, q:after {
 	color: #ccc;
 	font-size: 4rem;
 }
@@ -713,13 +707,11 @@ hr {
 }
 
 .fav-text {
-
 	color: white;
 	font-family: "made";
 	font-size: 50px;
 	font-weight: 900;
 	letter-spacing: 8px;
-
 }
 
 /*articoli home*/
@@ -731,7 +723,6 @@ hr {
 	width: 100%;
 	padding: 20px;
 }
-
 
 .ph2 {
 	font-size: 60px;
@@ -795,17 +786,14 @@ hr {
 }
 
 .quote-argomenti {
-
 	font-size: 2rem;
 	color: white;
 	text-align: center;
-
 }
 
 .text-arg {
 	color: whitesmoke;
 	font-size: 1.3rem;
-
 }
 
 .crea {
@@ -839,14 +827,12 @@ hr {
 }
 
 .riga2 {
-
 	color: #F8C01B;
 	background: #F8C01B;
 	border: 0;
 	height: 2px;
 	width: 60%;
 	margin: auto;
-
 }
 
 .hashtag {
@@ -862,7 +848,6 @@ hr {
 	/* align-self: center; */
 	/* align-content: center; */
 	margin: auto;
-
 	margin-top: 20px;
 }
 
@@ -916,7 +901,6 @@ hr {
 	color: blue;
 }
 
-
 .box-argomento {
 	height: 150px;
 }
@@ -954,7 +938,6 @@ hr {
 	border: 2px solid #F8C01B;
 	padding: 20px;
 }
-
 
 /************************************************ FAVOLE ***************************************/
 .favole-all {
@@ -1011,7 +994,6 @@ hr {
 	width: 90%;
 	margin: auto;
 }
-
 
 .favola-mast_container2 {
 	display: flex;
@@ -1074,7 +1056,6 @@ hr {
 	font-size: 80px;
 	color: white;
 	font-weight: 900;
-
 	display: flex;
 	padding: 20px;
 }
@@ -1092,7 +1073,9 @@ hr {
 
 .priv::before {
 	background-color: aquamarine;
-	clip-path: polygon(0% 4%, 6% 14%, 2% 24%, 3% 31%, 0% 40%, 2% 49%, 0 59%, 5% 70%, 2% 85%, 0% 99%, 100% 100%, 100% 88%, 99% 86%, 100% 66%, 97% 61%, 100% 44%, 98% 34%, 96% 24%, 100% 22%, 98% 4%, 100% 0);
+	clip-path: polygon(0% 4%, 6% 14%, 2% 24%, 3% 31%, 0% 40%, 2% 49%, 0 59%, 5% 70%, 2%
+		85%, 0% 99%, 100% 100%, 100% 88%, 99% 86%, 100% 66%, 97% 61%, 100% 44%
+		, 98% 34%, 96% 24%, 100% 22%, 98% 4%, 100% 0);
 	content: '';
 	display: inline-block;
 	position: absolute;
@@ -1115,7 +1098,6 @@ hr {
 	margin-bottom: 50px;
 	padding: 50px;
 }
-
 
 /************************************************* ARTICOLI ******************************/
 .articoli-all {
@@ -1166,8 +1148,6 @@ hr {
 
 /************************************************ PROFILO ***************************************/
 
-
-
 /************************************************ 	LOGIN ***************************************/
 .login-container {
 	position: relative;
@@ -1179,65 +1159,53 @@ hr {
 }
 
 /********************************************************* RESPONSIVE *******************************************/
-@media screen and (max-width: 1920px) {}
+@media screen and (max-width: 1920px) {
+}
 
 @media screen and (max-width: 1440px) {
 	.home {
 		height: 80vh;
 	}
-
 	.darn {
 		font-size: 28px;
 	}
-
 	.bi-exclamation-triangle-fill {
 		font-size: 22px;
 	}
-
 	.logo {
 		font-size: 1.3rem;
 		width: 50%;
 	}
-
 	.navbar .menu li a {
 		margin-left: 0;
 	}
-
 	.question {
 		font-size: 58px;
 	}
-
 	.umbrella span {
 		width: 30%;
 	}
-
 	.questionBox {
 		padding: 15px;
 		margin: 15px;
 	}
-
 	.answer {
 		font-size: 18px;
 		letter-spacing: 2px;
 	}
-
 	.answer2 {
 		font-size: 18px;
 		letter-spacing: 2px;
 	}
-
 	.bi-umbrella {
 		font-size: 25px;
 	}
-
 	.home .home-content .text-1 {
 		font-size: 1.5rem;
 	}
-
 	.home .home-content .titolo {
 		font-size: 85px;
 	}
-
 	#text2 {
 		font-size: 35px;
 		color: white;
@@ -1245,7 +1213,6 @@ hr {
 		letter-spacing: 4px;
 		font-family: "Syncopate";
 	}
-
 	blockquote {
 		font-size: 2.5rem;
 		color: white;
@@ -1257,7 +1224,6 @@ hr {
 		display: grid;
 		grid-template-rows: 40% 40%;
 	}
-
 	.grid-item fieldset {
 		height: 265px;
 		width: 95%;
@@ -1265,22 +1231,17 @@ hr {
 		grid-template-rows: 70% 30%;
 		row-gap: 25px;
 	}
-
 	.arg-sx {
 		display: grid;
-
 		padding: 50px 25px;
-
 		width: 40%;
 		grid-template-rows: 30% 30%;
 	}
-
 	.grid-container {
 		display: grid;
 		grid-template-columns: 50% 50%;
 		width: 58%;
 	}
-
 	.quote2 {
 		margin-top: 0 !important;
 	}
@@ -1291,33 +1252,57 @@ hr {
 	}
 }
 
+@media screen and (max-width: 1360px) {
+	.home {
+		height: 100vh;
+	}
+	#text2 {
+		font-size: 30px;
+		color: white;
+		text-transform: uppercase;
+		letter-spacing: 3px;
+		font-family: "Syncopate";
+	}
+	.domande-fill {
+		grid-template-columns: 84%;
+	}
+	.logo {
+		font-size: 1.2rem;
+	}
+	.home-argomenti {
+		height: 105vh;
+	}
+	.home-favole {
+		height: 75vh;
+		grid-template-rows: 70% 40%;
+	}
+	.question {
+		font-size: 55px;
+	}
+}
+
 @media screen and (max-width: 978px) {
 	.home {
 		display: grid;
-		height: 135vh;
+		height: 95vh;
 		grid-template-columns: auto;
 		margin: auto;
 		margin-top: 74px;
 	}
-
 	.darn {
 		font-size: 28px;
 	}
-
 	.bi-exclamation-triangle-fill {
 		font-size: 22px;
 	}
-
 	.logo {
 		font-size: 1.5rem;
 		width: 65%
 	}
-
 	.navbar .max-width {
 		align-items: center;
 		padding: 0 20px;
 	}
-
 	.navbar .menu {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
@@ -1333,35 +1318,27 @@ hr {
 		box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.3);
 		transition: 0.2s ease;
 	}
-
 	.navbar .menu li {
 		margin-bottom: 50px;
 	}
-
 	.navbar .menu.active {
 		top: 0;
 		padding: 0;
 	}
-
 	.navbar .menu li a {
 		transition: all 0.1s ease;
 		color: var(--sfondo);
 		border-radius: 0;
 	}
-
-	.navbar .menu li a:hover,
-	.navbar .menu i:hover {
+	.navbar .menu li a:hover, .navbar .menu i:hover {
 		color: var(--azzurro);
 	}
-
-
 	.menu-btn {
 		color: var(--bianco);
 		font-size: 30px;
 		cursor: pointer;
 		display: block;
 	}
-
 	.navbar .menu i {
 		display: flex;
 		flex-direction: column;
@@ -1372,11 +1349,9 @@ hr {
 		margin-bottom: 3px;
 		transition: all 0.1s ease;
 	}
-
 	.navbar .menu .menu-close {
 		color: var(--sfondo);
 	}
-
 	.menu-close {
 		position: absolute;
 		right: 20px;
@@ -1385,142 +1360,125 @@ hr {
 		cursor: pointer;
 		transition: all 0.1s ease;
 	}
-
 	.navbar .menu li {
 		display: block;
 		text-align: center;
 		margin: 30px auto;
 	}
-
 	.navbar .menu i {
 		display: block;
 		color: var(--sfondo);
 	}
-
 	.navbar .menu li a {
 		display: inline-block;
 		margin: 0;
 	}
-
 	.question {
 		font-size: 58px;
 	}
-
 	.umbrella span {
 		width: 30%;
 	}
-
 	.questionBox {
 		padding: 15px;
 		margin: 15px;
 	}
-
 	.answer {
 		font-size: 18px;
 		letter-spacing: 2px;
 	}
-
 	.answer2 {
 		font-size: 18px;
 		letter-spacing: 2px;
 	}
-
 	.bi-umbrella {
 		font-size: 25px;
 	}
-
 	.home .home-content .text-1 {
 		font-size: 1.5rem;
 		margin-bottom: 6px;
 	}
-
 	.home .home-content .titolo {
 		font-size: 85px;
 	}
-
+	.home-articoli {
+		display: grid;
+		grid-template-columns: 50% 50%;
+		background-color: var(--sfondo2);
+		height: 40vh;
+		width: 100%;
+		padding-top: 20px;
+	}
 	.domande {
 		width: 100%;
 		height: 35vh;
 	}
-
 	.testo {
 		width: 100%;
 		margin: auto;
 	}
-
 	.home-argomenti {
-		height: 120vh;
+		height: 80vh;
 		grid-template-columns: 100%;
 	}
-
+	.lista {
+		margin-top: 60px;
+	}
 	blockquote {
 		font-size: 1.8rem;
-
 	}
-
 	.quote.qhome {
 		text-align: center;
 		padding: 10px;
 	}
-
 	.argomenti-sx {
 		display: grid;
 		grid-template-rows: 50% 50%;
 		grid-template-columns: auto;
-
 	}
-
 	.box {
 		text-align: center;
 		width: 100%;
 		/* margin: auto; */
 	}
-
 	.argomenti-dx {
 		display: grid;
 		grid-template-rows: 25% 50%;
 		grid-template-columns: auto;
 		text-align: center;
 	}
-
 	.argomenti-sx-fav {
 		display: grid;
 		grid-template-columns: 100%;
 		grid-template-rows: 50% 50%;
 	}
-
 	.home-favole {
 		display: grid;
 		position: relative;
-		height: 80vh;
-		grid-template-columns: 100%;
-		grid-template-rows: 50% 50%;
+		height: fit-content;
+		grid-template-columns: auto;
+		grid-template-rows: 70% 30%;
 	}
-
 	.quote2 {
 		margin-top: 60px;
 	}
-
 	.argomenti-dx-fav {
 		display: inline;
 		text-align: center;
 		margin: auto;
-		margin-top: 210px;
+		margin-top: 52px;
+		margin-bottom: 50px;
 	}
-
 	.ph2 {
 		font-size: 50px;
-
 	}
 
 	/*repsonsive-favola*/
 	.titolo-fav {
 		font-size: 58px;
 	}
-
 	.glossario {
 		font-size: 3rem;
-
 	}
 
 	/*responsive -articoli*/
@@ -1529,13 +1487,11 @@ hr {
 		height: 120vh;
 		grid-template-columns: 100%;
 	}
-
 	.arg-sx-favole {
 		width: 100%;
 		padding-bottom: 0;
 		margin-bottom: 0;
 	}
-
 	.grid-container-articoli {
 		display: grid;
 		grid-template-columns: 100%;
@@ -1544,76 +1500,59 @@ hr {
 		padding: 35px;
 		row-gap: 20px;
 	}
-
 	.grid-container-articoli li {
 		list-style-type: none;
 		margin: auto;
 		padding: 30px;
 	}
-
-
-
-
 }
 
 @media screen and (max-width: 768px) {
 	.typ {
 		font-size: 40px;
 	}
-
 	.darn3 {
 		font-size: 55px;
 	}
-
 	.darn2 {
 		font-size: 55px;
 	}
-
 	.quote.qhome {
 		text-align: center;
 		padding: 10px;
 		margin-top: 5px;
 	}
-
 	blockquote {
 		font-size: 1.5rem;
 	}
-
 	.home-argomenti {
 		height: 115vh;
 	}
-
 	.argomenti-dx {
 		display: grid;
 		grid-template-rows: 30% 50%;
 		grid-template-columns: auto;
 		text-align: center;
 	}
-
 	.argomenti-sx {
 		display: grid;
 		grid-template-rows: 50% 50%;
 		grid-template-columns: auto;
 		padding: 25px 50px 10px 50px;
 	}
-
 	.quote-privacy2 {
 		padding: 0;
 		font-size: 25px;
 	}
-
 	.home-favole {
 		margin-top: 14px;
 	}
-
 	.text-fav {
 		font-size: 1.3rem;
 	}
-
 	.quote2 {
 		margin-top: 70px;
 	}
-
 	.ph2 {
 		font-size: 40px;
 	}
@@ -1621,10 +1560,8 @@ hr {
 	/*resp-argomenti*/
 	.argomenti-all {
 		display: grid;
-
 		grid-template-columns: auto;
 	}
-
 	.arg-sx {
 		display: grid;
 		padding: 50px 50px;
@@ -1632,7 +1569,6 @@ hr {
 		grid-template-rows: 30% 30%;
 		margin: auto;
 	}
-
 	.grid-container {
 		display: grid;
 		grid-template-columns: 50% 50%;
@@ -1644,14 +1580,11 @@ hr {
 	.favola-mast {
 		height: 25vh;
 	}
-
 	.titolo-fav {
 		font-size: 50px;
 	}
-
 	.glossario {
 		font-size: 2.5rem;
-
 	}
 
 	/*articoli responsive*/
@@ -1659,12 +1592,9 @@ hr {
 		margin-top: 0;
 		row-gap: 15px;
 	}
-
 	.grid-container-articoli {
-
 		margin-top: 0;
 	}
-
 	.articoli-all {
 		height: 120vh;
 		/* row-gap: 15px; */
@@ -1674,35 +1604,29 @@ hr {
 @media screen and (max-width: 450px) {
 	.home {
 		display: grid;
-		height: 50vh;
+		height: fit-content;
 		grid-template-columns: 100%;
 		margin: auto;
 		margin-top: 74px;
 	}
-
 	.darn {
 		font-size: 20px;
 	}
-
 	.bi-exclamation-triangle-fill {
 		font-size: 18px;
 	}
-
 	.logo {
 		font-size: 1rem;
 		width: 90%;
 	}
-
 	#rem {
 		display: none;
 	}
-
 	.home .home-content {
 		text-align: center;
 		padding: 5px;
 		border-radius: 5px;
 	}
-
 	#text2 {
 		font-size: 24px;
 		color: white;
@@ -1710,34 +1634,25 @@ hr {
 		letter-spacing: 2px;
 		font-family: "Syncopate";
 	}
-
 	.home .home-content .button-test a {
-
 		font-size: 1em;
-
 	}
-
 	.typ {
 		font-size: 30px;
 	}
-
 	.darn2 {
 		font-size: 40px;
 	}
-
 	.darn3 {
 		font-size: 40px;
 	}
-
 	blockquote q {
 		letter-spacing: 4px;
 		line-height: 10px;
 	}
-
 	.argomenti-dx-fav {
 		margin-top: 0;
 	}
-
 	.home-favole {
 		display: grid;
 		position: relative;
@@ -1745,11 +1660,9 @@ hr {
 		grid-template-columns: 100%;
 		grid-template-rows: 80% 20%;
 	}
-
 	.text-fav {
 		font-size: 1.2rem;
 	}
-
 	.home-articoli {
 		display: grid;
 		grid-template-rows: 50% 50%;
@@ -1767,27 +1680,20 @@ hr {
 		grid-template-rows: 53% 30%;
 		margin: 0;
 	}
-
 	.grid-container {
-
 		grid-template-columns: auto;
-
 	}
 
 	/*responsive-favole*/
 	.favola-mast_container {
 		display: grid;
 	}
-
 	.favola-mast {
 		height: 80vh;
 	}
-
-
 	.titolo-fav {
 		font-size: 45px;
 	}
-
 	.glossario {
 		font-size: 2rem;
 		padding: 20px;
@@ -1798,12 +1704,9 @@ hr {
 		margin-top: 0;
 		row-gap: 15px;
 	}
-
 	.grid-container-articoli {
-
 		margin-top: 0;
 	}
-
 	.articoli-all {
 		height: 120vh;
 		/* row-gap: 15px; */
@@ -1814,11 +1717,9 @@ hr {
 	blockquote {
 		font-size: 1.3rem;
 	}
-
 	.home-argomenti {
 		height: 110vh;
 	}
-
 	hr {
 		width: 200px;
 		color: white;
@@ -1826,17 +1727,13 @@ hr {
 		margin-top: 25px;
 		margin-bottom: 25px;
 	}
-
 	.quote-privacy2 {
 		padding: 0;
 		font-size: 18px;
 	}
-
 	.front p {
-
 		font-size: 20px;
 	}
-
 	.home-articoli {
 		display: grid;
 		grid-template-rows: 50% 50%;
@@ -1853,12 +1750,9 @@ hr {
 		margin-top: 0;
 		row-gap: 15px;
 	}
-
 	.grid-container-articoli {
-
 		margin-top: 0;
 	}
-
 	.articoli-all {
 		height: 120vh;
 		/* row-gap: 15px; */
@@ -1875,19 +1769,15 @@ hr {
 		/* text-align: center; */
 		background: rgba(63, 61, 69, 0.7);
 	}
-
 	.argomenti-sx {
 		padding: 25px 20px 10px 20px;
 	}
-
 	.text-fav {
 		font-size: 1rem;
 	}
-
 	.ph2 {
 		font-size: 35px;
 	}
-
 	.home-articoli {
 		display: grid;
 		grid-template-rows: 35% 50%;
@@ -1898,7 +1788,6 @@ hr {
 		/* row-gap: 25px; */
 		grid-template-columns: auto;
 	}
-
 	.home-favole {
 		display: grid;
 		position: relative;
@@ -1906,7 +1795,6 @@ hr {
 		grid-template-columns: 100%;
 		grid-template-rows: 80% 20%;
 	}
-
 	#text2 {
 		font-size: 23px;
 		color: white;
@@ -1920,12 +1808,9 @@ hr {
 		margin-top: 0;
 		row-gap: 15px;
 	}
-
 	.grid-container-articoli {
-
 		margin-top: 0;
 	}
-
 	.articoli-all {
 		height: 120vh;
 		/* row-gap: 15px; */
