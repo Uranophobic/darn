@@ -1,60 +1,202 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta charset="ISO-8859-1">
-<link rel="stylesheet" href="../css/stylesheet.css">
-<title>Privacy Literacy</title>
+	<meta charset="ISO-8859-1">
+	<link rel="stylesheet" href="../css/style3.css">
+	<title>Darn - Approfondimenti</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+	<link rel="stylesheet" href="https://www.ionos.it/digitalguide/path/to/font-awesome/css/font-awesome.min.css">
+	<!-- ICONSSCOUT -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+		integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/style3.css">
+
+	<!-- libreria per il typed jq-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.js"
+		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+	<!-- ScrollReveal -->
+	<script src="https://unpkg.com/scrollreveal"></script>
+	<script src="/path/to/noframework.waypoints.min.js"></script>
+
+	<script src="js/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Flip.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Observer.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Draggable.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/EaselPlugin.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/MotionPathPlugin.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/PixiPlugin.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/TextPlugin.min.js"></script>
 </head>
+
 
 <body>
 	<div th:insert="~{fragments/header::header}"></div>
+
 	<br>
-	<div class="container-home">
-		<div class="box-titolo">
+
+	<a class="button" th:if="${!session.isEmpty()} and ${session.userSession.email.equals('admin@gmail.com')}"
+		th:href="@{/admin/createArticolo}"> Aggiungi </a>
+	<th:block th:if="${!session.isEmpty()} and (${session.userSession.email.equals('admin@gmail.com')})"
+		th:each="art : ${tuttiArticoli}">
+		<div class="argomenti-all">
+			<div class="box-titolo">
 				<div class="titolo">Curiosit&agrave; e Novit&agrave;</div>
 			</div>
-	 <a class="button" th:if="${!session.isEmpty()} and ${session.userSession.email.equals('admin@gmail.com')}"  th:href="@{/admin/createArticolo}"> Aggiungi </a>
-		<div class="background">
-		<br>
+			<br>
 			<!-- CONTROLLO SE L'UTENTE SIA ADMIN -->
-			<th:block
-				th:if="${!session.isEmpty()} and (${session.userSession.email.equals('admin@gmail.com')})" th:each="art : ${tuttiArticoli}">
-				<fieldset style="margin:2% 15% 2% 15%;">
-					<div class="testo-articolo">
-						<br>
-						<h3 th:text="${art.getTitolo()}">Titolo articolo</h3>
-						<p th:text="${art.getMetaInfo()}">metainfo</p>
-						<br> <a target="_blank" style="color: blue;"
-							th:href="${art.getLink()}" th:value="${art.getLink()}">Contenuto
-							articolo</a>
-							<br> <br>
-							<a class=button th:href="@{/admin/fixedArticolo/{id}(id=${art.getId_articolo()})}">Modifica</a>
-							<a class=button th:href="@{/admin/deleteArticolo/{id}(id=${art.getId_articolo()})}">Elimina</a>
-					</div>
-				</fieldset>
-			</th:block>
 
-			<!--  ALTRIMENTI -->
-			<th:block
-				th:if="${session.isEmpty()} or ${!(session.userSession.email.equals('admin@gmail.com'))}">
+
+			<div class="testo-articolo">
+				<br>
+				<h3 th:text="${art.getTitolo()}">Titolo articolo</h3>
+				<p th:text="${art.getMetaInfo()}">metainfo</p>
+				<br> <a target="_blank" style="color: blue;" th:href="${art.getLink()}"
+					th:value="${art.getLink()}">Contenuto
+					articolo</a> <br> <br> <a class=button
+					th:href="@{/admin/fixedArticolo/{id}(id=${art.getId_articolo()})}">Modifica</a>
+				<a class=button th:href="@{/admin/deleteArticolo/{id}(id=${art.getId_articolo()})}">Elimina</a>
+			</div>
+
+
+		</div>
+	</th:block>
+	<!--  ALTRIMENTI -->
+
+	<!--<th:block th:if="${session.isEmpty()} or ${!(session.userSession.email.equals('admin@gmail.com'))}">
+
+			<button class="search-button" onclick="ricerca()"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+					height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+					<path
+						d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+				</svg></button>
+			<input type="text" id="barra-ricerca" placeholder="Digita un hashtag">
+
+			<ul id="elenco">
+
 				<div class="grid-container">
 					<th:block th:each="art : ${tuttiArticoli}">
-						<div class="grid-item">
-							<fieldset>
-								<div class="testo-articolo">
-									<br>
-									<h3 th:text="${art.getTitolo()}">Titolo articolo</h3>
-									<p th:text="${art.getMetaInfo()}">metainfo</p>
-									<br> <a target="_blank" style="color: blue;"
-										th:href="${art.getLink()}" th:value="${art.getLink()}">Contenuto
-										articolo</a>
+						<li>
+							<div class="grid-item">
+
+								<div class="titolo" th:text="${art.getTitolo()}">titolo
+									argomento</div>
+								<hr class="riga2">
+								<div class="hashtag">
+
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+										class="bi bi-bookmarks" viewBox="0 0 16 16">
+										<path
+											d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4zm2-1a1 1 0 0 0-1 1v10.566l3.723-2.482a.5.5 0 0 1 .554 0L11 14.566V4a1 1 0 0 0-1-1H4z" />
+										<path
+											d="M4.268 1H12a1 1 0 0 1 1 1v11.768l.223.148A.5.5 0 0 0 14 13.5V2a2 2 0 0 0-2-2H6a2 2 0 0 0-1.732 1z" />
+									</svg>
+
+									<p class="meta-info" th:text="'#' + ${art.getMetaInfo()}"></p>
+
 								</div>
-							</fieldset>
-						</div>
+
+								 anteprima dei link 
+								<a th:href="${art.getLink()}" class="embedly-card link" data-card-controls="1">
+									<a class="link" th:text="${art.getLink()}" th:href="${art.getLink()}"></a>
+
+
+
+							</div>
+						</li>
+
+
+
 					</th:block>
 				</div>
-			</th:block>
+			</ul>
+		</th:block>-->
+	<div class="articoli-all">
+		<div class="arg-sx-favole">
+			<div class="text-arg">
+				<h2>
+					<span><span class="crea" id="maiusc"> Aggiornati con le ultime notizie</span></span>
+
+					<span><span class="crea" id="normal"> Leggi una raccolta di articoli</span></span>
+					<span><span class="crea" id="normal"> Da noi selezionati</span></span>
+					<span><span class="crea" id="normal"> Che spaziano dalla protezione dei dati personali</span></span>
+					<span><span class="crea" id="normal"> Agli ultimi svilluppi tecnologici,</span></span>
+					<span><span class="crea" id="normal"> Offrendoti una panorammica completa
+							dell'attualità</span></span>
+
+				</h2>
+			</div>
+		</div>
+		<div class="grid-container-articoli">
+
+			<li>
+				<div class="grid-item-articoli">
+
+<div class="iframely-embed"><div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a href="https://www.ansa.it/sito/notizie/tecnologia/internet_social/2023/05/22/multa-record-a-meta-da-12-miliardi-per-violazione-privacy_b887be88-f273-46a6-83cf-4488afe40089.html" data-iframely-url="//cdn.iframe.ly/api/iframe?card=small&url=https%3A%2F%2Fwww.ansa.it%2Fsito%2Fnotizie%2Ftecnologia%2Finternet_social%2F2023%2F05%2F22%2Fmulta-record-a-meta-da-12-miliardi-per-violazione-privacy_b887be88-f273-46a6-83cf-4488afe40089.html&key=c1515ef9db35aaba4ab76561af906cc4"></a></div></div><script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
+
+				</div>
+
+			</li>
+
+			<li>
+				<div class="grid-item-articoli">
+
+<div class="iframely-embed"><div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a href="https://www.tecnoandroid.it/2023/06/08/whatsapp-e-la-crittografia-end-to-end-come-funziona-1238307" data-iframely-url="//cdn.iframe.ly/api/iframe?card=small&url=https%3A%2F%2Fwww.tecnoandroid.it%2F2023%2F06%2F08%2Fwhatsapp-e-la-crittografia-end-to-end-come-funziona-1238307&key=c1515ef9db35aaba4ab76561af906cc4"></a></div></div><script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
+
+
+				</div>
+
+			</li>
+
+			<li>
+				<div class="grid-item-articoli">
+			<div class="iframely-embed"><div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a href="https://www.startmag.it/cybersecurity/hacker-i-dati-della-polizia-di-stato-in-vendita-su-telegram/" data-iframely-url="//cdn.iframe.ly/api/iframe?card=small&url=https%3A%2F%2Fwww.startmag.it%2Fcybersecurity%2Fhacker-i-dati-della-polizia-di-stato-in-vendita-su-telegram%2F&key=c1515ef9db35aaba4ab76561af906cc4"></a></div></div><script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
+
+			</li>
+
+
 		</div>
 	</div>
+	<script>
+		function ricerca() {
+			var input;
+			var filtro;
+			var lista;
+			var voci;
+			var x;
+			var i;
+			var testo;
+			input = document.getElementById("barra-ricerca");
+			filtro = input.value.toUpperCase();
+			lista = document.getElementById("elenco");
+
+			voci = lista.getElementsByTagName("li");
+			for (i = 0; i < voci.length; i++) {
+				x = lista.getElementsByTagName("li")[i];
+				testo = x.textContent || x.innerText;
+				if (testo.toUpperCase().indexOf(filtro) > -1) {
+					voci[i].style.display = "";
+				} else {
+					voci[i].style.display = "none";
+				}
+			}
+		}
+	</script>
+	<script>
+		var tl = gsap.timeline({repeat: 3, repeatDelay: 5});
+		tl.to(".crea", {y: "0%", duration: 1.5, stagger: 0.2});
+		tl.fromTo(".quote2", {opacity: 0}, {opacity: 1, delay: 0.5});
+	</script>
+	<div th:insert="fragments/footer::footer"></div>
 </body>
+
 </html>

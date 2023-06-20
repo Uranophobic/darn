@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+	<link rel="stylesheet" href="https://www.ionos.it/digitalguide/path/to/font-awesome/css/font-awesome.min.css">
+	<!-- ICONSSCOUT -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+		integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/style3.css">
+
+	<!-- libreria per il typed jq-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.js"
+		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+	<!-- ScrollReveal -->
+	<script src="https://unpkg.com/scrollreveal"></script>
+	<script src="/path/to/noframework.waypoints.min.js"></script>
+
+	<script src="js/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Flip.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Observer.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Draggable.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/EaselPlugin.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/MotionPathPlugin.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/PixiPlugin.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/TextPlugin.min.js"></script>
+
+
+</head>
+
+<body>
+	<div th:insert="~{fragments/header::header}"></div>
+	<!-- burger -->
+	<div class="scroll-up">
+		<i class="fas fa-angle-up"></i>
+	</div>
+
+
+
+
+	<!-- titolo e domande -->
+	<section class="category">
+		<div class="home">
+			<div class="domande" id="rem">
+				<div class="domande-fill" >
+					<!-- prima domanda -->
+					<div class="questionBox">
+						<p class="question" id="first-quest"> Quanto ti proteggi online? </p>
+						<div class="umbrella">
+							<span id="ans1"><i class="bi bi-circle"></i><i class="bi bi-umbrella"></i></span>
+							<span id="ans2"><i class="bi bi-circle"></i><i class="bi bi-umbrella"></i><i
+									class="bi bi-umbrella"></i></span>
+							<span id="ans3"><i class="bi bi-circle"></i><i class="bi bi-umbrella"></i><i
+									class="bi bi-umbrella"></i><i class="bi bi-umbrella"></i></span>
+						</div>
+					</div>
+					<!-- seconda domanda-->
+					<div class="questionBox right">
+						<p class="question" id="second-quest">Dove salvi le tue password?</p>
+						<span id="ans4" class="answer"> su foglio di carta <i class="bi bi-x-lg"></i> </span>
+						<span id="ans5" class="answer"> nel mio diario segreto... <i class="bi bi-x-lg"></i></span>
+						<span id="ans6" class="answer"> un gruppo whatsapp in cui ci sono solo io <i
+								class="bi bi-x-lg"></i></span>
+					</div>
+
+					<!-- terza domanda-->
+					<div class="questionBox left">
+						<p class="question" id="third-quest"> Cos'è l 'autenticazione a due fattori?</p>
+						<span id="ans7" class="answer2"><i class="bi bi-x-lg"></i> ... un particolare tipo di pizza
+							Hawuaiana!</span>
+						<span id="ans8" class="answer2"><i class="bi bi-x-lg"></i> mhhhh l'autenticazione facciale
+							dell'Iphone</span>
+						<span id="ans9" class="answer2"><i class="bi bi-check-lg"></i> uno strumento di protezione
+							online!?! </span>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="testo">
+
+				<div class="home-content">
+					<div class="text-1">
+						<p id="rem"> Sei in difficoltà?</p>
+						<p id="rem">Questo argomento ti è nuovo?</p>
+					
+						<div class="quote0">
+							<div id="text2"><span> Non lasciare che</span><span class="underline"
+									id="underline1"></span></div><br>
+							<div id="text2"><span> la tua privacy sia</span><span class="underline"
+									id="underline2"></span></div><br>
+							<div id="text2"><span> il tuo punto debole</span><span class="underline"
+									id="underline3"></span></div><br>
+						</div>
+						<br>
+						<br>
+
+						Unisciti a noi per un test sulla privacy <br>
+						Scopri le migliori pratiche per mantenere i tuoi dati al sicuro
+					</div>
+					<div class="button-test"><a class="btn" href="#contacto">
+							Compila il tuo primo test</a></div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- argomenti -->
+	<section class="category">
+		<div class="home-argomenti">
+			<div class="argomenti-sx">
+				<div>
+					<span><a class="darn3">Darn</a><a class="darn2"> Look at your</a></span>
+					<div class="typ">
+						<a class="typing2"></a>
+					</div>
+				</div>
+
+
+
+
+				<div class="quote">
+					<hr>
+					<blockquote class="quote-privacy" contenteditable="true">
+						<q> La privacy è <br>
+							un diritto fondamentale <br>
+							che tutti dovremmo comprendere e <br>
+							soprattutto difendere.</q>
+					</blockquote>
+					<hr>
+				</div>
+
+			</div>
+			<div class="argomenti-dx">
+				<div class="box">
+					<p class="quote-privacy2"> Grazie a noi potrai approfondire le tue conoscenze in merito a questi
+						argomenti e molti altri ancora!</p>
+				</div>
+
+				<div class="lista">
+					<div class="block about" id="block1">
+						<div class="front face">
+							<p> Dati Sensibili </p>
+						</div>
+					</div>
+					<div class="block about" id="block2">
+						<div class="front face">
+							<p>Password </p>
+						</div>
+					</div>
+					<div class="block about" id="block3">
+						<div class="front face">
+							<p> Identità Digitale </p>
+						</div>
+					</div>
+					<div class="block about" id="block4">
+						<div class="front face">
+							<p> GDPR </p>
+						</div>
+					</div>
+					<div class="block about" id="block5">
+						<div class="front face">
+							<p> Violazione della privacy </p>
+						</div>
+					</div>
+					<div class="block about" id="block6">
+						<div class="front face">
+							<p> Cookie </p>
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- favole -->
+	<section class="category ">
+
+		<div class="home-favole">
+
+			<!-- RIGA FORMATA DA DUE COLONNE-->
+			<div class="argomenti-sx-fav">
+
+				<div class="text-fav">
+					<h2>
+						<span><span class="create">E' importante educare i </span></span><br>
+						<span><span class="create">bambini sui temi della </span></span><br>
+						<span><span class="create">privacy in modo divertente </span></span>
+						<span><span class="create">e coinvolgente.</span></span>
+					</h2>
+				</div>
+				
+				<div class="quote2">
+					<hr>
+					<blockquote class="quote-privacy" contenteditable="true">
+						<q> La privacy è <br>
+							un diritto fondamentale <br>
+							che riguarda tutti, <br>
+							indipendentemente dall'età!</q>
+					</blockquote>
+					<hr>
+				</div>
+
+			</div>
+
+			<!-- RIGA -->
+			<div class="argomenti-dx-fav">
+
+
+
+				<span><span class="quote2">Dai un un'occhiata alle <span class="fav-text">FAVOLE</span> </span></span>
+
+			</div>
+
+
+
+
+		</div>
+	</section>
+
+	<!-- test  -->
+	<section class="category">
+
+
+
+	</section>
+
+	<!-- articoli -->
+	<section class="category">
+		
+		<div class="home-articoli">
+<p class="ph2">Resta informato, resta al sicuro</p>
+<div class="tab-articoli">
+			<th:block th:each="art, artStat : ${tuttiArticoli}">
+				<div th:if="${artStat.count<=2}">
+					<fieldset>
+						<legend th:text="${art.getMetaInfo()}"></legend>
+						<h2 th:text="${art.getTitolo()}">Titolo Favola</h2>
+
+						<a style="color: wheat;" th:href="${art.getLink()}" th:value="${art.getLink()}">Contenuto
+							articolo</a>
+					</fieldset>
+				</div>
+			</th:block>
+
+		</div>
+</div>
+
+	</section>
+
+
+
+
+	<!-- ANIMAZIONI GSAP -->
+	<script>
+		gsap.registerPlugin(ScrollTrigger);
+
+		gsap.to("#first-quest", {x: -50, duration: 1, delay: 0.3, opacity: 1, ease: Power3.easeOut}); //domanda tre home
+		gsap.to("#second-quest", {x: 50, duration: 2, delay: 0.7, opacity: 1, ease: Power3.easeOut});  //domanda uno home
+		gsap.to("#third-quest ", {x: -50, duration: 3, delay: 1, opacity: 1, ease: Power3.easeOut});		//domanda due home
+
+		gsap.to("#ans1", {x: 10, duration: 2, delay: 0.4, opacity: 1, ease: Power1.easeOut});
+		gsap.to("#ans2", {x: 10, duration: 2, delay: 0.5, opacity: 1, ease: Power1.easeOut});
+		gsap.to("#ans3", {x: 10, duration: 2, delay: 0.6, opacity: 1, ease: Power1.easeOut});
+
+		gsap.to("#ans4", {x: 10, duration: 2, delay: 0.7, opacity: 1, ease: Power1.easeOut});
+		gsap.to("#ans5", {x: 10, duration: 2, delay: 0.8, opacity: 1, ease: Power1.easeOut});
+		gsap.to("#ans6", {x: 10, duration: 2, delay: 0.9, opacity: 1, ease: Power1.easeOut});
+
+		gsap.to("#ans7", {x: 10, duration: 2, delay: 1, opacity: 1, ease: Power1.easeOut});
+		gsap.to("#ans8", {x: 10, duration: 2, delay: 1.1, opacity: 1, ease: Power1.easeOut});
+		gsap.to("#ans9", {x: 10, duration: 2, delay: 1.2, opacity: 1, ease: Power1.easeOut});
+
+		//	gsap.to(".titolo", {duration: 8, delay: 2, opacity: 1, ease: Power1.easeOut});
+		gsap.to(".text-1", {delay: 2, opacity: 1, ease: Sine.easeOut});
+		gsap.to(".button-test", {duration: 2, delay: 2.5, opacity: 1, ease: Power1.easeOut});
+		gsap.to(".btn", {duration: 2, delay: 2.5, opacity: 1, ease: Expo.easeOut, y: -500});
+
+
+		gsap.to(".quote", {
+			scrollTrigger: {
+				trigger: ".quote",
+				toggleAction: "restart pause resume none"
+			}, x: 0, duration: 2, delay: 0.8, opacity: 1, ease: Power0.easeNone, y: -70
+		});
+
+		gsap.to("#block1", {
+			scrollTrigger: {
+				trigger: "#block1",
+				toggleAction: "restart pause resume none"
+			}, x: 0, duration: 1, opacity: 1, ease: Power0.easeNone, y: -70
+		});
+
+		gsap.to("#block2", {
+			scrollTrigger: {
+				trigger: "#block2",
+				toggleAction: "restart pause resume none"
+			}, x: 0, duration: 1, delay: 0.5, opacity: 1, ease: Power0.easeNone, y: -70
+		});
+
+		gsap.to("#block3", {
+			scrollTrigger: {
+				trigger: "#block3",
+				toggleAction: "restart pause resume none"
+			}, x: 0, duration: 1, delay: 1, opacity: 1, ease: Power0.easeNone, y: -70
+		});
+
+		gsap.to("#block4", {
+			scrollTrigger: {
+				trigger: "#block4",
+				toggleAction: "restart pause resume none"
+			}, x: 0, duration: 1, delay: 1.5, opacity: 1, ease: Power0.easeNone, y: -70
+		});
+
+		gsap.to("#block5", {
+			scrollTrigger: {
+				trigger: "#block5",
+				toggleAction: "restart pause resume none"
+			}, x: 0, duration: 1, delay: 2, opacity: 1, ease: Power0.easeNone, y: -70
+		});
+
+		gsap.to("#block6", {
+			scrollTrigger: {
+				trigger: "#block6",
+				toggleAction: "restart pause resume none"
+			}, x: 0, duration: 1, delay: 2.5, opacity: 1, ease: Power0.easeNone, y: -70
+		});
+
+
+
+
+
+
+		/* colore che cambia scritta home */
+		let colors = ['#8B0000', '#D5B120', '#12A94A', '#9651CC', '#FFA07A', '#192841', '#32a2ed'],
+			duration = 5,
+			gap = 0.5;
+
+		let tlHome = gsap.timeline({
+			repeat: -1,
+			repeatRefresh: true
+		});
+
+		colors.forEach(function (color, index) {
+			tlHome.to('.typ', {
+				duration: 5,
+				color: color
+			}, (duration + gap) * index);
+			tlHome.to('.darn3', {
+				duration: 5,
+				color: color
+			}, (duration + gap) * index);
+			tlHome.to('.fav-text', {
+				duration: 5,
+				color: color
+			}, (duration + gap) * index);
+		});
+
+
+
+		/*testo favole */
+		var tl = gsap.timeline({repeat: 2, repeatDelay: 5});
+
+		tl.to(".create", {y: "0%", duration: 0.7, stagger: 0.2});
+		tl.fromTo(".quote2", {opacity: 0}, {opacity: 1, delay: 0.5});
+
+
+
+		/*UNDERLINE TESTO HOME*/
+		let tl2 = gsap.timeline();
+		tl2.to("#underline1", {
+			width: "100%", duration: 1.5, delay: 2.5
+		})
+		tl2.to("#underline2", {
+			width: "100%", duration: 1.5, delay: 0.1
+		})
+		tl2.to("#underline3", {
+			width: "100%", duration: 1.5, delay: 0.1
+		})
+
+	</script>
+
+
+	<!-- TYPING E MENU BURGER-->
+	<script>
+
+		$(window).on("load", function () {
+			$("#page-loader").fadeOut("slow");
+		});
+
+		var typed = new Typed(".typing2", {
+			strings: ["Privacy online", "Password", "Privacy delle comunicazioni", "Dati Sensibili", "Dati Personali",
+				"Privacy mobile", "Protezioni dei dati", "Sicurezza", "Controllo dei dati", "Autenticazione", "Cookie"],
+			typeSpeed: 100,
+			backSpeed: 100,
+			loop: true
+
+		});
+
+
+		//toggle menu/ navbar active//
+		$(".menu-btn").click(function () {
+			$(".navbar .menu").addClass("active");
+			$("#burger").hide();
+		});
+
+		//nav menu close//
+		$("#menu-close").click(function () {
+			$(".navbar .menu").removeClass("active");
+			$("#burger").show();
+		});
+		//nav menu close icons//
+		$(".nav_link").click(function () {
+			$(".navbar .menu").removeClass("active");
+			$("#burger").show();
+		});
+
+
+	</script>
+
+	<!-- linee citazione -->
+	<script>
+		window.onload = function () {
+			setTimeout(function () {
+				document.querySelector('.quote').className = ('quote qhome');
+			}, 100)
+		}
+	</script>
+	<div th:insert="~{fragments/footer::footer}"></div>
+</body>
+
+</html>

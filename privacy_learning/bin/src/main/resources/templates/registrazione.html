@@ -20,10 +20,7 @@
 <body>
 	<div th:insert="~{fragments/header::header}"></div>
 	<br>
-	<br>
-	<br>
-	<br>
-	<br>
+
 
 	<div class="corpoReg">
 
@@ -133,12 +130,12 @@
 
 								<th:block th:each="dom : ${questionario1}">
 									<div class="box-domande">
-										
+
 										<div class="label">
 											<p class="idDomanda" th:text="${dom.id_domanda} + ')'"></p>
 											<p class="domanda" th:text="${dom.testo}"></p>
 										</div>
-									
+
 										<div class="spaceradio">
 											<input type="radio" th:name="'valore'+${dom.id_domanda}" id="mai"
 												value="mai" placeholder="perniente" required />
@@ -159,7 +156,7 @@
 												value="sempre" placeholder="tanto" required />
 											<p th:text="${dom.risposta4}"></p>
 										</div>
-							
+
 									</div>
 								</th:block>
 
@@ -257,7 +254,7 @@
 
 							<div class="field btns">
 								<button class="prev-3 prev">Previous</button>
-								<button type="submit" formaction="/users/reg" formmethod="post"
+								<button type="submit" formaction="/users/registrazione" formmethod="post"
 									onclick="checkRegistrationSubmit()">Registrati</button>
 							</div>
 						</div>
@@ -347,6 +344,7 @@
 			current--;
 		})
 	</script>
+	<div th:insert="fragments/footer::footer"></div>
 </body>
 
 </html>

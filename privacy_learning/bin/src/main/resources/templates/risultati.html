@@ -5,30 +5,12 @@
 	<meta charset="ISO-8859-1">
 	<link rel="stylesheet" href="/css/stylesheet.css">
 	<link rel="icon" type="image/png" href="img/logo.png" />
-	<title>Privacy Literacy - Login</title>
+	<title>Privacy Literacy - Risultati</title>
 </head>
 <!-- pagina test dalla homepage -->
-<style>
-	table,
-	th,
-	td {
-		border: 1px solid black;
-	}
-
-	table {
-
-		width: 80%;
-		margin: 25px;
-
-	}
-</style>
 
 <body>
 	<div th:insert="fragments/header::header"></div>
-	<br>
-	<br>
-	<br>
-	<br>
 	<br>
 	<div class="background">
 		<form th:action="@{/test/{email}}" th:object="${testuser}" method="POST">
@@ -42,7 +24,7 @@
 
 			<div class="risultati" th:if="${!session.isEmpty()}">
 				<p class="titolo"> I tuoi risultati </p>
-				<p>Hai completato con il test: <span th:text="${session.userSession.livello}"></span></p>
+				<p>Hai completato il test: <span th:text="${session.userSession.livello}"></span></p>
 				<p> Hai ottenuto una percentuale del: <span th:text="' '+${perc} + '%'"></span></p>
 				<p> Ecco una panoramica sull'andamento del test che hai appena effettuato. </p>
 				<br>
@@ -92,6 +74,7 @@
 
 		</form>
 	</div>
+	<div th:insert="fragments/footer::footer"></div>
 </body>
 
 </html>
