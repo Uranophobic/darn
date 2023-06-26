@@ -106,10 +106,10 @@ body {
 	padding: 1rem 0;
 	width: 100%;
 	z-index: 999;
-	letter-spacing: 2px;
+	letter-spacing: 1px;
 	transition: 0.5s ease;
 	background: var(--sfondo);
-	height: 75px;
+	height: 80px;
 	top: 0;
 }
 
@@ -127,7 +127,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
-	padding: 0;
+
 	width: 100%;
 }
 
@@ -173,7 +173,7 @@ body {
 	display: flex;
 	margin-top: auto;
 	margin-bottom: auto;
-	width: 47%;
+	width: 45%;
 }
 
 .active {
@@ -1151,18 +1151,164 @@ hr {
 /************************************************ 	LOGIN ***************************************/
 .login-container {
 	position: relative;
-	height: 85vh;
-	background-color: #5e7db0;
-	min-height: 30.25rem;
+	background-color: #1A2226;
+	min-height: 35rem;
 	letter-spacing: 1px;
-	margin-top: 74px;
+	margin-top: 100px;
+	width: 70%;
+	/* margin: auto; */
+	margin-left: auto;
+	/* margin-bottom: ; */
+	margin-right: auto;
+	border-radius: 4px;
+	/* margin-top: 10px; */
+}
+/**********************************************************LOGIN (vecchio) ****************************************************************************/
+.riga {
+	width: 250px;
+	color: white;
+	margin: auto;
+	/* margin-top: 20px; */
+	/* margin-bottom: 20px; */
+}
+
+.oppure {
+	display: flex;
+	margin: auto;
+}
+
+.label {
+	font-size: 18px;
+	/* margin: 10px; */
+	margin-bottom: 10px;
+}
+
+.text-login {
+	margin: auto;
+}
+
+.image3 {
+	border-radius: 4px;
+}
+
+.titolo-login {
+	margin: auto;
+	text-align: center;
+	padding: 10px;
+	color: #5082D7;
+	font-size: 25px;
+	font-weight: 600;
+	padding: 20px;
+}
+
+.components {
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+	margin-top: 10px;
+}
+
+.components input {
+	width: 90%;
+	margin: 15px 5% 25px 5%;
+	text-align: center;
+	font-size: 25px;
+	height: 35px;
+	color: #1E1E24;
+	border: none;
+	border-bottom: 2px solid;
+	background-color: rgba(0, 0, 0, .0);
+}
+
+.components input::placeholder {
+	color: #1E1E24;
+	opacity: 1;
+	font-size: 30px;
+}
+
+input:focus {
+	outline: none;
+}
+
+.components a {
+	font-size: 22px;
+	text-decoration: none;
+	border-bottom: solid #1E1E24 2px;
+	color: #1E1E24;
+}
+
+.components a:hover {
+	font-weight: bold;
+}
+
+.components-button {
+	width: 100%;
+	text-align: center;
+	margin-bottom: 20px;
+	margin-top: 30px;
+}
+
+.components-button input {
+	width: 100px;
+	height: 40px;
+	font-size: 22px;
+	font-family: 'Poppins', sans-serif;
+	color: black;
+	background-color: white;
+	border-radius: 10px;
+}
+
+.p-log {
+	margin: 5px;
+	/* padding: 3px; */
+	margin-right: 20px;
+	margin-left: 20px;
+	text-align: center;
+	font-size: 18px;
+	/* color: white; */
+	font-style: italic;
+}
+.form-signin {
+	background-color: white;
+	border-radius: 4px;
+	width: 75%;
+	margin: auto;
+	padding: 10px;
+}
+
+.form-control {
+	position: relative;
+	box-sizing: border-box;
+}
+
+.input-login {
+	width: 50%;
+	margin: auto;
+	display: grid;
+}
+
+.input-login input {
+	/* align-items: center; */
+	width: 100%;
+	margin: auto;
+	margin-bottom: 25px;
+	font-size: 18px;
+	/* border-bottom-style: 1 solid black; */
+	/* border-bottom: 1px solid black; */
+	border: none;
+	border-bottom: 1px solid black;
+}
+
+#text-style {
+	color: red;
+	font-weight: bold;
 }
 
 /********************************************************* RESPONSIVE *******************************************/
 @media screen and (max-width: 1920px) {
 }
 
-@media screen and (max-width: 1440px) {
+/* @media screen and (max-width: 1440px) {
 	.home {
 		height: 80vh;
 	}
@@ -1219,6 +1365,112 @@ hr {
 		text-align: center;
 	}
 
+	resp-argomenti
+	.arg-sx {
+		display: grid;
+		grid-template-rows: 40% 40%;
+	}
+	.grid-item fieldset {
+		height: 265px;
+		width: 95%;
+		display: grid;
+		grid-template-rows: 70% 30%;
+		row-gap: 25px;
+	}
+	.arg-sx {
+		display: grid;
+		padding: 50px 25px;
+		width: 40%;
+		grid-template-rows: 30% 30%;
+	}
+	.grid-container {
+		display: grid;
+		grid-template-columns: 50% 50%;
+		width: 58%;
+	}
+	.quote2 {
+		margin-top: 0 !important;
+	}
+
+	responsive-favole
+	.favola-mast {
+		height: 30vh;
+	}
+} */
+@media screen and (max-width: 1440px) {
+	.home {
+		height: 100vh;
+	}
+	.darn {
+		font-size: 28px;
+	}
+	.bi-exclamation-triangle-fill {
+		font-size: 22px;
+	}
+	.navbar .menu li a {
+		margin-left: 0;
+	}
+	#text2 {
+		font-size: 30px;
+		color: white;
+		text-transform: uppercase;
+		letter-spacing: 3px;
+		font-family: "Syncopate";
+	}
+	.domande-fill {
+		grid-template-columns: 84%;
+	}
+	.logo {
+		font-size: 1.2rem;
+	}
+	.home-argomenti {
+		height: 105vh;
+	}
+	.umbrella span {
+		width: 30%;
+	}
+	.questionBox {
+		padding: 15px;
+		margin: 15px;
+	}
+	.answer {
+		font-size: 18px;
+		letter-spacing: 2px;
+	}
+	.answer2 {
+		font-size: 18px;
+		letter-spacing: 2px;
+	}
+	.bi-umbrella {
+		font-size: 25px;
+	}
+	.home .home-content .text-1 {
+		font-size: 1.5rem;
+	}
+	.home .home-content .titolo {
+		font-size: 85px;
+	}
+	.home-favole {
+		height: 75vh;
+		grid-template-rows: 70% 40%;
+	}
+	.home-articoli {
+		height: 95vh;
+	}
+	.question {
+		font-size: 55px;
+	}
+	.iframely-embed {
+		padding: 20px;
+	}
+	blockquote {
+		font-size: 2rem;
+		color: white;
+		text-align: center;
+	}
+	.quote.qhome {
+		margin-top: 40px;
+	}
 	/*resp-argomenti*/
 	.arg-sx {
 		display: grid;
@@ -1246,38 +1498,9 @@ hr {
 		margin-top: 0 !important;
 	}
 
-	/*responsive-favole*/
+	/*	responsive-favole*/
 	.favola-mast {
 		height: 30vh;
-	}
-}
-
-@media screen and (max-width: 1360px) {
-	.home {
-		height: 100vh;
-	}
-	#text2 {
-		font-size: 30px;
-		color: white;
-		text-transform: uppercase;
-		letter-spacing: 3px;
-		font-family: "Syncopate";
-	}
-	.domande-fill {
-		grid-template-columns: 84%;
-	}
-	.logo {
-		font-size: 1.2rem;
-	}
-	.home-argomenti {
-		height: 105vh;
-	}
-	.home-favole {
-		height: 75vh;
-		grid-template-rows: 70% 40%;
-	}
-	.question {
-		font-size: 55px;
 	}
 }
 

@@ -3,467 +3,188 @@
 
 <head>
 
-	<meta charset="utf-8">
+<meta charset="utf-8">
 
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>Single Page Web Site</title>
+<title>Single Page Web Site</title>
 
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" 
+  integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
+<style>
+body {
+	background: #222d32;
+	font-family: "Roboto", sans-serif;
+}
 
-	<script src="js/gsap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Flip.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Observer.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Draggable.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/EaselPlugin.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/MotionPathPlugin.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/PixiPlugin.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/TextPlugin.min.js"></script>
+.login-box {
+	margin-top: 75px;
+	height: auto;
+	background: #1a2226;
+	text-align: center;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
 
+.login-key {
+	height: 100px;
+	font-size: 80px;
+	line-height: 100px;
+	background: -webkit-linear-gradient(#27ef9f, #0db8de);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
 
+.login-title {
+	margin-top: 15px;
+	text-align: center;
+	font-size: 30px;
+	letter-spacing: 2px;
+	margin-top: 15px;
+	font-weight: bold;
+	color: #ecf0f5;
+}
 
+.login-form {
+	margin-top: 25px;
+	text-align: left;
+}
 
-	<style>
-@import url(https://fonts.googleapis.com/css?family=Ubuntu:300);
-/* * Animation module with all animation code */
- .anim-text-flow, .anim-text-flow-hover:hover {
-	/* * Animation variables */
-	/* * Elements settings */
-	/* * Keyframe loop */
-	/* * Element animation delay loop */
-}
- .anim-text-flow span, .anim-text-flow-hover:hover span {
-	 animation-name: anim-text-flow-keys;
-	 animation-duration: 50s;
-	 animation-iteration-count: infinite;
-	 animation-direction: alternate;
-	 animation-fill-mode: forwards;
-}
- @keyframes anim-text-flow-keys {
-	 0% {
-		 color: rgba(165, 214, 92, 1);
-	}
-	 5% {
-		 color: rgba(92, 214, 104, 1);
-	}
-	 10% {
-		 color: rgba(112, 92, 214, 1);
-	}
-	 15% {
-		 color: rgba(92, 214, 145, 1);
-	}
-	 20% {
-		 color: rgba(214, 167, 92, 1);
-	}
-	 25% {
-		 color: rgba(92, 196, 214, 1);
-	}
-	 30% {
-		 color: rgba(92, 214, 214, 1);
-	}
-	 35% {
-		 color: rgba(214, 92, 169, 1);
-	}
-	 40% {
-		 color: rgba(198, 92, 214, 1);
-	}
-	 45% {
-		 color: rgba(92, 163, 214, 1);
-	}
-	 50% {
-		 color: rgba(194, 92, 214, 1);
-	}
-	 55% {
-		 color: rgba(214, 92, 141, 1);
-	}
-	 60% {
-		 color: rgba(100, 92, 214, 1);
-	}
-	 65% {
-		 color: rgba(214, 94, 92, 1);
-	}
-	 70% {
-		 color: rgba(92, 120, 214, 1);
-	}
-	 75% {
-		 color: rgba(214, 151, 92, 1);
-	}
-	 80% {
-		 color: rgba(92, 102, 214, 1);
-	}
-	 85% {
-		 color: rgba(92, 214, 206, 1);
-	}
-	 90% {
-		 color: rgba(214, 92, 161, 1);
-	}
-	 95% {
-		 color: rgba(214, 206, 92, 1);
-	}
-	 100% {
-		 color: rgba(92, 214, 177, 1);
-	}
-}
- .anim-text-flow span:nth-of-type(1), .anim-text-flow-hover:hover span:nth-of-type(1) {
-	 animation-delay: -19.8s;
-}
- .anim-text-flow span:nth-of-type(2), .anim-text-flow-hover:hover span:nth-of-type(2) {
-	 animation-delay: -19.6s;
-}
- .anim-text-flow span:nth-of-type(3), .anim-text-flow-hover:hover span:nth-of-type(3) {
-	 animation-delay: -19.4s;
-}
- .anim-text-flow span:nth-of-type(4), .anim-text-flow-hover:hover span:nth-of-type(4) {
-	 animation-delay: -19.2s;
-}
- .anim-text-flow span:nth-of-type(5), .anim-text-flow-hover:hover span:nth-of-type(5) {
-	 animation-delay: -19s;
-}
- .anim-text-flow span:nth-of-type(6), .anim-text-flow-hover:hover span:nth-of-type(6) {
-	 animation-delay: -18.8s;
-}
- .anim-text-flow span:nth-of-type(7), .anim-text-flow-hover:hover span:nth-of-type(7) {
-	 animation-delay: -18.6s;
-}
- .anim-text-flow span:nth-of-type(8), .anim-text-flow-hover:hover span:nth-of-type(8) {
-	 animation-delay: -18.4s;
-}
- .anim-text-flow span:nth-of-type(9), .anim-text-flow-hover:hover span:nth-of-type(9) {
-	 animation-delay: -18.2s;
-}
- .anim-text-flow span:nth-of-type(10), .anim-text-flow-hover:hover span:nth-of-type(10) {
-	 animation-delay: -18s;
-}
- .anim-text-flow span:nth-of-type(11), .anim-text-flow-hover:hover span:nth-of-type(11) {
-	 animation-delay: -17.8s;
-}
- .anim-text-flow span:nth-of-type(12), .anim-text-flow-hover:hover span:nth-of-type(12) {
-	 animation-delay: -17.6s;
-}
- .anim-text-flow span:nth-of-type(13), .anim-text-flow-hover:hover span:nth-of-type(13) {
-	 animation-delay: -17.4s;
-}
- .anim-text-flow span:nth-of-type(14), .anim-text-flow-hover:hover span:nth-of-type(14) {
-	 animation-delay: -17.2s;
-}
- .anim-text-flow span:nth-of-type(15), .anim-text-flow-hover:hover span:nth-of-type(15) {
-	 animation-delay: -17s;
-}
- .anim-text-flow span:nth-of-type(16), .anim-text-flow-hover:hover span:nth-of-type(16) {
-	 animation-delay: -16.8s;
-}
- .anim-text-flow span:nth-of-type(17), .anim-text-flow-hover:hover span:nth-of-type(17) {
-	 animation-delay: -16.6s;
-}
- .anim-text-flow span:nth-of-type(18), .anim-text-flow-hover:hover span:nth-of-type(18) {
-	 animation-delay: -16.4s;
-}
- .anim-text-flow span:nth-of-type(19), .anim-text-flow-hover:hover span:nth-of-type(19) {
-	 animation-delay: -16.2s;
-}
- .anim-text-flow span:nth-of-type(20), .anim-text-flow-hover:hover span:nth-of-type(20) {
-	 animation-delay: -16s;
-}
- .anim-text-flow span:nth-of-type(21), .anim-text-flow-hover:hover span:nth-of-type(21) {
-	 animation-delay: -15.8s;
-}
- .anim-text-flow span:nth-of-type(22), .anim-text-flow-hover:hover span:nth-of-type(22) {
-	 animation-delay: -15.6s;
-}
- .anim-text-flow span:nth-of-type(23), .anim-text-flow-hover:hover span:nth-of-type(23) {
-	 animation-delay: -15.4s;
-}
- .anim-text-flow span:nth-of-type(24), .anim-text-flow-hover:hover span:nth-of-type(24) {
-	 animation-delay: -15.2s;
-}
- .anim-text-flow span:nth-of-type(25), .anim-text-flow-hover:hover span:nth-of-type(25) {
-	 animation-delay: -15s;
-}
- .anim-text-flow span:nth-of-type(26), .anim-text-flow-hover:hover span:nth-of-type(26) {
-	 animation-delay: -14.8s;
-}
- .anim-text-flow span:nth-of-type(27), .anim-text-flow-hover:hover span:nth-of-type(27) {
-	 animation-delay: -14.6s;
-}
- .anim-text-flow span:nth-of-type(28), .anim-text-flow-hover:hover span:nth-of-type(28) {
-	 animation-delay: -14.4s;
-}
- .anim-text-flow span:nth-of-type(29), .anim-text-flow-hover:hover span:nth-of-type(29) {
-	 animation-delay: -14.2s;
-}
- .anim-text-flow span:nth-of-type(30), .anim-text-flow-hover:hover span:nth-of-type(30) {
-	 animation-delay: -14s;
-}
- .anim-text-flow span:nth-of-type(31), .anim-text-flow-hover:hover span:nth-of-type(31) {
-	 animation-delay: -13.8s;
-}
- .anim-text-flow span:nth-of-type(32), .anim-text-flow-hover:hover span:nth-of-type(32) {
-	 animation-delay: -13.6s;
-}
- .anim-text-flow span:nth-of-type(33), .anim-text-flow-hover:hover span:nth-of-type(33) {
-	 animation-delay: -13.4s;
-}
- .anim-text-flow span:nth-of-type(34), .anim-text-flow-hover:hover span:nth-of-type(34) {
-	 animation-delay: -13.2s;
-}
- .anim-text-flow span:nth-of-type(35), .anim-text-flow-hover:hover span:nth-of-type(35) {
-	 animation-delay: -13s;
-}
- .anim-text-flow span:nth-of-type(36), .anim-text-flow-hover:hover span:nth-of-type(36) {
-	 animation-delay: -12.8s;
-}
- .anim-text-flow span:nth-of-type(37), .anim-text-flow-hover:hover span:nth-of-type(37) {
-	 animation-delay: -12.6s;
-}
- .anim-text-flow span:nth-of-type(38), .anim-text-flow-hover:hover span:nth-of-type(38) {
-	 animation-delay: -12.4s;
-}
- .anim-text-flow span:nth-of-type(39), .anim-text-flow-hover:hover span:nth-of-type(39) {
-	 animation-delay: -12.2s;
-}
- .anim-text-flow span:nth-of-type(40), .anim-text-flow-hover:hover span:nth-of-type(40) {
-	 animation-delay: -12s;
-}
- .anim-text-flow span:nth-of-type(41), .anim-text-flow-hover:hover span:nth-of-type(41) {
-	 animation-delay: -11.8s;
-}
- .anim-text-flow span:nth-of-type(42), .anim-text-flow-hover:hover span:nth-of-type(42) {
-	 animation-delay: -11.6s;
-}
- .anim-text-flow span:nth-of-type(43), .anim-text-flow-hover:hover span:nth-of-type(43) {
-	 animation-delay: -11.4s;
-}
- .anim-text-flow span:nth-of-type(44), .anim-text-flow-hover:hover span:nth-of-type(44) {
-	 animation-delay: -11.2s;
-}
- .anim-text-flow span:nth-of-type(45), .anim-text-flow-hover:hover span:nth-of-type(45) {
-	 animation-delay: -11s;
-}
- .anim-text-flow span:nth-of-type(46), .anim-text-flow-hover:hover span:nth-of-type(46) {
-	 animation-delay: -10.8s;
-}
- .anim-text-flow span:nth-of-type(47), .anim-text-flow-hover:hover span:nth-of-type(47) {
-	 animation-delay: -10.6s;
-}
- .anim-text-flow span:nth-of-type(48), .anim-text-flow-hover:hover span:nth-of-type(48) {
-	 animation-delay: -10.4s;
-}
- .anim-text-flow span:nth-of-type(49), .anim-text-flow-hover:hover span:nth-of-type(49) {
-	 animation-delay: -10.2s;
-}
- .anim-text-flow span:nth-of-type(50), .anim-text-flow-hover:hover span:nth-of-type(50) {
-	 animation-delay: -10s;
-}
- .anim-text-flow span:nth-of-type(51), .anim-text-flow-hover:hover span:nth-of-type(51) {
-	 animation-delay: -9.8s;
-}
- .anim-text-flow span:nth-of-type(52), .anim-text-flow-hover:hover span:nth-of-type(52) {
-	 animation-delay: -9.6s;
-}
- .anim-text-flow span:nth-of-type(53), .anim-text-flow-hover:hover span:nth-of-type(53) {
-	 animation-delay: -9.4s;
-}
- .anim-text-flow span:nth-of-type(54), .anim-text-flow-hover:hover span:nth-of-type(54) {
-	 animation-delay: -9.2s;
-}
- .anim-text-flow span:nth-of-type(55), .anim-text-flow-hover:hover span:nth-of-type(55) {
-	 animation-delay: -9s;
-}
- .anim-text-flow span:nth-of-type(56), .anim-text-flow-hover:hover span:nth-of-type(56) {
-	 animation-delay: -8.8s;
-}
- .anim-text-flow span:nth-of-type(57), .anim-text-flow-hover:hover span:nth-of-type(57) {
-	 animation-delay: -8.6s;
-}
- .anim-text-flow span:nth-of-type(58), .anim-text-flow-hover:hover span:nth-of-type(58) {
-	 animation-delay: -8.4s;
-}
- .anim-text-flow span:nth-of-type(59), .anim-text-flow-hover:hover span:nth-of-type(59) {
-	 animation-delay: -8.2s;
-}
- .anim-text-flow span:nth-of-type(60), .anim-text-flow-hover:hover span:nth-of-type(60) {
-	 animation-delay: -8s;
-}
- .anim-text-flow span:nth-of-type(61), .anim-text-flow-hover:hover span:nth-of-type(61) {
-	 animation-delay: -7.8s;
-}
- .anim-text-flow span:nth-of-type(62), .anim-text-flow-hover:hover span:nth-of-type(62) {
-	 animation-delay: -7.6s;
-}
- .anim-text-flow span:nth-of-type(63), .anim-text-flow-hover:hover span:nth-of-type(63) {
-	 animation-delay: -7.4s;
-}
- .anim-text-flow span:nth-of-type(64), .anim-text-flow-hover:hover span:nth-of-type(64) {
-	 animation-delay: -7.2s;
-}
- .anim-text-flow span:nth-of-type(65), .anim-text-flow-hover:hover span:nth-of-type(65) {
-	 animation-delay: -7s;
-}
- .anim-text-flow span:nth-of-type(66), .anim-text-flow-hover:hover span:nth-of-type(66) {
-	 animation-delay: -6.8s;
-}
- .anim-text-flow span:nth-of-type(67), .anim-text-flow-hover:hover span:nth-of-type(67) {
-	 animation-delay: -6.6s;
-}
- .anim-text-flow span:nth-of-type(68), .anim-text-flow-hover:hover span:nth-of-type(68) {
-	 animation-delay: -6.4s;
-}
- .anim-text-flow span:nth-of-type(69), .anim-text-flow-hover:hover span:nth-of-type(69) {
-	 animation-delay: -6.2s;
-}
- .anim-text-flow span:nth-of-type(70), .anim-text-flow-hover:hover span:nth-of-type(70) {
-	 animation-delay: -6s;
-}
- .anim-text-flow span:nth-of-type(71), .anim-text-flow-hover:hover span:nth-of-type(71) {
-	 animation-delay: -5.8s;
-}
- .anim-text-flow span:nth-of-type(72), .anim-text-flow-hover:hover span:nth-of-type(72) {
-	 animation-delay: -5.6s;
-}
- .anim-text-flow span:nth-of-type(73), .anim-text-flow-hover:hover span:nth-of-type(73) {
-	 animation-delay: -5.4s;
-}
- .anim-text-flow span:nth-of-type(74), .anim-text-flow-hover:hover span:nth-of-type(74) {
-	 animation-delay: -5.2s;
-}
- .anim-text-flow span:nth-of-type(75), .anim-text-flow-hover:hover span:nth-of-type(75) {
-	 animation-delay: -5s;
-}
- .anim-text-flow span:nth-of-type(76), .anim-text-flow-hover:hover span:nth-of-type(76) {
-	 animation-delay: -4.8s;
-}
- .anim-text-flow span:nth-of-type(77), .anim-text-flow-hover:hover span:nth-of-type(77) {
-	 animation-delay: -4.6s;
-}
- .anim-text-flow span:nth-of-type(78), .anim-text-flow-hover:hover span:nth-of-type(78) {
-	 animation-delay: -4.4s;
-}
- .anim-text-flow span:nth-of-type(79), .anim-text-flow-hover:hover span:nth-of-type(79) {
-	 animation-delay: -4.2s;
-}
- .anim-text-flow span:nth-of-type(80), .anim-text-flow-hover:hover span:nth-of-type(80) {
-	 animation-delay: -4s;
-}
- .anim-text-flow span:nth-of-type(81), .anim-text-flow-hover:hover span:nth-of-type(81) {
-	 animation-delay: -3.8s;
-}
- .anim-text-flow span:nth-of-type(82), .anim-text-flow-hover:hover span:nth-of-type(82) {
-	 animation-delay: -3.6s;
-}
- .anim-text-flow span:nth-of-type(83), .anim-text-flow-hover:hover span:nth-of-type(83) {
-	 animation-delay: -3.4s;
-}
- .anim-text-flow span:nth-of-type(84), .anim-text-flow-hover:hover span:nth-of-type(84) {
-	 animation-delay: -3.2s;
-}
- .anim-text-flow span:nth-of-type(85), .anim-text-flow-hover:hover span:nth-of-type(85) {
-	 animation-delay: -3s;
-}
- .anim-text-flow span:nth-of-type(86), .anim-text-flow-hover:hover span:nth-of-type(86) {
-	 animation-delay: -2.8s;
-}
- .anim-text-flow span:nth-of-type(87), .anim-text-flow-hover:hover span:nth-of-type(87) {
-	 animation-delay: -2.6s;
-}
- .anim-text-flow span:nth-of-type(88), .anim-text-flow-hover:hover span:nth-of-type(88) {
-	 animation-delay: -2.4s;
-}
- .anim-text-flow span:nth-of-type(89), .anim-text-flow-hover:hover span:nth-of-type(89) {
-	 animation-delay: -2.2s;
-}
- .anim-text-flow span:nth-of-type(90), .anim-text-flow-hover:hover span:nth-of-type(90) {
-	 animation-delay: -2s;
-}
- .anim-text-flow span:nth-of-type(91), .anim-text-flow-hover:hover span:nth-of-type(91) {
-	 animation-delay: -1.8s;
-}
- .anim-text-flow span:nth-of-type(92), .anim-text-flow-hover:hover span:nth-of-type(92) {
-	 animation-delay: -1.6s;
-}
- .anim-text-flow span:nth-of-type(93), .anim-text-flow-hover:hover span:nth-of-type(93) {
-	 animation-delay: -1.4s;
-}
- .anim-text-flow span:nth-of-type(94), .anim-text-flow-hover:hover span:nth-of-type(94) {
-	 animation-delay: -1.2s;
-}
- .anim-text-flow span:nth-of-type(95), .anim-text-flow-hover:hover span:nth-of-type(95) {
-	 animation-delay: -1s;
-}
- .anim-text-flow span:nth-of-type(96), .anim-text-flow-hover:hover span:nth-of-type(96) {
-	 animation-delay: -0.8s;
-}
- .anim-text-flow span:nth-of-type(97), .anim-text-flow-hover:hover span:nth-of-type(97) {
-	 animation-delay: -0.6s;
-}
- .anim-text-flow span:nth-of-type(98), .anim-text-flow-hover:hover span:nth-of-type(98) {
-	 animation-delay: -0.4s;
-}
- .anim-text-flow span:nth-of-type(99), .anim-text-flow-hover:hover span:nth-of-type(99) {
-	 animation-delay: -0.2s;
-}
- .anim-text-flow span:nth-of-type(100), .anim-text-flow-hover:hover span:nth-of-type(100) {
-	 animation-delay: 0s;
-}
- body {
-	 background-color: #1a1a1a;
-	 color: #fefefe;
-	 font-family: 'Ubuntu';
-	 text-transform: uppercase;
-	 letter-spacing: 0.2em;
-	 font-size: 1.3em;
-	 line-height: 2;
-	 font-weight: 300;
-	 text-rendering: optimizeLegibility;
-	 text-align: center;
-}
- .container {
-	 position: absolute;
-	 top: 50%;
-	 left: 50%;
-	 width: 100%;
-	 transform: translate(-50%, -50%);
-}
- .txt {
-	 display: block;
-}
- a {
-	 text-decoration: none;
-	 position: absolute;
-	 bottom: 10px;
-	 right: 10px;
-	 text-align: right;
-	 color: #eee;
-	 font-size: 15px;
-	 line-height: 15px;
-}
- 
- 
-	</style>
+input[type="text"] {
+	background-color: #1a2226;
+	border: none;
+	border-bottom: 2px solid #0db8de;
+	border-top: 0px;
+	border-radius: 0px;
+	font-weight: bold;
+	outline: 0;
+	margin-bottom: 20px;
+	padding-left: 0px;
+	color: #ecf0f5;
+}
+
+input[type="password"] {
+	background-color: #1a2226;
+	border: none;
+	border-bottom: 2px solid #0db8de;
+	border-top: 0px;
+	border-radius: 0px;
+	font-weight: bold;
+	outline: 0;
+	padding-left: 0px;
+	margin-bottom: 20px;
+	color: #ecf0f5;
+}
+
+.form-group {
+	margin-bottom: 40px;
+	outline: 0px;
+}
+
+.form-control:focus {
+	border-color: inherit;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border-bottom: 2px solid #0db8de;
+	outline: 0;
+	background-color: #1a2226;
+	color: #ecf0f5;
+}
+
+input:focus {
+	outline: none;
+	box-shadow: 0 0 0;
+}
+
+label {
+	margin-bottom: 0px;
+}
+
+.form-control-label {
+	font-size: 10px;
+	color: #6c6c6c;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+
+.btn-outline-primary {
+	border-color: #0db8de;
+	color: #0db8de;
+	border-radius: 0px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.btn-outline-primary:hover {
+	background-color: #0db8de;
+	right: 0px;
+}
+
+.login-btm {
+	float: left;
+}
+
+.login-button {
+	padding-right: 0px;
+	text-align: right;
+	margin-bottom: 25px;
+}
+
+.login-text {
+	text-align: left;
+	padding-left: 0px;
+	color: #a2a4a4;
+}
+
+.loginbttm {
+	padding: 0px;
+}
+</style>
+
 
 
 </head>
 
+
+
 <body>
 
+		<div class="row">
+			<div class="col-lg-3 col-md-2"></div>
+			<div class="col-lg-6 col-md-8 login-box">
 
-	<div class="container">
-		<span class="txt anim-text-flow">P R I V A C Y</span>
-	</div>
+				<div class="col-lg-12 login-title">Accedi a DARN</div>
 
+				<div class="col-lg-12 login-form">
+					<div class="col-lg-12 login-form">
+						<form>
+							<div class="form-group">
+								<label class="form-control-label">EMAIL</label> <input
+									type="text" class="form-control">
+							</div>
+							<div class="form-group">
+								<label class="form-control-label">PASSWORD</label> <input
+									type="password" class="form-control" i>
+							</div>
 
+							<div class="col-lg-12 loginbttm">
+								<div class="col-lg-6 login-btm login-text">
+									<!-- Error Message -->
+								</div>
+								<div class="col-lg-6 login-btm login-button">
+									<button type="submit" class="btn btn-outline-primary">LOGIN</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-2"></div>
+			</div>
+		</div>
 
-	<script>
-		$('.txt').html(function (i, html) {
-			var chars = $.trim(html).split("");
-
-			return '<span>' + chars.join('</span><span>') + '</span>';
-		});
-	</script>
 </body>
 
 </html>
