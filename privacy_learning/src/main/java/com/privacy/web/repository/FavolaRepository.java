@@ -12,10 +12,14 @@ import com.privacy.web.model.Favola;
 public interface FavolaRepository extends CrudRepository<Favola, Integer> {
 	@Query(value = "Select max(id_favola) FROM Favola", nativeQuery = true)
 	int returnLastId();
+
 	@Query(value = "SELECT * FROM Favola", nativeQuery = true)
 	public List<Favola> findAll();
+
 	boolean existsByTestofavola(String testo);
+
 	boolean existsByTitolofavola(String titolo);
-	@Query(value="Select * FROM Favola f WHERE f.id_favola=?1" ,nativeQuery = true)
+
+	@Query(value = "Select * FROM Favola f WHERE f.id_favola=?1", nativeQuery = true)
 	Favola findByIdFavola(int id);
 }
