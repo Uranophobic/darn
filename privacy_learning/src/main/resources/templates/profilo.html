@@ -13,7 +13,7 @@
 		integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
 	<!-- CSS -->
-	<link rel="stylesheet" href="css/style3.css">
+	<link rel="stylesheet" href="../css/style3.css">
 
 	<!-- libreria per il typed jq-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
@@ -46,8 +46,9 @@
 
 <body>
 	<div th:insert="~{fragments/header::header}"></div>
+	
+	<div class="profilo-page">
 	<br>
-
 	<p class="titolo2">Benvenuto sul tuo profilo personale</p>
 	<div class="bordo">
 		<!-- utente -->
@@ -264,7 +265,7 @@
 
 			<fieldset class="row-lezioni">
 				<legend> Le tue lezioni</legend>
-				<p> Accedi alla tua pagina privata delle lezioni: </p>
+				<p class="parg"> Accedi alla tua pagina privata delle lezioni: </p>
 				<div class="but-mod">
 					<a type="submit"
 						th:href="@{/users/profilo/lezioni-private/{email} (email=${session.userSession.email})}">
@@ -273,6 +274,7 @@
 				</div>
 			</fieldset>
 		</th:block>
+	</div>
 	</div>
 	<div th:insert="fragments/footer::footer"></div>
 </body>

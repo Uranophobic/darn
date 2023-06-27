@@ -1122,6 +1122,288 @@ hr {
 
 /************************************************ PROFILO ***************************************/
 
+/* profilo vecchio*/
+/**********************************************************PROFILO************************************************************************/
+/*.box-profilo {
+	display: flex;
+	width: auto;
+}
+*/
+.bordo {
+	/* border: 1px solid #F8C01B; */
+	/* border-radius: 5px !important; */
+	margin: auto;
+	width: 95%;
+	padding: 20px;
+}
+
+.profilo-page{
+	position: relative;
+	height: fit-content;
+/*	 background-color:#5E7DB0;*/ 
+	min-height: 50rem;
+	letter-spacing: 1px;
+	margin-top: 50px;
+	padding: 20px;
+}
+
+.background2 {
+	/*background-color: rgba(255, 255, 255, 0.8);*/
+
+	display: grid;
+	grid-template-columns: 50% 50%;
+	height: auto;
+
+}
+
+
+.background2 legend {
+	font-weight: bold;
+	font-size: 30px;
+	color: white;
+	font-family: bit;
+	/* margin-left: 15px; */
+	padding: 15px 25px;
+}
+
+.personal-progress {
+	width: 95%;
+	margin: auto;
+	color: white;
+}
+
+.personal-info {
+	width: 95%;
+	margin: auto;
+	margin-bottom: 20px;
+	color: white;
+}
+
+
+.personal-info label {
+	font-weight: bold;
+	padding: 5px;
+	width: 50%;
+	text-align: right;
+}
+
+/*.progresso {
+	width: 50%;
+}
+*/
+.infoUtente {
+	display: flex;
+	/* width: 55%; */
+	padding: 5px;
+	/* text-align: center; */
+	/* margin: auto; */
+	/* width: 50%; */
+	font-size: 18px;
+}
+
+.infoUtente p {
+	margin-left: 10px;
+	padding: 5px;
+	/* border-bottom: 1px solid black; */
+	padding-bottom: 0;
+	width: 50%;
+}
+
+/*.infoUtente2 {
+	display: flex;
+	width: 100%;
+	padding: 5px;
+}
+
+.infoUtente2 label {
+	width: 42%;
+	padding: 4px;
+}
+
+.infoUtente2 p {
+	color: green;
+	font-size: 20px;
+	font-weight: bold;
+}*/
+
+.link {
+	color: red;
+	font-weight: 600;
+	text-decoration: underline;
+}
+
+.parg {
+	margin-left: 9px;
+	font-size: 18px;
+}
+
+/*.tab-arg td th {
+	border: none;
+}
+*/
+/*.prova {
+	width: 90%;
+}
+*/
+/*tab-arg {
+	width: 100%;
+
+}*/
+
+.hashtag {
+	display: flex;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	padding: 10px;
+	background: rgba(248, 192, 27, 0.4);
+	width: fit-content;
+	border-radius: 30px;
+
+}
+
+
+
+/*input[type=checkbox] {
+
+	width: 20px;
+	height: 20px;
+
+}*/
+.parg span {
+	font-size: 32px;
+	font-weight: bold;
+}
+
+/** grafico a torta **/
+#myChart {
+	width: 100%;
+	max-width: 450px;
+	display: block;
+	margin: auto;
+	color: white;
+}
+
+.background-grafico {
+	height: 260px;
+	background: rgba(255, 255, 255, 0.7);
+	margin: auto;
+}
+
+/**** MODIFICA PROFILO ****/
+.sez-button {
+	width: 100%;
+	margin-top: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	display: flex;
+}
+
+.sez-button button {
+	background-color: #5082D7;
+	border: none;
+	border-radius: 4px;
+	font-size: 15px;
+	color: white;
+	font-weight: bold;
+	margin-right: 30px;
+	margin-left: 5px;
+}
+
+.sez-button a {
+	margin-left: auto;
+	margin-right: 10px;
+}
+
+.p-mod {
+	margin: auto;
+	width: 50%;
+	text-align: center;
+}
+
+.but-mod {
+
+	margin-top: 15px;
+	margin-bottom: 15px;
+
+	display: flex;
+
+	align-content: center;
+	justify-content: center;
+}
+
+.personal-info-mod {
+	width: 45%;
+	margin: auto;
+	margin-bottom: 20px;
+	/* height: 164px; */
+}
+
+
+.personal-info-mod fieldset {
+	height: 250px;
+	color: white;
+}
+
+.titolo2 {
+	width: 70%;
+	margin: auto;
+	text-align: center;
+	padding: 10px;
+	color: white;
+	font-size: 45px;
+	font-weight: 600;
+	font-family: Milky;
+}
+
+.progresso-box {
+
+	height: 555px;
+
+}
+
+/**riga dellle lezioni **/
+.row-lezioni {
+	width: 98%;
+	margin: auto;
+	/* margin-top: 30px; */
+	color: white;
+	padding: 10px;
+}
+
+.row-lezioni legend {
+	  font-weight: bold;
+  font-size: 30px;
+  color: white;
+  font-family: bit;
+  margin-left: 15px;
+  padding: 15px 25px;
+}
+
+
+/**********************************************************pagina dei risultati*****************************************************************/
+/**********************************************************pagina dei risultati*****************************************************************/
+.risultati {
+	color: white;
+}
+
+.risultati span {
+	font-size: 18px;
+	color: #5082D7;
+	font-weight: 600;
+}
+
+.risultati table {
+	border: 1px solid black;
+}
+
+.risultati th {
+	border: 1px solid black;
+}
+
+.risultati td {
+	border: 1px solid black;
+}
+
 /************************************************ 	LOGIN ***************************************/
 .login-container {
 	position: relative;
