@@ -3,144 +3,112 @@
 
 <head>
 
-<meta charset="utf-8">
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<link rel="stylesheet"
+	href="https://www.ionos.it/digitalguide/path/to/font-awesome/css/font-awesome.min.css">
+<!-- ICONSSCOUT -->
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+	integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+	crossorigin="anonymous">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- CSS -->
+<link rel="stylesheet" href="css/style3.css">
 
-<title>Single Page Web Site</title>
+<!-- libreria per il typed jq-->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"
+	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+	crossorigin="anonymous"></script>
 
-  <!-- Bootstrap 3.3.6 -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" 
-  integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<!-- ScrollReveal -->
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="/path/to/noframework.waypoints.min.js"></script>
 
+<script src="js/gsap.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Flip.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Observer.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Draggable.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/EaselPlugin.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/MotionPathPlugin.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/PixiPlugin.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/TextPlugin.min.js"></script>
 <style>
-body {
-	background: #222d32;
-	font-family: "Roboto", sans-serif;
-}
+@import "compass/css3";
 
-.login-box {
-	margin-top: 75px;
-	height: auto;
-	background: #1a2226;
-	text-align: center;
-	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-}
-
-.login-key {
-	height: 100px;
-	font-size: 80px;
-	line-height: 100px;
-	background: -webkit-linear-gradient(#27ef9f, #0db8de);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-}
-
-.login-title {
-	margin-top: 15px;
-	text-align: center;
-	font-size: 30px;
-	letter-spacing: 2px;
-	margin-top: 15px;
-	font-weight: bold;
-	color: #ecf0f5;
-}
-
-.login-form {
-	margin-top: 25px;
-	text-align: left;
-}
-
-input[type="text"] {
-	background-color: #1a2226;
+.square {
+	background: none;
 	border: none;
-	border-bottom: 2px solid #0db8de;
-	border-top: 0px;
-	border-radius: 0px;
-	font-weight: bold;
-	outline: 0;
-	margin-bottom: 20px;
-	padding-left: 0px;
-	color: #ecf0f5;
-}
-
-input[type="password"] {
-	background-color: #1a2226;
-	border: none;
-	border-bottom: 2px solid #0db8de;
-	border-top: 0px;
-	border-radius: 0px;
-	font-weight: bold;
-	outline: 0;
-	padding-left: 0px;
-	margin-bottom: 20px;
-	color: #ecf0f5;
-}
-
-.form-group {
-	margin-bottom: 40px;
-	outline: 0px;
-}
-
-.form-control:focus {
-	border-color: inherit;
-	-webkit-box-shadow: none;
-	box-shadow: none;
-	border-bottom: 2px solid #0db8de;
-	outline: 0;
-	background-color: #1a2226;
-	color: #ecf0f5;
-}
-
-input:focus {
-	outline: none;
-	box-shadow: 0 0 0;
-}
-
-label {
-	margin-bottom: 0px;
-}
-
-.form-control-label {
-	font-size: 10px;
-	color: #6c6c6c;
+	display: inline-block;
+	font: 14px Gotham HTF Bold, sans-serif;
+	overflow: hidden;
+	padding: 22px 30px 22px 30px;
+	position: absolute;
+	text-transform: uppercase;
+	transition: background .4s ease;
+	vertical-align: middle;
+	white-space: nowrap;
+	margin: auto 45%;
+	top: 40%;
+	color: white;
+	font-size: 24px;
+	text-align: center;
 	font-weight: bold;
 	letter-spacing: 1px;
 }
 
-.btn-outline-primary {
-	border-color: #0db8de;
-	color: #0db8de;
-	border-radius: 0px;
-	font-weight: bold;
-	letter-spacing: 1px;
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+.l1, .l2, .l3, .l4 {
+	position: absolute;
+	background: green;
 }
 
-.btn-outline-primary:hover {
-	background-color: #0db8de;
-	right: 0px;
+.l1 {
+	left: 0;
+	bottom: 0;
+	height: 100%;
+	width: 2px;
 }
 
-.login-btm {
-	float: left;
+.l2 {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 2px;
 }
 
-.login-button {
-	padding-right: 0px;
-	text-align: right;
-	margin-bottom: 25px;
+.l3 {
+	right: 0;
+	top: 0;
+	height: 100%;
+	width: 2px;
 }
 
-.login-text {
-	text-align: left;
-	padding-left: 0px;
-	color: #a2a4a4;
-}
-
-.loginbttm {
-	padding: 0px;
+.l4 {
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 2px;
 }
 </style>
 
@@ -152,39 +120,29 @@ label {
 
 <body>
 
-		<div class="row">
-			<div class="col-lg-3 col-md-2"></div>
-			<div class="col-lg-6 col-md-8 login-box">
+	<button class="square">
+		ACCEDI <span class="l1"></span> <span class="l2"></span> <span
+			class="l3"></span> <span class="l4"></span>
+	</button>
+	<script>
+  		TweenLite.defaultEase = Linear.easeNone;
 
-				<div class="col-lg-12 login-title">Accedi a DARN</div>
 
-				<div class="col-lg-12 login-form">
-					<div class="col-lg-12 login-form">
-						<form>
-							<div class="form-group">
-								<label class="form-control-label">EMAIL</label> <input
-									type="text" class="form-control">
-							</div>
-							<div class="form-group">
-								<label class="form-control-label">PASSWORD</label> <input
-									type="password" class="form-control" i>
-							</div>
+		//show the square only once js has run
+		//visibility set to hidden in css panel
+		TweenLite.set(".square", {visibility:"visible"});
 
-							<div class="col-lg-12 loginbttm">
-								<div class="col-lg-6 login-btm login-text">
-									<!-- Error Message -->
-								</div>
-								<div class="col-lg-6 login-btm login-button">
-									<button type="submit" class="btn btn-outline-primary">LOGIN</button>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-2"></div>
-			</div>
-		</div>
 
+
+		var tl = new TimelineMax();
+		tl
+		.from(".l2", 1, {width:0})
+		.from(".l3", 1, {height:0})
+		.from(".l4", 1, {width:0})
+		.from(".l1", 1, {height:0})
+		
+		tl.timeScale(1) //play faster
+</script>
 </body>
 
 </html>
