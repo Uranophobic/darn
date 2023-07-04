@@ -3,17 +3,19 @@
 
 
 <head>
-<meta charset="UTF-8">
-<script type="text/javascript" src="../js/ConvalidazioneCampi.js"></script>
-<link rel="stylesheet" href="/css/stylesheet.css">
-<link rel="icon" type="image/png" href="img/logo.png" />
-<title>Privacy Literacy - Tutte le domande</title>
-<style type="text/css">
-table, th, td {
-	border: 1px solid black;
-	border-collapse: collapse;
-}
-</style>
+	<meta charset="ISO-8859-1">
+	<script type="text/javascript" src="../js/ConvalidazioneCampi.js"></script>
+	<link rel="stylesheet" href="/css/stylesheet.css">
+	<link rel="icon" type="image/png" href="img/logo.png" />
+	<title>Privacy Literacy - Tutte le domande</title>
+	<style type="text/css">
+		table,
+		th,
+		td {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+	</style>
 </head>
 
 <body>
@@ -26,34 +28,32 @@ table, th, td {
 	<br>
 	<br>
 	<div class="background">
-		<div
-			th:if="${!session.isEmpty()} and ${session.userSession.email.equals('admin@gmail.com')}">
+		<div th:if="${!session.isEmpty()} and ${session.userSession.email.equals('admin@gmail.com')}">
 			<div class="utentelist">
 
-				<h2>Lista di tutte le domande del test:</h2>
+				<h2>Lista di tutte le domande del test: </h2>
 
-				<table style="width: 78%; padding: 5px;">
+				<table style="width: 78%; padding:5px;">
 					<thead>
 						<tr>
-							<th>Id</th>
-							<th>Testo</th>
-							<th>Meta_info</th>
-							<th>Risposta 1</th>
-							<th>Risposta 2</th>
-							<th>Risposta 3</th>
-							<th>Risposta 4</th>
-							<th>Risposta corretta</th>
-							<th>Azione</th>
+							<th> Id</th>
+							<th> Testo</th>
+							<th> Meta_info</th>
+							<th> Risposta 1</th>
+							<th> Risposta 2</th>
+							<th> Risposta 3</th>
+							<th> Risposta 4</th>
+							<th> Risposta corretta</th>
+							<th> Azione </th>
 						</tr>
 
 
-						<!-- AL MOMENTO NON LO METTO IL CONTROLLO DELLA SESSIONE DELL'ADMIN PERCHÃ¨ DEVO PRIMA VEDERE SE FUNZIONA-->
+						<!-- AL MOMENTO NON LO METTO IL CONTROLLO DELLA SESSIONE DELL'ADMIN PERCHè DEVO PRIMA VEDERE SE FUNZIONA-->
 						<!--th:if="${!session.isEmpty()} and ${session.userSession.email.equals('admin@gmail.com')}" -->
 					</thead>
 					<tbody>
-						<a type="button" class="button"
-							th:href="@{/admin/createDomanda/{id} (id=${idTest})}">
-							Aggiungi </a>
+						<a type="button" class="button" th:href="@{/admin/createDomanda/{id} (id=${idTest})}"> Aggiungi
+						</a>
 						<tr th:each="dom : ${domande}">
 							<td th:text="${dom.id_domanda}">nome</td>
 							<td th:text="${dom.testo}">cognome</td>
@@ -63,11 +63,12 @@ table, th, td {
 							<td th:text="${dom.risposta3}">livello</td>
 							<td th:text="${dom.risposta4}">livello</td>
 							<td th:text="${dom.risposta_corretta}">livello</td>
-							<td><a type="button" class="button"
-								th:href="@{/admin/deleteDomanda/{id}(id=${dom.id_domanda})}">
-									Elimina </a> <a type="button" class="button"
-								th:href="@{/admin/fixedDomanda/{id}/{test} (id=${dom.id_domanda}, test=${dom.id_test})}">
-									Modifica </a></td>
+							<td> <a type="button" class="button"
+									th:href="@{/admin/deleteDomanda/{id}(id=${dom.id_domanda})}"> Elimina </a>
+								<a type="button" class="button"
+									th:href="@{/admin/fixedDomanda/{id}/{test} (id=${dom.id_domanda}, test=${dom.id_test})}">
+									Modifica </a>
+							</td>
 
 
 						</tr>
@@ -75,9 +76,9 @@ table, th, td {
 				</table>
 			</div>
 		</div>
-		<div
-			th:if="${session.isEmpty()} or ${!session.userSession.email.equals('admin@gmail.com')}">
-			NON HAI L'AUTORIZZAZIOINE PER ACCEDERE A QUESTA PAGINA</div>
+		<div th:if="${session.isEmpty()} or ${!session.userSession.email.equals('admin@gmail.com')}">
+			NON HAI L'AUTORIZZAZIOINE PER ACCEDERE A QUESTA PAGINA
+		</div>
 	</div>
 	<div th:insert="fragments/footer::footer"></div>
 </body>

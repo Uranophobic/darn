@@ -80,107 +80,6 @@ body {
 	background: var(--sfondo);
 	font-family: 'Montserrat', sans-serif;
 }
-/********** bottoni *******************/
-.custom-btn {
-	width: 130px;
-	height: 40px;
-	color: #fff;
-	border-radius: 5px;
-	padding: 10px 25px;
-	background: transparent;
-	cursor: pointer;
-	transition: all 0.3s ease;
-	position: relative;
-	display: inline-block;
-	box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px
-		0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
-	outline: none;
-	font-size: 16px;
-	letter-spacing: 2px;
-}
-
-.btn-3 {
-	background: rgb(95, 125, 176);
-	background: linear-gradient(0deg, rgba(95, 125, 176, 1) 0%,
-		rgb(46, 142, 238) 100%);
-	width: 130px;
-	height: 40px;
-	line-height: 42px;
-	padding: 0;
-	border: none;
-	margin: 10px;
-}
-
-.btn-3 span {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: 100%;
-}
-
-.btn-3:before, .btn-3:after {
-	position: absolute;
-	content: "";
-	right: 0;
-	top: 0;
-	background: rgba(2, 126, 251, 1);
-	transition: all 0.3s ease;
-}
-
-.btn-3:before {
-	height: 0%;
-	width: 2px;
-}
-
-.btn-3:after {
-	width: 0%;
-	height: 2px;
-}
-
-.btn-3:hover {
-	background: transparent;
-	box-shadow: none;
-}
-
-.btn-3:hover:before {
-	height: 100%;
-}
-
-.btn-3:hover:after {
-	width: 100%;
-}
-
-.btn-3 span:hover {
-	color: rgba(2, 126, 251, 1);
-	font-weight: 900;
-}
-
-.btn-3 span:before, .btn-3 span:after {
-	position: absolute;
-	content: "";
-	left: 0;
-	bottom: 0;
-	background: rgba(2, 126, 251, 1);
-	transition: all 0.3s ease;
-}
-
-.btn-3 span:before {
-	width: 2px;
-	height: 0%;
-}
-
-.btn-3 span:after {
-	width: 0%;
-	height: 2px;
-}
-
-.btn-3 span:hover:before {
-	height: 100%;
-}
-
-.btn-3 span:hover:after {
-	width: 100%;
-}
 
 /************************************************ HEADER ***************************************/
 .scroll-up {
@@ -212,7 +111,6 @@ body {
 	background: var(--sfondo);
 	height: 80px;
 	top: 0;
-	width: 100%;
 }
 
 .navbar .menu {
@@ -274,19 +172,7 @@ body {
 	display: flex;
 	margin-top: auto;
 	margin-bottom: auto;
-	width: 43%;
-}
-
-.logo2 {
-	transition: 0.5s ease;
-	font-size: 1.4rem;
-	color: var(--bianco);
-	text-decoration: none;
-	font-weight: bold;
-	display: flex;
-	margin-top: auto;
-	margin-bottom: auto;
-	width: 15%;
+	width: 45%;
 }
 
 .active {
@@ -335,6 +221,7 @@ body {
 	color: white;
 	text-decoration: none;
 }
+
 /************************************************ HOMEPAGE ***************************************/
 .home {
 	display: flex;
@@ -480,10 +367,10 @@ body {
 	color: white;
 }
 
-/* .umbrella {
+.umbrella {
 	display: flex;
 }
- */
+
 .umbrella input {
 	margin: 5px;
 }
@@ -497,7 +384,7 @@ body {
 
 .bi-umbrella {
 	margin: 6px;
-	font-size: 40px;
+	font-size: 28px;
 }
 
 .answer {
@@ -519,15 +406,15 @@ body {
 }
 
 #ans1 {
-	color: hotpink;
+	color: fuchsia;
 }
 
 #ans2 {
-	color: greenyellow;
+	color: rgb(0, 180, 50);
 }
 
 #ans3 {
-	color: darkmagenta;
+	color: rgb(240, 190, 0);
 }
 
 #ans9 {
@@ -630,7 +517,6 @@ body {
 	margin-right: auto;
 	/* text-align: center; */
 	opacity: 0;
-	cursor: pointer;
 }
 
 .about {
@@ -805,15 +691,11 @@ hr {
 /*articoli home*/
 .home-articoli {
 	display: grid;
-	/* grid-template-columns: 50% 50%; */
+	grid-template-columns: 50% 50%;
 	background-color: var(--sfondo2);
-	/* height: 60vh; */
+	height: 60vh;
 	width: 100%;
-	/* padding: 20px; */
-}
-
-.tab-art2 {
-	display: flex;
+	padding: 20px;
 }
 
 .ph2 {
@@ -824,23 +706,11 @@ hr {
 	padding: 25px;
 	text-align: center;
 	margin: auto;
-	width: 50%;
 }
 
-#gdpr-embed {
-	padding: 20px;
-	width: 40%;
-	margin: auto;
-}
 .tab-articoli {
 	display: grid;
-	grid-template-columns: 33% 33% 33%;
-	/* row-gap: 5px; */
-	text-align: center;
-	/* margin: auto; */
-	/* margin-left: auto; */
-	/* margin-bottom: auto; */
-	padding: 20px;
+	grid-template-rows: 30% 30% 30%;
 }
 /************************************************ 	footer  ***************************************/
 .footer {
@@ -1267,10 +1137,10 @@ hr {
 	padding: 20px;
 }
 
-.profilo-page {
+.profilo-page{
 	position: relative;
 	height: fit-content;
-	/*	 background-color:#5E7DB0;*/
+/*	 background-color:#5E7DB0;*/ 
 	min-height: 50rem;
 	letter-spacing: 1px;
 	margin-top: 50px;
@@ -1279,10 +1149,13 @@ hr {
 
 .background2 {
 	/*background-color: rgba(255, 255, 255, 0.8);*/
+
 	display: grid;
 	grid-template-columns: 50% 50%;
 	height: auto;
+
 }
+
 
 .background2 legend {
 	font-weight: bold;
@@ -1305,6 +1178,7 @@ hr {
 	margin-bottom: 20px;
 	color: white;
 }
+
 
 .personal-info label {
 	font-weight: bold;
@@ -1351,6 +1225,7 @@ hr {
 	font-size: 20px;
 	font-weight: bold;
 }*/
+
 .link {
 	color: red;
 	font-weight: 600;
@@ -1374,6 +1249,7 @@ hr {
 	width: 100%;
 
 }*/
+
 .hashtag {
 	display: flex;
 	margin-top: 15px;
@@ -1382,7 +1258,10 @@ hr {
 	background: rgba(248, 192, 27, 0.4);
 	width: fit-content;
 	border-radius: 30px;
+
 }
+
+
 
 /*input[type=checkbox] {
 
@@ -1442,7 +1321,12 @@ hr {
 }
 
 .but-mod {
+
+	margin-top: 15px;
+	margin-bottom: 15px;
+
 	display: flex;
+
 	align-content: center;
 	justify-content: center;
 }
@@ -1453,6 +1337,7 @@ hr {
 	margin-bottom: 20px;
 	/* height: 164px; */
 }
+
 
 .personal-info-mod fieldset {
 	height: 250px;
@@ -1471,8 +1356,11 @@ hr {
 }
 
 .progresso-box {
-	height: 629px;
+
+	height: 555px;
+
 }
+
 /**riga dellle lezioni **/
 .row-lezioni {
 	width: 98%;
@@ -1483,13 +1371,14 @@ hr {
 }
 
 .row-lezioni legend {
-	font-weight: bold;
-	font-size: 30px;
-	color: white;
-	font-family: bit;
-	margin-left: 15px;
-	padding: 15px 25px;
+	  font-weight: bold;
+  font-size: 30px;
+  color: white;
+  font-family: bit;
+  margin-left: 15px;
+  padding: 15px 25px;
 }
+
 
 /**********************************************************pagina dei risultati*****************************************************************/
 /**********************************************************pagina dei risultati*****************************************************************/
@@ -1544,14 +1433,13 @@ hr {
 	margin: auto;
 }
 
-.campo-reg {
+.label {
 	font-size: 18px;
 	/* margin: 10px; */
 	margin-bottom: 10px;
-	color: black;
+	color: white;
 	font-weight: bold;
 	letter-spacing: 3px;
-	display: flex;
 }
 
 .accedi {
@@ -1671,10 +1559,7 @@ hr {
 	width: 50%;
 	margin: auto;
 	display: grid;
-	color: white;
-	font-weight: bold;
 }
-
 
 .input-login input {
 	/* align-items: center; */
@@ -1695,517 +1580,99 @@ hr {
 	font-weight: bold;
 }
 
-/*************************************** REGISTRAZIONE ******************************/
-/**********************************************************REGISTRAZIONE****************************************************************************/
-.corpoReg {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	min-height: 75vh;
-}
-
-.containerReg {
-	width: 45%;
-	background-color: white;
-	border-radius: 5px;
-	padding: 25px 20px 0px 20px;
-	/* border: 1px solid #F8C01B; */
-	margin: auto;
-}
-.titReg {
-	font-size: 35px;
-	font-weight: 600;
-	margin: 0;
-	text-align: center;
-	color: #5082D7;
-}
-.questionario-box{
-	margin: 25px 15px;
-}
-.spaceradio {
-	display: inline-flex;
-}
-
-.spaceradio p {
-	margin-left: 5px;
-	margin-right: 5px;
-	padding-left: 5px;
-	padding-right: 5px;
-}
-
-.prova {
-	width: 90%;
-	padding: 10px;
-	margin: auto;
-}
-
-.containerReg .form-outer {
-	width: 100%;
-	overflow: hidden;
-}
-
-.form-outer .form {
-	display: flex;
-	width: 400%;
-}
-
-.form-outer .form .page {
-	width: 25%;
-	transition: margin-left .3s ease-in-out;
-	height: 650px;
-}
-.form-outer .form .page .title {
-	font-size: 25px;
-	font-weight: 500;
-	text-align: center;
-}
-
-.form-outer .form .page .field {
-	height: 50px;
-	position: relative;
-	display: flex;
-}
-
-.idDomanda,
-.domanda {
-	font-size: 16px;
-	padding: 5px;
-}
-
-.label {
-	display: flex;
-}
-
-.box-domande {
-	padding: 5px;
-	margin-bottom: 20px;
-	margin-top: 20px;
-}
-
-.field2 {
-	height: 540px;
-}
-
-.inputRegistrazione {
-	height: 35px;
-	width: 100%;
-	border: 1px solid lightgrey;
-	border-radius: 5px;
-	font-size: 16px;
-	padding-left: 15px;
-}
-
-.form .page .field select {
-	width: 100%;
-	padding: 10px;
-	font-size: 17px;
-	font-weight: 500;
-}
-
-.form-outer .form .page .field button {
-	width: 100%;
-	height: calc(85% + 2px);
-	margin-top: -20px;
-	border: none;
-	border-radius: 5px;
-	background-color: #6E8BC0;
-	color: #fff;
-	font-size: 18px;
-	font-weight: 600;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	cursor: pointer;
-	transition: .4s ease;
-}
-.form-outer .form .page .field button:hover {
-	background-color: #5082D7;
-}
-
-.form-outer .form .page .field .btns button {
-	margin-top: -20px !important;
-}
-
-.form .page .btns button.prev {
-	margin-right: 3px;
-	font-size: 17px;
-}
-
-.form .page .btns button.next {
-	margin-left: 3px;
-}
-
-.containerReg .progress-bar {
-	display: flex;
-	margin: 20px 0;
-}
-
-.containerReg .progress-bar .step {
-	position: relative;
-	text-align: center;
-	width: 100%;
-}
-
-.progress-bar .step p {
-	font-size: 18px;
-	font-weight: 500;
-	color: #000;
-	margin-bottom: 8px;
-}
-
-.progress-bar .step p.active {
-	color: #5082D7;
-}
-
-.progress-bar .step .bullet {
-	height: 30px;
-	width: 30px;
-	border-radius: 50%;
-	display: inline-block;
-	font-weight: 500;
-	font-size: 17px;
-	line-height: 25px;
-	position: relative;
-	transition: .2s;
-}
-
-.progress-bar .step .bullet.active {
-	border-color: #5082D7;
-	background: #5082D7;
-}
-
-.progress-bar .step:last-child .bullet::before,
-.progress-bar .step:last-child .bullet::after {
-	display: none;
-}
-
-.progress-bar .step .bullet::before, .progress-bar .step .bullet::after {
-	content: "";
-	position: absolute;
-	bottom: 13px;
-	right: -100px;
-	width: 90px;
-	height: 2px;
-	background-color: #262626;
-}
-.progress-bar .step .bullet.active::after {
-	background-color: #5082D7;
-	transform: scaleX(0);
-	transform-origin: left;
-	animation: animate 0.3s linear forwards;
-}
-.fa-check::before {
-	content: "\f00c";
-	background: #5082D7;
-}
-@keyframes animate {
-	100% {
-		transform: scaleX(1);
-	}
-}
-
-.progress-bar .step .bullet span {
-	font-weight: 500;
-	font-size: 17px;
-	line-height: 25px;
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-}
-
-.progress-bar .step .bullet.active span {
-	display: none;
-}
-
-.progress-bar .step .check {
-	position: absolute;
-	left: 50%;
-	top: 70%;
-	font-size: 16px;
-	transform: translate(-50%, -50%);
-	display: none;
-}
-
-.progress-bar .step .check.active {
-	display: block;
-	color: #fff;
-}
-
-
-#my-textarea {
-	display: none;
-	width: 465px;
-	height: 65px;
-	margin: auto;
-}
-
-.my-policy{
-
-  height: 400px;
-  overflow: auto;
-  margin-bottom: 25px;
-  margin-top: 25px;
-  border: 1px solid black;
-  padding: 10px;
-
-	
-}
-
-.num {
-	font-size: 30px;
-	color: #575757;
-}
-/************** test nuovo ***********/
-.test-page {
-	position: relative;
-	height: fit-content;
-	background-color: #5e7db0;
-	min-height: 30.25rem;
-	letter-spacing: 1px;
-	margin-top: 74px;
-}
-
-.titolo-test {
-	width: 70%;
-	margin: auto;
-	text-align: center;
-	color: #434b53;
-	font-size: 45px;
-	font-weight: 600;
-	font-family: Milky;
-}
-
-.titolo-test2 {
-	/* width: 70%; */
-	/* margin: auto; */
-	text-align: center;
-	/* padding: 10px; */
-	/* color: black; */
-	font-size: 20px;
-	/* font-weight: 600; */
-	/* font-family: bit; */
-	letter-spacing: 4px;
-	margin-bottom: 25px;
-}
-
-.domprivacy-test {
-	margin: 10px;
-	text-align: center;
-	font-size: 22px;
-}
-
-.domande-test {
-	list-style-type: none;
-	width: 85%;
-	margin: auto;
-	text-align: justify;
-}
-
-/**********************************************************TEST vechcio ****************************************************************************/
-section .title {
-	display: block;
-	text-align: center;
-	margin-bottom: 40px;
-}
-
-section hr {
-	width: 75%;
-	border-color: #84A7E3;
-	margin: auto;
-	/* margin-bottom: 28px; */
-	margin-bottom: 25px;
-	/* margin-top: 15px; */
-	margin-top: 25px;
-}
-
-section .progressionBar {
-	display: flex;
-	height: auto;
-	padding: 0 10%;
-	margin-bottom: 25px;
-}
-
-section .progressionBar .step {
-	height: auto;
-	width: 33%;
-	text-align: center;
-	padding: 10px 0;
-	margin: 0 10px;
-	border-radius: 10px;
-}
-
-section .progressionBar .step p {
-	margin: 0;
-	font-size: 18px;
-}
-
-section .progressionBar .step.active {
-	background-color: #84A7E3;
-}
-
-section .progressionBar .step.active p {
-	margin: 0;
-	color: white;
-}
-
-section .progressionBar .step.completed {
-	background-color: #84A7E3;
-	opacity: 0.5;
-}
-
-section .formArea {
-	display: block;
-	height: auto;
-	padding: 20px 10%;
-	/* margin-bottom: 25px; */
-	background: white;
-	width: 100%;
-	margin: auto;
-	/* border: ; */
-	/* border: 1px solid #F8C01B; */
-	border-radius: 5px;
-}
-
-section .formArea div div.fields {
-	display: grid;
-	width: 60%;
-	margin: 30px 20%;
-}
-
-section .formArea div div.fields label {
-	text-align: left;
-	padding-left: 10px;
-	color: #84A7E3;
-}
-
-section .formArea div div.fields input {
-	border: 0;
-	border-bottom: 1px solid grey;
-	margin-top: 15px;
-	padding-left: 10px;
-	padding-bottom: 5px;
-	outline: none;
-}
-
-section .formArea div div.fields input:focus {
-	border-bottom: 2px solid #84A7E3;
-}
-
-section .formArea div div.button2 {
-	display: flex;
-	width: 60%;
-	margin: 0 20%;
-}
-
-section .formArea div div.button2 .back {
-	display: flex;
-	justify-content: flex-start;
-}
-
-section .formArea div div.button2 .next {
-	display: flex;
-	justify-content: flex-end;
-}
-
-section .formArea div div.button2 div {
-	width: 50%;
-}
-
-section .formArea div div.button2 div div {
-	width: 45px;
-	height: 45px;
-	background-color: #84A7E3;
-	/* border: none; */
-	border-radius: 50%;
-	font-size: 20px;
-	cursor: pointer;
-	align-content: center;
-	display: grid;
-}
-
-section .formArea div div.button2 div div i {
-	color: white;
-	margin: auto;
-}
-
-section .formArea div#personalInfo {
-	display: none;
-	padding: 15px;
-}
-
-section .formArea div#professionalInfo {
-	display: none;
-}
-
-/* .domande {
-	width: 75%;
-	margin: auto;
-	font-size: 18px;
-} */
-.domande li {
-	margin: 20px;
-	padding: 5px;
-}
-
-.risposte {
-	/* display: grid; */
-	/* grid-template-columns: 5% 80%; */
-	/* grid-gap: 10px; */
-	margin: auto;
-	font-size: 18px;
-	text-align: justify;
-	padding: 5px;
-	display: flex;
-}
-
-.risposte input {
-	margin-right: 15px;
-}
-
-.risposte p {
-	margin: 5px;
-	/* text-align: center; */
-	font-size: 18px;
-	text-align: justify;
-}
-
-.boxRisposte {
-	display: grid;
-	grid-template-columns: 50% 50%;
-	grid-gap: 15px;
-	width: 80%;
-	margin: auto;
-	grid-row-gap: 20px;
-	margin-top: 20px;
-	margin-bottom: 20px;
-}
-
-.intro-tit {
-	color: #2c2d2a;
-	text-align: center;
-	font-size: 25px;
-	border-bottom: 1px solid #84A7E3;
-	padding: 5px;
-}
-
-.intro-testo {
-	display: block;
-	height: auto;
-	padding: 20px 10%;
-	margin-bottom: 25px;
-	width: 80%;
-	margin: auto;
-	text-align: justify;
-}
-
-.no-style {
-	border: none;
-	background: white;
-}
-
 /********************************************************* RESPONSIVE *******************************************/
 @media screen and (max-width: 1920px) {
 }
 
+/* @media screen and (max-width: 1440px) {
+	.home {
+		height: 80vh;
+	}
+	.darn {
+		font-size: 28px;
+	}
+	.bi-exclamation-triangle-fill {
+		font-size: 22px;
+	}
+	.logo {
+		font-size: 1.3rem;
+		width: 50%;
+	}
+	.navbar .menu li a {
+		margin-left: 0;
+	}
+	.question {
+		font-size: 58px;
+	}
+	.umbrella span {
+		width: 30%;
+	}
+	.questionBox {
+		padding: 15px;
+		margin: 15px;
+	}
+	.answer {
+		font-size: 18px;
+		letter-spacing: 2px;
+	}
+	.answer2 {
+		font-size: 18px;
+		letter-spacing: 2px;
+	}
+	.bi-umbrella {
+		font-size: 25px;
+	}
+	.home .home-content .text-1 {
+		font-size: 1.5rem;
+	}
+	.home .home-content .titolo {
+		font-size: 85px;
+	}
+	#text2 {
+		font-size: 35px;
+		color: white;
+		text-transform: uppercase;
+		letter-spacing: 4px;
+		font-family: "Syncopate";
+	}
+	blockquote {
+		font-size: 2.5rem;
+		color: white;
+		text-align: center;
+	}
+
+	resp-argomenti
+	.arg-sx {
+		display: grid;
+		grid-template-rows: 40% 40%;
+	}
+	.grid-item fieldset {
+		height: 265px;
+		width: 95%;
+		display: grid;
+		grid-template-rows: 70% 30%;
+		row-gap: 25px;
+	}
+	.arg-sx {
+		display: grid;
+		padding: 50px 25px;
+		width: 40%;
+		grid-template-rows: 30% 30%;
+	}
+	.grid-container {
+		display: grid;
+		grid-template-columns: 50% 50%;
+		width: 58%;
+	}
+	.quote2 {
+		margin-top: 0 !important;
+	}
+
+	responsive-favole
+	.favola-mast {
+		height: 30vh;
+	}
+} */
 @media screen and (max-width: 1440px) {
 	.home {
 		height: 100vh;
@@ -2251,7 +1718,7 @@ section .formArea div#professionalInfo {
 		letter-spacing: 2px;
 	}
 	.bi-umbrella {
-		font-size: 40px;
+		font-size: 25px;
 	}
 	.home .home-content .text-1 {
 		font-size: 1.5rem;
@@ -2260,22 +1727,18 @@ section .formArea div#professionalInfo {
 		font-size: 85px;
 	}
 	.home-favole {
-	height: 75vh;
-	grid-template-rows: 70% 30%;
-}
-.home-articoli {
-	height: 105vh;
-	display: grid;
-	grid-template-rows: 70% 30%;
-}
+		height: 75vh;
+		grid-template-rows: 70% 40%;
+	}
+	.home-articoli {
+		height: 95vh;
+	}
 	.question {
 		font-size: 55px;
 	}
-#gdpr-embed {
-	padding: 20px;
-	width: 40%;
-	margin: auto;
-}
+	.iframely-embed {
+		padding: 20px;
+	}
 	blockquote {
 		font-size: 2rem;
 		color: white;
@@ -2351,7 +1814,7 @@ section .formArea div#professionalInfo {
 		border-bottom: 3px solid var(--bianco);
 		padding-bottom: 100px;
 		background: var(--bianco);
-		box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
+		box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.3);
 		transition: 0.2s ease;
 	}
 	.navbar .menu li {
@@ -2647,14 +2110,8 @@ section .formArea div#professionalInfo {
 		/* row-gap: 15px; */
 	}
 	/*login-responsive*/
-	.box-square {
+		.box-square {
 		margin: auto 22%;
-	}
-	.background2 {
-		grid-template-columns: auto;
-	}
-	.row-lezioni {
-		width: 95%;
 	}
 }
 
@@ -2770,58 +2227,19 @@ section .formArea div#professionalInfo {
 	}
 	/*login-responsive*/
 	.accedi {
-		font-size: 1.2rem;
-	}
-	.login-container {
-		margin-top: 60px;
-		width: 80%;
-		min-height: 30rem;
-	}
-	.square {
-		font-size: 20px;
-	}
-	.box-square {
-		margin: auto 8%;
-	}
-	/*login responsive*/
-	.bordo {
-		width: 100%;
-	}
-	.background-grafico {
-		height: 220px;
-	}
-	.background2 legend {
-		font-size: 25px;
-	}
-
-	/*test-responsive*/
-	section .progressionBar {
-		display: none;
-	}
-.intro-testo {
-	/* display: block; */
-	/* height: auto; */
-	/* padding: 20px 10%; */
-	/* margin-bottom: 25px; */
-	width: 100%;
-	/* margin: auto; */
-	text-align: justify;
-	padding:0;
-	padding-top: 15px;
+	font-size: 1.2rem;
 }
-.domande-test {
-padding-left:0;
-	 width: 100%; 
-
-}
-section .formArea div#personalInfo {
-
-	padding: 0; 
-	
-}
-.titolo-test {
+.login-container {
+	margin-top:60px;
 	width: 80%;
+	min-height: 30rem;
 
+}
+.square {
+	font-size: 20px;
+}
+.box-square {
+	margin: auto 8%;
 }
 }
 
@@ -2869,19 +2287,6 @@ section .formArea div#personalInfo {
 		height: 120vh;
 		/* row-gap: 15px; */
 	}
-	/*profilo responsive*/
-	.personal-info {
-		width: 100%;
-	}
-	.personal-progress {
-		width: 100%;
-	}
-	.background2 legend {
-		font-size: 24px;
-	}
-	.titolo-test {
-	width: 85%;
-}
 }
 
 @media screen and (max-width: 375px) {
@@ -2940,43 +2345,13 @@ section .formArea div#personalInfo {
 		height: 120vh;
 		/* row-gap: 15px; */
 	}
-
+	
 	/*login-responsive*/
-	.box-square {
-		margin: auto 20%;
-	}
-	.input-login {
-		width: 85%;
-	}
+.box-square {
+	margin: auto 20%;
+}
+.input-login {
+	width: 85%;
 
-	/*profilo responsive*/
-	.titolo2 {
-		font-size: 40px;
-	}
-	.background2 legend {
-		font-size: 19px;
-	}
-	.infoUtente {
-		font-size: 16px;
-	}
-	.parg {
-		font-size: 16px;
-	}
-	.row-lezioni legend {
-		font-size: 16px;
-	}
-	.titolo-test {
-	width: 100%;
-}
-.domprivacy-test {
-	font-size: 18px;
-}
-.risposte p {
-	font-size: 16px;
-
-}
-.intro-testo {
-	text-align: inherit;
-	font-size: 18px;
 }
 }

@@ -13,7 +13,8 @@ import lombok.NonNull;
 
 @Entity
 @Table(name = "salvataggio_risposte")
-@Data // crea i metodi hashCode, equals e toString, getter e setter
+@Data // crea i metodi hashCode, equals e toString, getter e setter senza renderli
+		// visibili nella classe
 @NoArgsConstructor // crea il costruttore vuoto senza renderlo visibile nella classe
 @AllArgsConstructor
 public class Salvataggio {
@@ -21,7 +22,7 @@ public class Salvataggio {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id_salvataggio; // auto
-
+	
 	@Column(name = "email_utente")
 	private String email_utente;
 
@@ -33,16 +34,16 @@ public class Salvataggio {
 
 	@Column(name = "id_risposta")
 	private int id_risposta;
-
+	
 	@Column(name = "risposta_corretta")
 	private String risposta_corretta;
-
+	
 	@Column(name = "risposta_utente")
 	private String risposta_utente;
-
+	
 	@Column(name = "testo_domanda")
 	private String testo_domanda;
-
+	
 	@Column(name = "meta_info")
 	private String meta_info;
 

@@ -59,17 +59,16 @@ public class UtenteControl {
 	@GetMapping("/registrazione")
 	public String prova(Model model) {
 		List<Domanda> questionario = domServ.findByIdTest(0);
-		//List<Domanda> prima = split(questionario);
-	//	List<Domanda> seconda = split2(questionario);
+		List<Domanda> prima = split(questionario);
+		List<Domanda> seconda = split2(questionario);
 
 		/*
 		 * Utente user = new Utente();
 		 * 
 		 * model.addAttribute("user", user);
 		 */
-		//model.addAttribute("questionario1", prima);
-		//model.addAttribute("questionario2", seconda);
-		model.addAttribute("questionario", questionario);
+		model.addAttribute("questionario1", prima);
+		model.addAttribute("questionario2", seconda);
 		return "registrazione";
 	}
 
@@ -338,7 +337,7 @@ public class UtenteControl {
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
 		session.invalidate();
-		return "redirect:/index2";  //cambiare solo index
+		return "redirect:/homepage";
 	}
 
 	/*------------------------------------METODI INTERNI-------------------------------*/

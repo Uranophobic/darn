@@ -1,5 +1,6 @@
 package com.privacy.web.model;
 
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,16 +13,15 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "test")
-@Data // crea i metodi hashCode, equals e toString, getter e setter senza renderli
-		// visibili nella classe
-@NoArgsConstructor // crea il costruttore vuoto
-@AllArgsConstructor // crea il costruttore con paramentri
+@Data //crea i metodi hashCode, equals e toString, getter e setter senza renderli visibili nella classe
+@NoArgsConstructor //crea il costruttore vuoto senza renderlo visibile nella classe
+@AllArgsConstructor //crea il costruttore con paramentri senza renderlo visibile nella classe
 public class Test {
-	@Column(name = "id_test")
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id_test;
-	@Column(name = "tipo_test")
+@Column(name="id_test")
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id_test;	
+	@Column(name="tipo_test")
 	private String tipo_test;
 
+	
 }

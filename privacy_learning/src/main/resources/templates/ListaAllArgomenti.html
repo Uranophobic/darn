@@ -2,68 +2,49 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<meta charset="UTF-8">
-<title>Darn - Lezioni & Approfondimenti</title>
+	<meta charset="ISO-8859-1">
+	<title>Darn - Lezioni & Approfondimenti</title>
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+	<link rel="stylesheet" href="https://www.ionos.it/digitalguide/path/to/font-awesome/css/font-awesome.min.css">
+	<!-- ICONSSCOUT -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+		integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-<link rel="stylesheet"
-	href="https://www.ionos.it/digitalguide/path/to/font-awesome/css/font-awesome.min.css">
-<!-- ICONSSCOUT -->
-<link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-	integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
-	crossorigin="anonymous">
+	<!-- CSS -->
+	<link rel="stylesheet" href="../css/style3.css">
 
-<!-- CSS -->
-<link rel="stylesheet" href="../css/style3.css">
+	<!-- libreria per il typed jq-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.js"
+		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
-<!-- libreria per il typed jq-->
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.js"
-	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-	crossorigin="anonymous"></script>
+	<!-- ScrollReveal -->
+	<script src="https://unpkg.com/scrollreveal"></script>
+	<script src="/path/to/noframework.waypoints.min.js"></script>
 
-<!-- ScrollReveal -->
-<script src="https://unpkg.com/scrollreveal"></script>
-<script src="/path/to/noframework.waypoints.min.js"></script>
-
-<script src="js/gsap.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Flip.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Observer.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Draggable.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/EaselPlugin.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/MotionPathPlugin.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/PixiPlugin.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/TextPlugin.min.js"></script>
+	<script src="js/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Flip.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Observer.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Draggable.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/EaselPlugin.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/MotionPathPlugin.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/PixiPlugin.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/TextPlugin.min.js"></script>
 </head>
 
 <body>
 	<div th:insert="~{fragments/header::header}"></div>
 
 
-	<th:block
-		th:if="${!session.isEmpty()} and ${session.userSession.email.equals('admin@gmail.com')}"
+	<th:block th:if="${!session.isEmpty()} and ${session.userSession.email.equals('admin@gmail.com')}"
 		th:each="arg : ${argomentiView}">
 
-		<a type="button" class="button" th:href="@{/admin/creaArg}">
-			Aggiungi </a>
+		<a type="button" class="button" th:href="@{/admin/creaArg}"> Aggiungi </a>
 
 		<!-- CONTROLLO SE L'UTENTE SIA ADMIN -->
 
@@ -73,12 +54,9 @@
 				<h3 th:text="${arg.titolo}">Titolo Argomento</h3>
 				<p th:text="${arg.getDescrizione().substring(0,200).concat('...')}">contenuto</p>
 			</div>
-			<a class="button" type="submit"
-				th:href="@{/argomenti/argomentoView/{id}(id=${arg.id_studio})}">Continua</a>
-			<a class=button
-				th:href="@{/admin/fixedArgomento/{id}(id=${arg.getId_studio()})}">Modifica</a>
-			<a class=button
-				th:href="@{/admin/deleteArgomento/{id}(id=${arg.getId_studio()})}">Elimina</a>
+			<a class="button" type="submit" th:href="@{/argomenti/argomentoView/{id}(id=${arg.id_studio})}">Continua</a>
+			<a class=button th:href="@{/admin/fixedArgomento/{id}(id=${arg.getId_studio()})}">Modifica</a>
+			<a class=button th:href="@{/admin/deleteArgomento/{id}(id=${arg.getId_studio()})}">Elimina</a>
 		</fieldset>
 	</th:block>
 
@@ -86,51 +64,47 @@
 
 	<div class="argomenti-all">
 
-		<th:block
-			th:if="${session.isEmpty()} or ${!(session.userSession.email.equals('admin@gmail.com'))}">
+		<th:block th:if="${session.isEmpty()} or ${!(session.userSession.email.equals('admin@gmail.com'))}">
 			<div class="arg-sx">
 
 				<div class="text-arg">
 					<h2>
-						<span><span class="crea" id="maiusc">Proteggi i tuoi
-								dati,</span></span> <span><span class="crea" id="maiusc">proteggi
-								te stesso</span></span><br> <span><span class="crea" id="normal">Scopri
-								i segreti della sicurezza informatica,</span></span><br> <span><span
-							class="crea" id="normal">immergiti negli studi sulla
-								privacy,</span></span><br> <span><span class="crea" id="normal">sulla
-								sicurezza onlin e sul furto di dati.</span></span><br>
+						<span><span class="crea" id="maiusc">Proteggi i tuoi dati,</span></span>
+						<span><span class="crea" id="maiusc">proteggi te stesso</span></span><br>
+						
+						
+						<span><span class="crea" id="normal">Scopri i segreti della sicurezza informatica,</span></span><br>
+						<span><span class="crea"  id="normal">immergiti negli studi sulla privacy,</span></span><br>
+						<span><span class="crea"  id="normal">sulla sicurezza onlin e sul furto di dati.</span></span><br>
 					</h2>
 				</div>
 
 				<div class="quote2">
 					<hr>
 					<blockquote class="quote-argomenti" contenteditable="true">
-						<q> Acquisisci le giuste competenze<br> per difendere la
-							tua sicurezza online <br> e preservare la tua privacy
-						</q>
+						<q> Acquisisci le giuste competenze<br>
+							per difendere la tua sicurezza online <br>
+							e preservare la tua privacy</q>
 					</blockquote>
 					<hr>
 				</div>
 
 			</div>
 			<div class="grid-container">
-
+				
 				<th:block th:each="arg : ${argomentiView}">
 					<div class="grid-item">
 						<fieldset>
 							<legend th:text="${arg.meta_info}">Meta-Info</legend>
 							<div class="box-argomento">
 								<h3 th:text="${arg.titolo}">Titolo Argomento</h3>
-								<p
-									th:text="${arg.getDescrizione().substring(0,150).concat('...')}">contenuto</p>
+								<p th:text="${arg.getDescrizione().substring(0,150).concat('...')}">contenuto</p>
 							</div>
 							<div class="box-continua">
 								<a type="submit" class="link2"
-									th:href="@{/argomenti/argomentoView/{id}(id=${arg.id_studio})}">Continua
-								</a>
-								<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-									fill="currentColor" class="bi bi-arrow-right arrow-continua"
-									viewBox="0 0 16 16">
+									th:href="@{/argomenti/argomentoView/{id}(id=${arg.id_studio})}">Continua </a><svg
+									xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+									class="bi bi-arrow-right arrow-continua" viewBox="0 0 16 16">
 									<path fill-rule="evenodd"
 										d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
 								</svg>
@@ -139,6 +113,7 @@
 
 					</div>
 				</th:block>
+
 		</th:block>
 	</div>
 
@@ -147,23 +122,11 @@
 
 
 	<div th:insert="fragments/footer::footer"></div>
-
+	
 	<script>
-		var tl = gsap.timeline({
-			repeat : 3,
-			repeatDelay : 5
-		});
-		tl.to(".crea", {
-			y : "0%",
-			duration : 1.5,
-			stagger : 0.2
-		});
-		tl.fromTo(".quote2", {
-			opacity : 0
-		}, {
-			opacity : 1,
-			delay : 0.5
-		});
+		var tl = gsap.timeline({repeat: 3, repeatDelay: 5});
+		tl.to(".crea", {y: "0%", duration: 1.5, stagger: 0.2});
+		tl.fromTo(".quote2", {opacity: 0}, {opacity: 1, delay: 0.5});
 	</script>
 
 </body>

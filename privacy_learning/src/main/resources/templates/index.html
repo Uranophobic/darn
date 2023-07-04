@@ -2,57 +2,40 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-<link rel="stylesheet"
-	href="https://www.ionos.it/digitalguide/path/to/font-awesome/css/font-awesome.min.css">
-<!-- ICONSSCOUT -->
-<link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-	integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
-	crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+	<link rel="stylesheet" href="https://www.ionos.it/digitalguide/path/to/font-awesome/css/font-awesome.min.css">
+	<!-- ICONSSCOUT -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+		integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
-<!-- CSS -->
-<link rel="stylesheet" href="css/style2.css">
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/style2.css">
 
-<!-- libreria per il typed jq-->
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.js"
-	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-	crossorigin="anonymous"></script>
+	<!-- libreria per il typed jq-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.js"
+		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
-<!-- ScrollReveal -->
-<script src="https://unpkg.com/scrollreveal"></script>
-<script src="/path/to/noframework.waypoints.min.js"></script>
+	<!-- ScrollReveal -->
+	<script src="https://unpkg.com/scrollreveal"></script>
+	<script src="/path/to/noframework.waypoints.min.js"></script>
 
-<script src="js/gsap.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Flip.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Observer.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Draggable.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/EaselPlugin.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/MotionPathPlugin.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/PixiPlugin.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/TextPlugin.min.js"></script>
+	<script src="js/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Flip.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Observer.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Draggable.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/EaselPlugin.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/MotionPathPlugin.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/PixiPlugin.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/TextPlugin.min.js"></script>
 
 
 </head>
@@ -69,22 +52,17 @@
 	<nav class="navbar">
 		<div class="max-width">
 			<div class="logo">
-				<a>Darn: </a> <a class="typing"></a>
+				<a>Darn: </a>
+				<a class="typing"></a>
 			</div>
 			<ul class="menu">
 				<li><a th:href="@{/homepage}" class="active">Home</a></li>
-				<li><a th:href="@{/argomenti/studia-con-noi}">Studia con
-						noi</a></li>
-				<li><a th:href="@{/favole/leggi-una-favola}">Leggi una
-						favola</a></li>
-				<li><a th:href="@{/article/leggi-un-articolo}">Notizie di
-						attualità</a></li>
-				<li><a th:if="${session.isEmpty()}" th:href="@{/login}">Ettettua
-						il test</a></li>
-				<li><a th:if="${!session.isEmpty()}" th:href="@{/test}">Effettua
-						il test</a></li>
-				<th:block
-					th:if="${!session.isEmpty()} and (${session.userSession.email.equals('admin@gmail.com')})">
+				<li><a th:href="@{/argomenti/studia-con-noi}">Studia con noi</a></li>
+				<li><a th:href="@{/favole/leggi-una-favola}">Leggi una favola</a></li>
+				<li><a th:href="@{/article/leggi-un-articolo}">Notizie di attualità</a></li>
+				<li><a th:if="${session.isEmpty()}" th:href="@{/login}">Ettettua il test</a></li>
+				<li><a th:if="${!session.isEmpty()}" th:href="@{/test}">Effettua il test</a></li>
+				<th:block th:if="${!session.isEmpty()} and (${session.userSession.email.equals('admin@gmail.com')})">
 					<a th:href="@{/admin/lista-utenti}">Utenti</a>
 					<a th:href="@{/admin/lista-meta_info}"> MetaInfo </a>
 				</th:block>
@@ -96,12 +74,11 @@
 
 				<th:block th:unless="${session.isEmpty()}">
 					<li><a class="icon" type="submit"
-						th:href="@{/profilo/{email} (email=${session.userSession.email})}">
-							Area Personale </a></li>
-					<li><a class="icon" type="submit" th:href="@{/users/logout}">
-							Logout</a></li>
+							th:href="@{/profilo/{email} (email=${session.userSession.email})}"> Area Personale </a></li>
+					<li><a class="icon" type="submit" th:href="@{/users/logout}"> Logout</a></li>
 				</th:block>
-				<i class="fas fa-times-circle menu-close" id="menu-close"> </i>
+				<i class="fas fa-times-circle menu-close" id="menu-close">
+				</i>
 			</ul>
 			<div class="menu-btn">
 				<i class="fas fa-bars" id="burger"></i>
@@ -114,53 +91,46 @@
 		<div class="home-perfil">
 			<!-- prima domanda-->
 			<div class="questionBox">
-				<p class="question" id="first-quest">Quanto ti proteggi online ?
-				</p>
+				<p class="question" id="first-quest"> Quanto ti proteggi online ? </p>
 				<div class="umbrella">
-					<span id="ans1"><i class="bi bi-circle"></i><i
-						class="bi bi-umbrella"></i></span> <span id="ans2"><i
-						class="bi bi-circle"></i><i class="bi bi-umbrella"></i><i
-						class="bi bi-umbrella"></i></span> <span id="ans3"><i
-						class="bi bi-circle"></i><i class="bi bi-umbrella"></i><i
-						class="bi bi-umbrella"></i><i class="bi bi-umbrella"></i></span>
+					<span id="ans1"><i class="bi bi-circle"></i><i class="bi bi-umbrella"></i></span>
+					<span id="ans2"><i class="bi bi-circle"></i><i class="bi bi-umbrella"></i><i
+							class="bi bi-umbrella"></i></span>
+					<span id="ans3"><i class="bi bi-circle"></i><i class="bi bi-umbrella"></i><i
+							class="bi bi-umbrella"></i><i class="bi bi-umbrella"></i></span>
 				</div>
 			</div>
 
 			<!-- seconda domanda-->
 			<div class="questionBox right">
-				<p class="question" id="second-quest">Dove salvi le tue password
-					?</p>
-				<span id="ans4" class="answer"> su foglio di carta <i
-					class="bi bi-x-lg"></i>
-				</span> <span id="ans5" class="answer"> nel mio diario segreto... <i
-					class="bi bi-x-lg"></i></span> <span id="ans6" class="answer"> un
-					gruppo whatsapp in cui ci sono solo io <i class="bi bi-x-lg"></i>
-				</span>
+				<p class="question" id="second-quest">Dove salvi le tue password ?</p>
+				<span id="ans4" class="answer"> su foglio di carta <i class="bi bi-x-lg"></i> </span>
+				<span id="ans5" class="answer"> nel mio diario segreto... <i class="bi bi-x-lg"></i></span>
+				<span id="ans6" class="answer"> un gruppo whatsapp in cui ci sono solo io <i
+						class="bi bi-x-lg"></i></span>
 			</div>
 
 			<!-- terza domanda-->
 			<div class="questionBox left">
-				<p class="question" id="third-quest">Cos'è l 'autenticazione a
-					due fattori ?</p>
-				<span id="ans7" class="answer2"><i class="bi bi-x-lg"></i>
-					... un particolare tipo di pizza Hawuaiana! </span> <span id="ans8"
-					class="answer2"><i class="bi bi-x-lg"></i> mhhhh
-					l'autenticazione facciale dell'Iphone </span> <span id="ans9"
-					class="answer2"><i class="bi bi-check-lg"></i> uno strumento
-					di protezione online!?! </span>
+				<p class="question" id="third-quest"> Cos'è l 'autenticazione a due fattori ?</p>
+				<span id="ans7" class="answer2"><i class="bi bi-x-lg"></i> ... un particolare tipo di pizza Hawuaiana!
+				</span>
+				<span id="ans8" class="answer2"><i class="bi bi-x-lg"></i> mhhhh l'autenticazione facciale dell'Iphone
+				</span>
+				<span id="ans9" class="answer2"><i class="bi bi-check-lg"></i> uno strumento di protezione online!?!
+				</span>
 			</div>
 
 		</div>
 		<div class="max-width">
 			<div class="home-content">
 				<div class="text-1">
-					<p>Sei in difficoltà?</p>
+					<p> Sei in difficoltà?</p>
 					<p>Questo argomento ti è nuovo?</p>
 				</div>
-				<div class="titolo">Darn ! Look at your privacy!!!</div>
-				<div class="button-text-3">
-					<a class="btn" href="#contacto"> Compila il tuo primo test</a>
-				</div>
+				<div class="titolo">Darn ! Look at your privacy!!! </div>
+				<div class="button-text-3"><a class="btn" href="#contacto">
+						Compila il tuo primo test</a></div>
 
 
 			</div>
@@ -169,112 +139,108 @@
 	</section>
 	<!-- argomenti -->
 	<section class="category">
+		
+			<h2 class="title">ARGOMENTI<i class="bi bi-file-text"></i> </h2>
 
-		<h2 class="title">
-			ARGOMENTI<i class="bi bi-file-text"></i>
-		</h2>
-
-		<span class="subtitle">Qui potrai esplorare una vasta gamma di
-			temi legati alla privacy e alla sicurezza dei dati. Abbiamo
-			selezionato con cura questi argomenti per offrire una panoramica
-			completa delle questioni pi&ugrave; rilevanti in questo ambito. Siamo
-			certi che troverai materiale interessante e informativo per
-			approfondire le tue conoscenze. Scegli l'argomento che ti interessa
-			di pi&ugrave; e lascia che il tuo percorso di apprendimento inizi! </span>
+				<span class="subtitle">Qui potrai esplorare una vasta gamma di temi legati alla
+					privacy e alla sicurezza dei dati. Abbiamo selezionato con cura
+					questi argomenti per offrire una panoramica completa delle
+					questioni pi&ugrave; rilevanti in questo ambito. Siamo certi
+					che troverai materiale interessante e informativo per
+					approfondire le tue conoscenze. Scegli l'argomento che ti
+					interessa di pi&ugrave; e lascia che il tuo percorso di
+					apprendimento inizi! </span>
 		<div class="about-content">
 
 
-			<th:block th:each="arg : ${argomentiView}"
-				th:if="${arg.getId_studio()>(argomentiView.size()-3)}">
-				<div class="col-md-6 col-lg-4 col-sm-12">
-					<a th:href="@{/argomenti/argomentoView/{id}(id=${arg.id_studio})}">
-						<div class="single_service hvr-curl-top-right">
-							<div class="single_service-left">
-								<div class="icon">
-									<scan th:text="${arg.meta_info}"></scan>
+				<th:block th:each="arg : ${argomentiView}" th:if="${arg.getId_studio()>(argomentiView.size()-3)}">
+					<div class="col-md-6 col-lg-4 col-sm-12">
+						<a th:href="@{/argomenti/argomentoView/{id}(id=${arg.id_studio})}">
+							<div class="single_service hvr-curl-top-right">
+								<div class="single_service-left">
+									<div class="icon">
+										<scan th:text="${arg.meta_info}"></scan>
+									</div>
+								</div>
+								<div class="single_service-body">
+									<h4 class="single_service-heading" th:text="${arg.titolo}">Nome</h4>
+									<p th:text="${arg.getDescrizione().substring(0,200).concat('...')}">Testo
+										dell'argomento</p>
 								</div>
 							</div>
-							<div class="single_service-body">
-								<h4 class="single_service-heading" th:text="${arg.titolo}">Nome</h4>
-								<p
-									th:text="${arg.getDescrizione().substring(0,200).concat('...')}">Testo
-									dell'argomento</p>
-							</div>
-						</div>
-					</a>
-				</div>
-			</th:block>
-
-		</div>
-
+						</a>
+					</div>
+				</th:block>
+		
+</div>
+	
 	</section>
 
 	<!-- favole -->
 	<section class="category">
+		
+			<h2 class="title">FAVOLE</h2>
+			<span class="subtitle">Scopri il nostro vasto assortimento di favole incentrate sulla
+				privacy per bambini! Leggendo queste storie, i tuoi bambini
+				potranno approfondire le loro conoscenze sulla privacy in modo
+				divertente e coinvolgente. Abbiamo selezionato con cura ogni
+				favola per garantire la massima qualit&agrave; e un messaggio
+				educativo efficace. Dai un'occhiata alla nostra collezione e
+				scegli la favola perfetta per la tua famiglia! </span>
+			<div class="about-content">
+				<div class="tab-fav">
+						<th:block th:each="favola : ${tutteFavole}"
+							th:if="${favola.getId_favola() > tutteFavole.size()-3}">
 
-		<h2 class="title">FAVOLE</h2>
-		<span class="subtitle">Scopri il nostro vasto assortimento di
-			favole incentrate sulla privacy per bambini! Leggendo queste storie,
-			i tuoi bambini potranno approfondire le loro conoscenze sulla privacy
-			in modo divertente e coinvolgente. Abbiamo selezionato con cura ogni
-			favola per garantire la massima qualit&agrave; e un messaggio
-			educativo efficace. Dai un'occhiata alla nostra collezione e scegli
-			la favola perfetta per la tua famiglia! </span>
-		<div class="about-content">
-			<div class="tab-fav">
-				<th:block th:each="favola : ${tutteFavole}"
-					th:if="${favola.getId_favola() > tutteFavole.size()-3}">
+							<div class="grid">
+								<figure class="effect-lily">
+									<img th:src="${favola.image_path}" alt="img9">
+									<figcaption>
+										<h2 th:text="${favola.titolofavola}">Titolo Favola</h2>
+										<p th:text="${favola.getTestofavola().substring(0,80).concat('...')}">Contenuto
+											favola</p>
+										<a th:href="@{/favole/favolaView/{id}(id=${favola.id_favola})}">View
+											more</a>
+									</figcaption>
+								</figure>
+							</div>
 
-					<div class="grid">
-						<figure class="effect-lily">
-							<img th:src="${favola.image_path}" alt="img9">
-							<figcaption>
-								<h2 th:text="${favola.titolofavola}">Titolo Favola</h2>
-								<p
-									th:text="${favola.getTestofavola().substring(0,80).concat('...')}">Contenuto
-									favola</p>
-								<a th:href="@{/favole/favolaView/{id}(id=${favola.id_favola})}">View
-									more</a>
-							</figcaption>
-						</figure>
+						</th:block>
 					</div>
-
-				</th:block>
 			</div>
-		</div>
 
 
-
+	
 	</section>
 
 	<!-- articoli -->
 	<section class="category">
+		
+			<h2 class="title">ARTICOLI</h2>
+			<span class="subtitle">La tua sicurezza e la protezione dei tuoi dati personali
+				sono al centro delle nostre preoccupazioni e per questo motivo,
+				ti offriamo una selezione accurata di notizie e informazioni
+				sugli sviluppi in materia di privacy literacy per restare
+				sempre aggiornato. Esplora i nostri articoli e rimani sempre al
+				passo con le ultime tendenze, le leggi e le regolamentazioni, e
+				gli eventi più importanti legati alla protezione dei tuoi dati
+				personali.</span>
+			<div class="about-content">
+				<div class="tab-fav">
+						<th:block th:each="art : ${tuttiArticoli}"
+							th:if="${art.getId_articolo() > (tuttiArticoli.size()-3)}">
+							<fieldset>
+								<legend th:text="${art.getMetaInfo()}"></legend>
+								<h2 th:text="${art.getTitolo()}">Titolo Favola</h2>
 
-		<h2 class="title">ARTICOLI</h2>
-		<span class="subtitle">La tua sicurezza e la protezione dei
-			tuoi dati personali sono al centro delle nostre preoccupazioni e per
-			questo motivo, ti offriamo una selezione accurata di notizie e
-			informazioni sugli sviluppi in materia di privacy literacy per
-			restare sempre aggiornato. Esplora i nostri articoli e rimani sempre
-			al passo con le ultime tendenze, le leggi e le regolamentazioni, e
-			gli eventi più importanti legati alla protezione dei tuoi dati
-			personali.</span>
-		<div class="about-content">
-			<div class="tab-fav">
-				<th:block th:each="art : ${tuttiArticoli}"
-					th:if="${art.getId_articolo() > (tuttiArticoli.size()-3)}">
-					<fieldset>
-						<legend th:text="${art.getMetaInfo()}"></legend>
-						<h2 th:text="${art.getTitolo()}">Titolo Favola</h2>
+								<a style="color: wheat;" th:href="${art.getLink()}"
+									th:value="${art.getLink()}">Contenuto articolo</a>
+							</fieldset>
 
-						<a style="color: wheat;" th:href="${art.getLink()}"
-							th:value="${art.getLink()}">Contenuto articolo</a>
-					</fieldset>
-
-				</th:block>
+						</th:block>
+					</div>
 			</div>
-		</div>
-
+	
 	</section>
 
 
@@ -291,122 +257,55 @@
 
 	<!-- ANIMAZIONI GSAP -->
 	<script>
-		gsap.to("#first-quest", {
-			x : -50,
-			duration : 3,
-			delay : 0.3,
-			opacity : 1,
-			ease : Power3.easeOut
-		}); //domanda tre home
-		gsap.to("#second-quest", {
-			x : 50,
-			duration : 4,
-			delay : 0.7,
-			opacity : 1,
-			ease : Power3.easeOut
-		}); //domanda uno home
-		gsap.to("#third-quest ", {
-			x : -50,
-			duration : 5,
-			delay : 1,
-			opacity : 1,
-			ease : Power3.easeOut
-		}); //domanda due home
+		gsap.to("#first-quest", {x: -50, duration: 3, delay: 0.3, opacity: 1, ease: Power3.easeOut}); //domanda tre home
+		gsap.to("#second-quest", {x: 50, duration: 4, delay: 0.7, opacity: 1, ease: Power3.easeOut});  //domanda uno home
+		gsap.to("#third-quest ", {x: -50, duration: 5, delay: 1, opacity: 1, ease: Power3.easeOut});		//domanda due home
 
-		gsap.to("#ans1", {
-			x : 10,
-			duration : 3,
-			delay : 0.4,
-			opacity : 1,
-			ease : Power1.easeOut
-		});
-		gsap.to("#ans2", {
-			x : 10,
-			duration : 3,
-			delay : 0.5,
-			opacity : 1,
-			ease : Power1.easeOut
-		});
-		gsap.to("#ans3", {
-			x : 10,
-			duration : 3,
-			delay : 0.6,
-			opacity : 1,
-			ease : Power1.easeOut
-		});
+		gsap.to("#ans1", {x: 10, duration: 3, delay: 0.4, opacity: 1, ease: Power1.easeOut});
+		gsap.to("#ans2", {x: 10, duration: 3, delay: 0.5, opacity: 1, ease: Power1.easeOut});
+		gsap.to("#ans3", {x: 10, duration: 3, delay: 0.6, opacity: 1, ease: Power1.easeOut});
 
-		gsap.to("#ans4", {
-			x : 10,
-			duration : 3,
-			delay : 0.7,
-			opacity : 1,
-			ease : Power1.easeOut
-		});
-		gsap.to("#ans5", {
-			x : 10,
-			duration : 3,
-			delay : 0.8,
-			opacity : 1,
-			ease : Power1.easeOut
-		});
-		gsap.to("#ans6", {
-			x : 10,
-			duration : 3,
-			delay : 0.9,
-			opacity : 1,
-			ease : Power1.easeOut
-		});
+		gsap.to("#ans4", {x: 10, duration: 3, delay: 0.7, opacity: 1, ease: Power1.easeOut});
+		gsap.to("#ans5", {x: 10, duration: 3, delay: 0.8, opacity: 1, ease: Power1.easeOut});
+		gsap.to("#ans6", {x: 10, duration: 3, delay: 0.9, opacity: 1, ease: Power1.easeOut});
 
-		gsap.to("#ans7", {
-			x : 10,
-			duration : 3,
-			delay : 1,
-			opacity : 1,
-			ease : Power1.easeOut
-		});
-		gsap.to("#ans8", {
-			x : 10,
-			duration : 3,
-			delay : 1.1,
-			opacity : 1,
-			ease : Power1.easeOut
-		});
-		gsap.to("#ans9", {
-			x : 10,
-			duration : 3,
-			delay : 1.2,
-			opacity : 1,
-			ease : Power1.easeOut
-		});
+		gsap.to("#ans7", {x: 10, duration: 3, delay: 1, opacity: 1, ease: Power1.easeOut});
+		gsap.to("#ans8", {x: 10, duration: 3, delay: 1.1, opacity: 1, ease: Power1.easeOut});
+		gsap.to("#ans9", {x: 10, duration: 3, delay: 1.2, opacity: 1, ease: Power1.easeOut});
 	</script>
 	<script>
-		$(window).on("load", function() {
+
+		$(window).on("load", function () {
 			$("#page-loader").fadeOut("slow");
 		});
 
+
+
 		//typing animation script
 		var typed = new Typed(".typing", {
-			strings : [ "look at your privacy!!!" ],
-			typeSpeed : 120,
-			backSpeed : 80,
-			loop : true
+			strings: ["look at your privacy!!!"],
+			typeSpeed: 120,
+			backSpeed: 80,
+			loop: true
 		});
 		//toggle menu/ navbar active//
-		$(".menu-btn").click(function() {
+		$(".menu-btn").click(function () {
 			$(".navbar .menu").addClass("active");
 			$("#burger").hide();
 		});
 
 		//nav menu close//
-		$("#menu-close").click(function() {
+		$("#menu-close").click(function () {
 			$(".navbar .menu").removeClass("active");
 			$("#burger").show();
 		});
 		//nav menu close icons//
-		$(".nav_link").click(function() {
+		$(".nav_link").click(function () {
 			$(".navbar .menu").removeClass("active");
 			$("#burger").show();
 		});
+
+
 	</script>
 </body>
 

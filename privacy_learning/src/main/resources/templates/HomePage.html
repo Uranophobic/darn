@@ -2,12 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="css/stylesheet.css">
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/stylesheet.css">
 
 
 
-<title>Privacy Literacy - Homepage</title>
+	<title>Privacy Literacy - Homepage</title>
 
 </head>
 
@@ -28,8 +28,8 @@
 						<p>Parlaci un po' di te!</p>
 						<br>
 						<p>
-							<a th:href=@{/users/registrazione} target="_top">Iscriviti e
-								compila il tuo primo questionario ></a>
+							<a th:href=@{/users/registrazione} target="_top">Iscriviti e compila il
+								tuo primo questionario ></a>
 						</p>
 					</div>
 
@@ -65,8 +65,7 @@
 							primo test</a>
 					</th:block>
 					<th:block th:if="${!session.isEmpty()}">
-						<a th:href="@{/test}" class="button-test">Compila il tuo primo
-							test</a>
+						<a th:href="@{/test}" class="button-test">Compila il tuo primo test</a>
 					</th:block>
 				</div>
 
@@ -90,9 +89,8 @@
 								<h2>ARGOMENTI</h2>
 								<div class="brand_border">
 									<hr class="riga">
-									<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-										fill="currentColor" class="bi bi-file-text"
-										viewBox="0 0 16 16">
+									<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+										class="bi bi-file-text" viewBox="0 0 16 16">
 										<path
 											d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z" />
 										<path
@@ -116,11 +114,9 @@
 				</div>
 
 				<div class="row">
-					<th:block th:each="arg : ${argomentiView}"
-						th:if="${arg.getId_studio()>(argomentiView.size()-3)}">
+					<th:block th:each="arg : ${argomentiView}" th:if="${arg.getId_studio()>(argomentiView.size()-3)}">
 						<div class="col-md-6 col-lg-4 col-sm-12">
-							<a
-								th:href="@{/argomenti/argomentoView/{id}(id=${arg.id_studio})}">
+							<a th:href="@{/argomenti/argomentoView/{id}(id=${arg.id_studio})}">
 								<div class="single_service hvr-curl-top-right">
 									<div class="single_service-left">
 										<div class="icon">
@@ -129,8 +125,7 @@
 									</div>
 									<div class="single_service-body">
 										<h4 class="single_service-heading" th:text="${arg.titolo}">Nome</h4>
-										<p
-											th:text="${arg.getDescrizione().substring(0,200).concat('...')}">Testo
+										<p th:text="${arg.getDescrizione().substring(0,200).concat('...')}">Testo
 											dell'argomento</p>
 									</div>
 								</div>
@@ -154,9 +149,8 @@
 								<h2>FAVOLE</h2>
 								<div class="brand_border">
 									<hr class="riga">
-									<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-										fill="currentColor" class="bi bi-balloon-heart"
-										viewBox="0 0 16 16">
+									<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+										class="bi bi-balloon-heart" viewBox="0 0 16 16">
 										<path fill-rule="evenodd"
 											d="m8 2.42-.717-.737c-1.13-1.161-3.243-.777-4.01.72-.35.685-.451 1.707.236 3.062C4.16 6.753 5.52 8.32 8 10.042c2.479-1.723 3.839-3.29 4.491-4.577.687-1.355.587-2.377.236-3.061-.767-1.498-2.88-1.882-4.01-.721L8 2.42Zm-.49 8.5c-10.78-7.44-3-13.155.359-10.063.045.041.089.084.132.129.043-.045.087-.088.132-.129 3.36-3.092 11.137 2.624.357 10.063l.235.468a.25.25 0 1 1-.448.224l-.008-.017c.008.11.02.202.037.29.054.27.161.488.419 1.003.288.578.235 1.15.076 1.629-.157.469-.422.867-.588 1.115l-.004.007a.25.25 0 1 1-.416-.278c.168-.252.4-.6.533-1.003.133-.396.163-.824-.049-1.246l-.013-.028c-.24-.48-.38-.758-.448-1.102a3.177 3.177 0 0 1-.052-.45l-.04.08a.25.25 0 1 1-.447-.224l.235-.468ZM6.013 2.06c-.649-.18-1.483.083-1.85.798-.131.258-.245.689-.08 1.335.063.244.414.198.487-.043.21-.697.627-1.447 1.359-1.692.217-.073.304-.337.084-.398Z" />
 									</svg>
@@ -187,11 +181,9 @@
 									<img th:src="${favola.image_path}" alt="img9">
 									<figcaption>
 										<h2 th:text="${favola.titolofavola}">Titolo Favola</h2>
-										<p
-											th:text="${favola.getTestofavola().substring(0,80).concat('...')}">Contenuto
+										<p th:text="${favola.getTestofavola().substring(0,80).concat('...')}">Contenuto
 											favola</p>
-										<a
-											th:href="@{/favole/favolaView/{id}(id=${favola.id_favola})}">View
+										<a th:href="@{/favole/favolaView/{id}(id=${favola.id_favola})}">View
 											more</a>
 									</figcaption>
 								</figure>
@@ -215,9 +207,8 @@
 								<h2>ARTICOLI</h2>
 								<div class="brand_border">
 									<hr class="riga">
-									<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-										fill="currentColor" class="bi bi-newspaper"
-										viewBox="0 0 16 16">
+									<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+										class="bi bi-newspaper" viewBox="0 0 16 16">
 										<path
 											d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5v-11zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5H12z" />
 										<path
@@ -241,22 +232,8 @@
 
 				<div>
 					<div class="tab-fav">
-						<div class="iframely-embed">
-							<div class="iframely-responsive"
-								style="height: 140px; padding-bottom: 0;">
-								<a href="https://www.garanteprivacy.it"
-									data-iframely-url="//cdn.iframe.ly/api/iframe?card=small&url=https%3A%2F%2Fwww.garanteprivacy.it%2Fhome&key=c1515ef9db35aaba4ab76561af906cc4"></a>
-							</div>
-						</div>
-						<script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
-						<div class="iframely-embed">
-							<div class="iframely-responsive"
-								style="height: 140px; padding-bottom: 0;">
-								<a href="https://www.privacyitalia.eu/home/home/"
-									data-iframely-url="//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fwww.privacyitalia.eu%2F&key=c1515ef9db35aaba4ab76561af906cc4"></a>
-							</div>
-						</div>
-						<script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
+						<div class="iframely-embed"><div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a href="https://www.garanteprivacy.it" data-iframely-url="//cdn.iframe.ly/api/iframe?card=small&url=https%3A%2F%2Fwww.garanteprivacy.it%2Fhome&key=c1515ef9db35aaba4ab76561af906cc4"></a></div></div><script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
+					<div class="iframely-embed"><div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a href="https://www.privacyitalia.eu/home/home/" data-iframely-url="//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fwww.privacyitalia.eu%2F&key=c1515ef9db35aaba4ab76561af906cc4"></a></div></div><script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
 					</div>
 
 				</div>
