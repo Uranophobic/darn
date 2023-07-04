@@ -2,11 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<meta charset="ISO-8859-1">
-	<script type="text/javascript" src="../js/ConvalidazioneCampi.js"></script>
-	<link rel="stylesheet" href="../css/stylesheet.css">
-	<link rel="icon" type="image/png" href="img/logo.png" />
-	<title>Privacy Literacy - Admin Page</title>
+<meta charset="UTF-8">
+<script type="text/javascript" src="../js/ConvalidazioneCampi.js"></script>
+<link rel="stylesheet" href="../css/stylesheet.css">
+<link rel="icon" type="image/png" href="img/logo.png" />
+<title>Privacy Literacy - Admin Page</title>
 </head>
 
 <body>
@@ -19,7 +19,8 @@
 		<div class="background">
 			<p class="titolo">Modifica il tuo profilo personale</p>
 			<div th:if="${!session.isEmpty()}">
-				<p class="p-mod" th:text="'Modifica delle informazioni personali di ' + ${session.userSession.email}">
+				<p class="p-mod"
+					th:text="'Modifica delle informazioni personali di ' + ${session.userSession.email}">
 				</p>
 			</div>
 			<div class="box-profilo">
@@ -28,22 +29,15 @@
 
 					<fieldset>
 						<legend>Informazioni personali</legend>
-						<label> Password:</label>
-						<br>
-						<input th:value="${session.userSession.password}" readonly>
-						<br>
-						<label> Nome:</label>
-						<br>
-						<input th:value="${session.userSession.nome}" readonly>
-						<br>
-						<label> Cognome:</label>
-						<br>
-						<input th:value="${session.userSession.cognome}" readonly>
-						<br>
-						<label> Data di nascita:</label>
-						<br>
-						<input th:value="${session.userSession.dataNascita}" type="date" readonly>
-						<br>
+						<label> Password:</label> <br> <input
+							th:value="${session.userSession.password}" readonly> <br>
+						<label> Nome:</label> <br> <input
+							th:value="${session.userSession.nome}" readonly> <br>
+						<label> Cognome:</label> <br> <input
+							th:value="${session.userSession.cognome}" readonly> <br>
+						<label> Data di nascita:</label> <br> <input
+							th:value="${session.userSession.dataNascita}" type="date"
+							readonly> <br>
 					</fieldset>
 				</div>
 
@@ -53,33 +47,24 @@
 
 					<fieldset>
 						<legend>Sovrascrivi i campi che vuoi modificare</legend>
-						<label> Password:</label>
-						<br>
-						<input type="text" name="password">
-						<br>
-						<label> Nome:</label>
-						<br>
-						<input type="text" name="nome">
-						<br>
-						<label> Cognome:</label>
-						<br>
-						<input type="text" name="cognome">
-						<br>
-						<label> Data di nascita:</label>
-						<br>
-						<input type="date" name="dataNascita">
-						<br>
+						<label> Password:</label> <br> <input type="text"
+							name="password"> <br> <label> Nome:</label> <br>
+						<input type="text" name="nome"> <br> <label>
+							Cognome:</label> <br> <input type="text" name="cognome"> <br>
+						<label> Data di nascita:</label> <br> <input type="date"
+							name="dataNascita"> <br>
 					</fieldset>
 				</div>
 
 			</div>
 
 			<div class="sez-button">
-				<!-- con a al posto di button esce la mano piuttosto che il cursore. ho inserito il riferimento perch� dava errore -->
-				<a class=button type="submit" th:href="@{/profilo/{email} (email= ${session.userSession.email})}"
-					formmethod="get"> Torna indietro </a>
-				<br>
-				<button type="submit" th:formaction="@{/users/modifica/{email} (email=${session.userSession.email})}"
+				<!-- con a al posto di button esce la mano piuttosto che il cursore. ho inserito il riferimento perchï¿½ dava errore -->
+				<a class=button type="submit"
+					th:href="@{/profilo/{email} (email= ${session.userSession.email})}"
+					formmethod="get"> Torna indietro </a> <br>
+				<button type="submit"
+					th:formaction="@{/users/modifica/{email} (email=${session.userSession.email})}"
 					formmethod="post">Conferma le modifiche</button>
 			</div>
 

@@ -10,11 +10,11 @@ import com.privacy.web.repository.ArgomentoStudioRepository;
 import com.privacy.web.service.ArgomentoStudioService;
 
 @Service
-public class ArgomentoStudioServiceImpl implements ArgomentoStudioService{
+public class ArgomentoStudioServiceImpl implements ArgomentoStudioService {
 
 	@Autowired
 	private ArgomentoStudioRepository argRep;
-	
+
 	@Override
 	public List<ArgomentoStudio> findAllArgomenti() {
 		return (List<ArgomentoStudio>) argRep.findAll();
@@ -37,7 +37,7 @@ public class ArgomentoStudioServiceImpl implements ArgomentoStudioService{
 
 	@Override
 	public void save(ArgomentoStudio a) {
-		argRep.save(a);		
+		argRep.save(a);
 	}
 
 	@Override
@@ -47,7 +47,7 @@ public class ArgomentoStudioServiceImpl implements ArgomentoStudioService{
 
 	@Override
 	public boolean existsByLink(String link) {
-		
+
 		return argRep.existsByLinkvideo(link);
 	}
 

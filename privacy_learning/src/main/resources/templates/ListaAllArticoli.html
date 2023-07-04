@@ -2,40 +2,57 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<meta charset="ISO-8859-1">
-	<link rel="stylesheet" href="../css/style3.css">
-	<title>Darn - Articoli & News</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style3.css">
+<title>Darn - Articoli & News</title>
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-	<link rel="stylesheet" href="https://www.ionos.it/digitalguide/path/to/font-awesome/css/font-awesome.min.css">
-	<!-- ICONSSCOUT -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-		integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<link rel="stylesheet"
+	href="https://www.ionos.it/digitalguide/path/to/font-awesome/css/font-awesome.min.css">
+<!-- ICONSSCOUT -->
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+	integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+	crossorigin="anonymous">
 
-	<!-- CSS -->
-	<link rel="stylesheet" href="css/style3.css">
+<!-- CSS -->
+<link rel="stylesheet" href="css/style3.css">
 
-	<!-- libreria per il typed jq-->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
-	<script src="https://code.jquery.com/jquery-3.6.0.js"
-		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<!-- libreria per il typed jq-->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"
+	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+	crossorigin="anonymous"></script>
 
-	<!-- ScrollReveal -->
-	<script src="https://unpkg.com/scrollreveal"></script>
-	<script src="/path/to/noframework.waypoints.min.js"></script>
+<!-- ScrollReveal -->
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="/path/to/noframework.waypoints.min.js"></script>
 
-	<script src="js/gsap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Flip.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Observer.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Draggable.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/EaselPlugin.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/MotionPathPlugin.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/PixiPlugin.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/TextPlugin.min.js"></script>
+<script src="js/gsap.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Flip.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Observer.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Draggable.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/EaselPlugin.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/MotionPathPlugin.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/PixiPlugin.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/TextPlugin.min.js"></script>
 </head>
 
 
@@ -44,9 +61,11 @@
 
 	<br>
 
-	<a class="button" th:if="${!session.isEmpty()} and ${session.userSession.email.equals('admin@gmail.com')}"
+	<a class="button"
+		th:if="${!session.isEmpty()} and ${session.userSession.email.equals('admin@gmail.com')}"
 		th:href="@{/admin/createArticolo}"> Aggiungi </a>
-	<th:block th:if="${!session.isEmpty()} and (${session.userSession.email.equals('admin@gmail.com')})"
+	<th:block
+		th:if="${!session.isEmpty()} and (${session.userSession.email.equals('admin@gmail.com')})"
 		th:each="art : ${tuttiArticoli}">
 		<div class="argomenti-all">
 			<div class="box-titolo">
@@ -60,11 +79,12 @@
 				<br>
 				<h3 th:text="${art.getTitolo()}">Titolo articolo</h3>
 				<p th:text="${art.getMetaInfo()}">metainfo</p>
-				<br> <a target="_blank" style="color: blue;" th:href="${art.getLink()}"
-					th:value="${art.getLink()}">Contenuto
+				<br> <a target="_blank" style="color: blue;"
+					th:href="${art.getLink()}" th:value="${art.getLink()}">Contenuto
 					articolo</a> <br> <br> <a class=button
 					th:href="@{/admin/fixedArticolo/{id}(id=${art.getId_articolo()})}">Modifica</a>
-				<a class=button th:href="@{/admin/deleteArticolo/{id}(id=${art.getId_articolo()})}">Elimina</a>
+				<a class=button
+					th:href="@{/admin/deleteArticolo/{id}(id=${art.getId_articolo()})}">Elimina</a>
 			</div>
 
 
@@ -124,14 +144,15 @@
 		<div class="arg-sx-favole">
 			<div class="text-arg">
 				<h2>
-					<span><span class="crea" id="maiusc"> Aggiornati con le ultime notizie</span></span>
-
-					<span><span class="crea" id="normal"> Leggi una raccolta di articoli</span></span>
-					<span><span class="crea" id="normal"> Da noi selezionati</span></span>
-					<span><span class="crea" id="normal"> Che spaziano dalla protezione dei dati personali</span></span>
-					<span><span class="crea" id="normal"> Agli ultimi svilluppi tecnologici,</span></span>
-					<span><span class="crea" id="normal"> Offrendoti una panorammica completa
-							dell'attualità</span></span>
+					<span><span class="crea" id="maiusc"> Aggiornati con
+							le ultime notizie</span></span> <span><span class="crea" id="normal">
+							Leggi una raccolta di articoli</span></span> <span><span class="crea"
+						id="normal"> Da noi selezionati</span></span> <span><span
+						class="crea" id="normal"> Che spaziano dalla protezione dei
+							dati personali</span></span> <span><span class="crea" id="normal">
+							Agli ultimi svilluppi tecnologici,</span></span> <span><span
+						class="crea" id="normal"> Offrendoti una panorammica
+							completa dell'attualitÃ </span></span>
 
 				</h2>
 			</div>
@@ -142,7 +163,9 @@
 				<div class="grid-item-articoli">
 
 					<div class="iframely-embed">
-						<div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a
+						<div class="iframely-responsive"
+							style="height: 140px; padding-bottom: 0;">
+							<a
 								href="https://www.ansa.it/sito/notizie/tecnologia/internet_social/2023/05/22/multa-record-a-meta-da-12-miliardi-per-violazione-privacy_b887be88-f273-46a6-83cf-4488afe40089.html"
 								data-iframely-url="//cdn.iframe.ly/api/iframe?card=small&url=https%3A%2F%2Fwww.ansa.it%2Fsito%2Fnotizie%2Ftecnologia%2Finternet_social%2F2023%2F05%2F22%2Fmulta-record-a-meta-da-12-miliardi-per-violazione-privacy_b887be88-f273-46a6-83cf-4488afe40089.html&key=c1515ef9db35aaba4ab76561af906cc4"></a>
 						</div>
@@ -157,7 +180,9 @@
 				<div class="grid-item-articoli">
 
 					<div class="iframely-embed">
-						<div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a
+						<div class="iframely-responsive"
+							style="height: 140px; padding-bottom: 0;">
+							<a
 								href="https://www.tecnoandroid.it/2023/06/08/whatsapp-e-la-crittografia-end-to-end-come-funziona-1238307"
 								data-iframely-url="//cdn.iframe.ly/api/iframe?card=small&url=https%3A%2F%2Fwww.tecnoandroid.it%2F2023%2F06%2F08%2Fwhatsapp-e-la-crittografia-end-to-end-come-funziona-1238307&key=c1515ef9db35aaba4ab76561af906cc4"></a>
 						</div>
@@ -172,13 +197,14 @@
 			<li>
 				<div class="grid-item-articoli">
 					<div class="iframely-embed">
-						<div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a
+						<div class="iframely-responsive"
+							style="height: 140px; padding-bottom: 0;">
+							<a
 								href="https://www.startmag.it/cybersecurity/hacker-i-dati-della-polizia-di-stato-in-vendita-su-telegram/"
 								data-iframely-url="//cdn.iframe.ly/api/iframe?card=small&url=https%3A%2F%2Fwww.startmag.it%2Fcybersecurity%2Fhacker-i-dati-della-polizia-di-stato-in-vendita-su-telegram%2F&key=c1515ef9db35aaba4ab76561af906cc4"></a>
 						</div>
 					</div>
 					<script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
-
 			</li>
 
 
@@ -210,9 +236,21 @@
 		}
 	</script>
 	<script>
-		var tl = gsap.timeline({repeat: 3, repeatDelay: 5});
-		tl.to(".crea", {y: "0%", duration: 1.5, stagger: 0.2});
-		tl.fromTo(".quote2", {opacity: 0}, {opacity: 1, delay: 0.5});
+		var tl = gsap.timeline({
+			repeat : 3,
+			repeatDelay : 5
+		});
+		tl.to(".crea", {
+			y : "0%",
+			duration : 1.5,
+			stagger : 0.2
+		});
+		tl.fromTo(".quote2", {
+			opacity : 0
+		}, {
+			opacity : 1,
+			delay : 0.5
+		});
 	</script>
 	<div th:insert="fragments/footer::footer"></div>
 </body>

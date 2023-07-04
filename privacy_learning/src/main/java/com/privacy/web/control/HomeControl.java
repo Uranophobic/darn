@@ -44,23 +44,28 @@ public class HomeControl {
 	@Autowired
 	private MetaInfoService metaServ;
 
-	
+	@GetMapping("/policy")
+	public String policy(Model model) {
+		return "privacy";
+	}
+
 	@GetMapping("/icon")
 	public String icon(Model model) {
 		return "prova";
 	}
-	
+
 	@GetMapping("/prove")
 	public String icon2(Model model) {
-		List<ArgomentoStudio> allarg= argServ.findAllArgomenti();
+		List<ArgomentoStudio> allarg = argServ.findAllArgomenti();
 		model.addAttribute("allarg", allarg);
 		return "prove";
 	}
-	
+
 	@GetMapping("/index")
 	public String scroll(Model model) {
 		return "index";
 	}
+
 	@GetMapping("/index2")
 	public String scroll2(Model model) {
 		model.addAttribute("allmeta", metaServ.findAll());
@@ -84,7 +89,7 @@ public class HomeControl {
 	public String registrazione(Model model) {
 		return "forward:/utente/registrati";
 	}
-	
+
 	@GetMapping("/homepage")
 	public String argomenti2(Model model, HttpSession session) {
 		model.addAttribute("argomentiView", argServ.findAllArgomenti());
@@ -121,10 +126,8 @@ public class HomeControl {
 
 			// la sessione
 			userSession.setAttribute("userSession", u);
-		
+
 		}
-		
-		
 
 		// ed eventuali argomenti da studare
 

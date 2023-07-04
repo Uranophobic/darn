@@ -10,25 +10,31 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "utente")
-@Data //crea i metodi hashCode, equals e toString, getter e setter senza renderli visibili nella classe
-@NoArgsConstructor //crea il costruttore vuoto senza renderlo visibile nella classe
-@AllArgsConstructor //crea il costruttore con paramentri senza renderlo visibile nella classe
-
+@Data // crea i metodi hashCode, equals e toString, getter e setter
+@NoArgsConstructor // crea il costruttore vuoto
+@AllArgsConstructor // crea il costruttore con paramentri
 public class Utente {
-	
-	@Id @Column(name="email")
+
+	@Id
+	@Column(name = "email")
 	private String email;
-	@Column(name="password")
+
+	@Column(name = "password")
 	private String password;
-	@Column(name="nome")
+
+	@Column(name = "nome")
 	private String nome;
-	@Column(name="cognome")
+
+	@Column(name = "cognome")
 	private String cognome;
-	@Column(name="data_nascita")
+
+	@Column(name = "data_nascita")
 	private String dataNascita;
-	@Column(name="percentuale")
+
+	@Column(name = "percentuale")
 	private int percentuale;
-	@Column(name="livello")
+
+	@Column(name = "livello")
 	private String livello;
 
 }

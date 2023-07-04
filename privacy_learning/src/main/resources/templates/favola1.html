@@ -2,40 +2,57 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<meta charset="ISO-8859-1">
-	<link rel="stylesheet" href="../css/style3.css">
-	<title>Darn - Favole</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style3.css">
+<title>Darn - Favole</title>
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-	<link rel="stylesheet" href="https://www.ionos.it/digitalguide/path/to/font-awesome/css/font-awesome.min.css">
-	<!-- ICONSSCOUT -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-		integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<link rel="stylesheet"
+	href="https://www.ionos.it/digitalguide/path/to/font-awesome/css/font-awesome.min.css">
+<!-- ICONSSCOUT -->
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+	integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+	crossorigin="anonymous">
 
-	<!-- CSS -->
-	<link rel="stylesheet" href="css/style3.css">
+<!-- CSS -->
+<link rel="stylesheet" href="css/style3.css">
 
-	<!-- libreria per il typed jq-->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
-	<script src="https://code.jquery.com/jquery-3.6.0.js"
-		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<!-- libreria per il typed jq-->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"
+	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+	crossorigin="anonymous"></script>
 
-	<!-- ScrollReveal -->
-	<script src="https://unpkg.com/scrollreveal"></script>
-	<script src="/path/to/noframework.waypoints.min.js"></script>
+<!-- ScrollReveal -->
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="/path/to/noframework.waypoints.min.js"></script>
 
-	<script src="js/gsap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Flip.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Observer.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Draggable.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/EaselPlugin.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/MotionPathPlugin.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/PixiPlugin.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/TextPlugin.min.js"></script>
+<script src="js/gsap.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Flip.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Observer.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Draggable.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/EaselPlugin.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/MotionPathPlugin.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/PixiPlugin.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/TextPlugin.min.js"></script>
 
 </head>
 
@@ -44,76 +61,79 @@
 
 	<div class="favola-container">
 
-		<div class="titolo-fav">Lily ed il suo diario segreto </div>
+		<div class="titolo-fav">Lily ed il suo diario segreto</div>
 		<div class="corpo-fav">
 
-			<p> C'era una volta una bambina di nome Lily che amava giocare nel parco.</p>
+			<p>C'era una volta una bambina di nome Lily che amava giocare nel
+				parco.</p>
 
-			<p> Trascorreva ore correndo, giocando sulle altalene, sugli scivoli, sui trampolini e arrampicandosi sulla
-				palestra della giungla, inventandosi ogni volta avventure diverse.</p>
+			<p>Trascorreva ore correndo, giocando sulle altalene, sugli
+				scivoli, sui trampolini e arrampicandosi sulla palestra della
+				giungla, inventandosi ogni volta avventure diverse.</p>
 
-			<p> Come ogni giorno, Lily stava giocando nel parco quando vide una nuova ragazza seduta su una panchina. Le
-				sembrò sola, così Lily si avvicinò.</p>
+			<p>Come ogni giorno, Lily stava giocando nel parco quando vide
+				una nuova ragazza seduta su una panchina. Le sembrÃ² sola, cosÃ¬
+				Lily si avvicinÃ².</p>
 
-			<p>
-				// Ciao! Come ti chiami?// disse Lily,
-			</p>
+			<p>// Ciao! Come ti chiami?// disse Lily,</p>
 
-			<p>
-				// Sarah e tu?// replicò la nuova ragazza.
-			</p>
+			<p>// Sarah e tu?// replicÃ² la nuova ragazza.</p>
 
-			<p>
-				// Io sono Lily. Vuoi venire a giocare con me sull’altalena? //
-			</p>
+			<p>// Io sono Lily. Vuoi venire a giocare con me sullâaltalena?
+				//</p>
 
-			<p> Così le due si conobbero meglio e Lily apprese che Sarah si era appena trasferita in città, quindi non
-				aveva molti amici. </p>
+			<p>CosÃ¬ le due si conobbero meglio e Lily apprese che Sarah si
+				era appena trasferita in cittÃ , quindi non aveva molti amici.</p>
 
-			<p> Lily e Sarah divennero presto amiche e spesso giocavano insieme nel parco, dopo la scuola.</p>
+			<p>Lily e Sarah divennero presto amiche e spesso giocavano
+				insieme nel parco, dopo la scuola.</p>
 
-			<p> Un giorno, Lily e Sarah stavano giocando nel parco, ma Sarah notò subito che Lily non era felice come al
-				solito.</p>
+			<p>Un giorno, Lily e Sarah stavano giocando nel parco, ma Sarah
+				notÃ² subito che Lily non era felice come al solito.</p>
 
-			<p>
-				//E’ successo qualcosa?//, disse Sarah, // Sembri un po’ triste//
-			</p>
+			<p>//Eâ successo qualcosa?//, disse Sarah, // Sembri un poâ
+				triste//</p>
 
-			<p> Lily come prima cosa negò, ma successivamente confidò timidamente all’amica quello che era successo
-				poche ore prima. </p>
+			<p>Lily come prima cosa negÃ², ma successivamente confidÃ²
+				timidamente allâamica quello che era successo poche ore prima.</p>
 
-			<p>
-			// Stamattina a scuola, mentre ero al bagno, il mio amichetto Luca ha trovato e preso il mio diario
-					segreto nella mia borsa senza il mio permesso e lo ha letto davanti a tutti. Tutti hanno sentito i
-					miei segreti e ora tutti sanno per chi ho una cotta. Quando sono tornata dal bagno tutti mi
-					fissavano, mi indicavano e ridevano, ma io non capivo… finché non ho visto il diario in mano Luca //
-			</p>
+			<p>// Stamattina a scuola, mentre ero al bagno, il mio amichetto
+				Luca ha trovato e preso il mio diario segreto nella mia borsa senza
+				il mio permesso e lo ha letto davanti a tutti. Tutti hanno sentito i
+				miei segreti e ora tutti sanno per chi ho una cotta. Quando sono
+				tornata dal bagno tutti mi fissavano, mi indicavano e ridevano, ma
+				io non capivoâ¦ finchÃ© non ho visto il diario in mano Luca //</p>
 
-			<p>
-				// E lo hai detto alla maestra? //, disse Sarah incredula, la piccola Lily fece di no con il capo.
-			</p>
+			<p>// E lo hai detto alla maestra? //, disse Sarah incredula, la
+				piccola Lily fece di no con il capo.</p>
 
-			<p>
-				// Mi sono solo arrabbiata con Luca ed ho rimesso il diario nel mio zaino. Questo non mi ha fatto
-					sentire a mio agio e mi sono sentita molto in imbarazzo e derisa da tutti//
-			</p>
+			<p>// Mi sono solo arrabbiata con Luca ed ho rimesso il diario
+				nel mio zaino. Questo non mi ha fatto sentire a mio agio e mi sono
+				sentita molto in imbarazzo e derisa da tutti//</p>
 
-			<p> Sarah consolò la sua amichetta e le disse che se fosse successo di nuovo che qualcuno toccasse le sue
-				cose senza il suo permesso deve chiedere aiuto alla maestra o a un adulto senza avere vergogna, perché è
-				sbagliato usare le informazioni private di una persona senza il suo permesso, come ha fatto Luca, si
-				dice “ violare la privacy degli altri”.</p>
+			<p>Sarah consolÃ² la sua amichetta e le disse che se fosse
+				successo di nuovo che qualcuno toccasse le sue cose senza il suo
+				permesso deve chiedere aiuto alla maestra o a un adulto senza avere
+				vergogna, perchÃ© Ã¨ sbagliato usare le informazioni private di una
+				persona senza il suo permesso, come ha fatto Luca, si dice â
+				violare la privacy degli altriâ.</p>
 
-			<p> Sarah spiega che la sua mamma le ha spiegato il significato di questa parola importante: sono tutte le
-				nostre informazioni, tutto ciò che noi vogliamo tenere riservato e nessuno ha il diritto di usarle.</p>
+			<p>Sarah spiega che la sua mamma le ha spiegato il significato di
+				questa parola importante: sono tutte le nostre informazioni, tutto
+				ciÃ² che noi vogliamo tenere riservato e nessuno ha il diritto di
+				usarle.</p>
 
-			<p> Quando le persone sentono che la loro privacy viene invasa, possono sentirsi spaventate, arrabbiate e
-				violate. Sarah ha suggerito alla sua amica di mettere un lucchetto al suo diario, cosicché nessuno possa
-				leggerlo più senza il suo permesso.</p>
+			<p>Quando le persone sentono che la loro privacy viene invasa,
+				possono sentirsi spaventate, arrabbiate e violate. Sarah ha
+				suggerito alla sua amica di mettere un lucchetto al suo diario,
+				cosicchÃ© nessuno possa leggerlo piÃ¹ senza il suo permesso.</p>
 
-			<p>Lily e Sarah hanno imparato che la privacy è importante perché consente alle persone di sentirsi al
-				sicuro e a proprio agio, e che quindi è importante non solo rispettarla ma anche proteggerla .</p>
+			<p>Lily e Sarah hanno imparato che la privacy Ã¨ importante
+				perchÃ© consente alle persone di sentirsi al sicuro e a proprio
+				agio, e che quindi Ã¨ importante non solo rispettarla ma anche
+				proteggerla .</p>
 
-			<p> Fine.</p>
+			<p>Fine.</p>
 		</div>
 
 	</div>

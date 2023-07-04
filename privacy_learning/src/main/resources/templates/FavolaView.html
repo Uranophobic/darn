@@ -2,28 +2,28 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<meta charset="ISO-8859-1">
-	<script type="text/javascript" src="../js/ConvalidazioneCampi.js"></script>
-	<link rel="stylesheet" href="/css/stylesheet.css">
-	<link rel="icon" type="image/png" href="img/logo.png" />
-	<title>Privacy Literacy - Login</title>
-	<style type="text/css">
-		.imgback {
-			background-image: url([[${favola.image_path}]]);
-			background-repeat: round;
-		}
+<meta charset="UTF-8">
+<script type="text/javascript" src="../js/ConvalidazioneCampi.js"></script>
+<link rel="stylesheet" href="/css/stylesheet.css">
+<link rel="icon" type="image/png" href="img/logo.png" />
+<title>Privacy Literacy - Login</title>
+<style type="text/css">
+.imgback {
+	background-image: url([[${favola.image_path}]]);
+	background-repeat: round;
+}
 
-		fieldset {
-			padding: 1% 3% 1% 3%;
-			/*margin:1% 10% 1% 10%;*/
-			background: white;
-			opacity: 1;
-		}
+fieldset {
+	padding: 1% 3% 1% 3%;
+	/*margin:1% 10% 1% 10%;*/
+	background: white;
+	opacity: 1;
+}
 
-		legend {
-			background-color: #ffffb3;
-		}
-	</style>
+legend {
+	background-color: #ffffb3;
+}
+</style>
 </head>
 
 <body class=imgback>
@@ -32,21 +32,23 @@
 	<div class="container-home imgback">
 		<div class="background">
 			<div class="box-titolo" style="background-color: white;">
-				<div class="titolo" style="font-family: 'Tempus Sans ITC'; color: purple;"
-					th:text="${favola.getTitolofavola()}">
-					argomento</div>
+				<div class="titolo"
+					style="font-family: 'Tempus Sans ITC'; color: purple;"
+					th:text="${favola.getTitolofavola()}">argomento</div>
 			</div>
 			<fieldset>
 				<legend th:text="${favola.meta_info}">Meta-Info</legend>
 				<div>
-					<p style="font-family: 'Segoe Print'; font-size:10pt ;" th:text="${favola.testofavola}">contenuto
-					</p>
+					<p style="font-family: 'Segoe Print'; font-size: 10pt;"
+						th:text="${favola.testofavola}">contenuto</p>
 				</div>
 			</fieldset>
 			<a class="button" type="submit" th:if="${favola.getId_favola()}>1"
-				th:href="@{/favole/favolaView/{id}(id=${favola.id_favola}-1)}"> preview </a>
-			<a class="button" type="submit" th:if="${favola.getId_favola()}< ${ultimoId}"
-				th:href="@{/favole/favolaView/{id}(id=${favola.id_favola}+1)}"> next </a>
+				th:href="@{/favole/favolaView/{id}(id=${favola.id_favola}-1)}">
+				preview </a> <a class="button" type="submit"
+				th:if="${favola.getId_favola()}< ${ultimoId}"
+				th:href="@{/favole/favolaView/{id}(id=${favola.id_favola}+1)}">
+				next </a>
 
 		</div>
 	</div>
