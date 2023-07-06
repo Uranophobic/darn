@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-
 <head>
-<meta charset="UTF-8">
-<title>Darn - Lezioni & Approfondimenti</title>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="../css/style3.css">
+<title>Privacy Literacy - Argomenti</title>
 
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -16,7 +16,7 @@
 	crossorigin="anonymous">
 
 <!-- CSS -->
-<link rel="stylesheet" href="../css/style3.css">
+<link rel="stylesheet" href="css/style3.css">
 
 <!-- libreria per il typed jq-->
 <script
@@ -86,86 +86,69 @@
 
 	<div class="argomenti-all">
 
-		<th:block
-			th:if="${session.isEmpty()} or ${!(session.userSession.email.equals('admin@gmail.com'))}">
-			<div class="arg-sx">
 
-				<div class="text-arg">
-					<h2>
-						<span><span class="crea" id="maiusc">Proteggi i tuoi
-								dati,</span></span> <span><span class="crea" id="maiusc">proteggi
-								te stesso</span></span><br> <span><span class="crea" id="normal">Scopri
-								i segreti della sicurezza informatica,</span></span><br> <span><span
-							class="crea" id="normal">immergiti negli studi sulla
-								privacy,</span></span><br> <span><span class="crea" id="normal">sulla
-								sicurezza onlin e sul furto di dati.</span></span><br>
-					</h2>
-				</div>
+		<div class="arg-sx">
 
-				<div class="quote2">
-					<hr>
-					<blockquote class="quote-argomenti" contenteditable="true">
-						<q> Acquisisci le giuste competenze<br> per difendere la
-							tua sicurezza online <br> e preservare la tua privacy
-						</q>
-					</blockquote>
-					<hr>
-				</div>
-
+			<div class="text-arg">
+				<h2>
+					<span><span class="crea" id="maiusc">Proteggi i tuoi
+							dati,</span></span> <span><span class="crea" id="maiusc">proteggi
+							te stesso</span></span><br> <span><span class="crea" id="normal">Scopri
+							i segreti della sicurezza informatica,</span></span><br> <span><span
+						class="crea" id="normal">immergiti negli studi sulla
+							privacy,</span></span><br> <span><span class="crea" id="normal">sulla
+							sicurezza onlin e sul furto di dati.</span></span><br>
+				</h2>
 			</div>
-			<div class="grid-container">
 
-				<th:block th:each="arg : ${argomentiView}">
-					<div class="grid-item">
-						<fieldset>
-							<legend th:text="${arg.meta_info}">Meta-Info</legend>
-							<div class="box-argomento">
-								<h3 th:text="${arg.titolo}">Titolo Argomento</h3>
-								<p
-									th:text="${arg.getDescrizione().substring(0,150).concat('...')}">contenuto</p>
-							</div>
-							<div class="box-continua">
-								<a type="submit" class="link2"
-									th:href="@{/argomenti/argomentoView/{id}(id=${arg.id_studio})}">Continua
-								</a>
-								<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-									fill="currentColor" class="bi bi-arrow-right arrow-continua"
-									viewBox="0 0 16 16">
-									<path fill-rule="evenodd"
-										d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-								</svg>
-							</div>
-						</fieldset>
+			<div class="quote2">
+				<hr>
+				<blockquote class="quote-argomenti" contenteditable="true">
+					<q> Acquisisci le giuste competenze<br> per difendere la
+						tua sicurezza online <br> e preservare la tua privacy
+					</q>
+				</blockquote>
+				<hr>
+			</div>
 
-					</div>
-				</th:block>
-		</th:block>
+		</div>
+		
+<div class="griglia-args"> 
+<th:block th:each="arg : ${argomentiView}">
+<div class="grid-item">
+	<fieldset>
+		<legend th:text="${arg.meta_info}">Meta-Info</legend>
+	<div class="box-argomento">
+							<h3 th:text="${arg.titolo}">Titolo Argomento</h3>
+							<p
+								th:text="${arg.getDescrizione().substring(0,50).concat('...')}">contenuto</p>
+						</div>
+						<div class="box-continua">
+							<a type="submit" class="link2"
+								th:href="@{/argomenti/argomentoView/{id}(id=${arg.id_studio})}">Continua <i class="bi bi-book"></i>
+							</a>
+							
+						</div>
+	</fieldset></div>
+</th:block>
+
+</div>
 	</div>
 
-	</div>
+
 
 
 
 	<div th:insert="fragments/footer::footer"></div>
 
 	<script>
-		var tl = gsap.timeline({
-			repeat : 3,
-			repeatDelay : 5
-		});
-		tl.to(".crea", {
-			y : "0%",
-			duration : 1.5,
-			stagger : 0.2
-		});
-		tl.fromTo(".quote2", {
-			opacity : 0
-		}, {
-			opacity : 1,
-			delay : 0.5
-		});
+		var tl = gsap.timeline({repeat: 3, repeatDelay: 5});
+		tl.to(".crea", {y: "0%", duration: 1.5, stagger: 0.2});
+		tl.fromTo(".quote2", {opacity: 0}, {opacity: 1, delay: 0.5});
 	</script>
 
 </body>
+
+</html>
 
 </html>

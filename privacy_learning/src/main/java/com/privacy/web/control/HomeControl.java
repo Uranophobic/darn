@@ -44,6 +44,10 @@ public class HomeControl {
 	@Autowired
 	private MetaInfoService metaServ;
 
+	@GetMapping("/p")
+	public String p(Model model) {
+		return "prove2";
+	}
 	
 	@GetMapping("/icon")
 	public String icon(Model model) {

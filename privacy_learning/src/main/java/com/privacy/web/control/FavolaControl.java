@@ -48,6 +48,11 @@ public class FavolaControl {
 	
 	@GetMapping("/Lily-e-il-diario-segreto")
 	public String favola1(@ModelAttribute("listaFavoleHome") HttpServletRequest request, HttpServletResponse resp) {
-	 return "favola1";
+	 return "favolaLily";
+	}
+	
+	@GetMapping("/Matteo-e-il-suo-giardino-incantato")
+	public String favola2(@ModelAttribute("listaFavoleHome") HttpServletRequest request, HttpServletResponse resp) {
+	 return "favolaMatteo";
 	}
 }

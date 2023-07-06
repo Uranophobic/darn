@@ -60,6 +60,16 @@
 		url("../font/made_soulmaze/MADE\ Soulmaze\ Outline\ PERSONAL\ USE.otf");
 }
 
+@font-face {
+	font-family: "lovely";
+	src: url("../font/lovely/LovelyFont.ttf ");
+}
+
+@font-face {
+	font-family: "tale";
+	src: url("../font/TALE/Tale.ttf ");
+}
+
 * {
 	margin: 0;
 	outline: none;
@@ -865,7 +875,7 @@ hr {
 
 /************************************************ ARTICOLI ***************************************/
 
-/************************************************ ARGOMENTI ***************************************/
+/************************************************ ALL-ARGOMENTI ***************************************/
 .argomenti-all {
 	display: flex;
 	position: relative;
@@ -920,15 +930,21 @@ hr {
 	color: white;
 }
 
-.grid-container {
+/* .grid-container {
 	display: grid;
 	grid-template-columns: 33% 33% 33%;
 	grid-template-rows: auto;
 	width: 100%;
 }
-
+ */
 .grid-item {
 	transition: 0.5s ease;
+}
+
+.griglia-args {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	width: 55%;
 }
 
 .riga2 {
@@ -1007,17 +1023,17 @@ hr {
 }
 
 .box-argomento {
-	height: 150px;
+	height: 120px;
 }
 
 .box-continua {
 	/* display: inline-flex; */
 	/* margin-top: 15px; */
-	margin: auto;
-	align-content: center;
+	/* margin: auto; */
+	/* align-content: center; */
 	display: flex;
 	/* text-align: center; */
-	justify-content: center;
+	justify-content: end;
 	color: white !important;
 	/* height: 77px; */
 }
@@ -1145,18 +1161,6 @@ hr {
 	margin-top: 70px;
 }
 
-.corpo-fav {
-	display: grid;
-	position: relative;
-	/* height: 100vh; */
-	background-color: #5e7db0;
-	min-height: 30.25rem;
-	letter-spacing: 1px;
-	margin-top: 75px;
-	margin: auto;
-	width: 80%;
-}
-
 .titolo-fav1 {
 	font-size: 80px;
 	color: white;
@@ -1204,11 +1208,135 @@ hr {
 	padding: 50px;
 }
 
+/************ FAVOLA LILY **********/
+.text-lily {
+	font-family: made;
+	font-size: 55px;
+}
+
+.tit-lily {
+	font-size: 55px;
+	color: white;
+	font-weight: 900;
+	font-family: Lovely;
+	/* padding: 20px; */
+	text-align: center;
+}
+
+.corpo-fav {
+	position: relative;
+	font-family: tale;
+	font-size: 45px;
+	padding: 30px;
+	letter-spacing: 1px;
+	margin-top: 75px;
+	margin: auto;
+	letter-spacing: 1px
+}
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.parallax>* {
+	height: calc(60% + 50px);
+	/* width: 80%; */
+	/* top: -70px; */
+}
+
+.img-lily {
+	width: 50%;
+	height: fit-content;
+}
+
+.shuttleContainer>* {
+	height: 65vh;
+}
+
+.textSection {
+	/* height: 120vh; */
+	font-size: 1.5em;
+	/* padding-top: 100px; */
+	/* margin: 50px 20px; */
+	/* margin: 0px; */
+	background-color: #6736e4;
+	color: white;
+	font-family: 'Poppins', sans-serif;
+	/* font-size: 20px; */
+	padding: 0 50px;
+	/* padding-bottom: 15px; */
+}
+
+.textSection::before {
+	border-radius: 10000px;
+	box-shadow: 1px 1px 1px 1px #00b8ff;
+}
+
+.imageSection {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+	background: #6736E4;
+}
+
+.imageSection .img {
+	margin: 0px 30px;
+	border-radius: 30px;
+	flex-grow: 1;
+	/* background-color: #00b8ff; */
+	overflow: hidden;
+	box-shadow: inset 1px 1px 1px 1px #6736e4;
+}
+
+.imageSection .img .image {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	/* background: url('https://source.unsplash.com/random'); */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	box-shadow: inset 0 1px 14px 9px #341f56 45;
+	/* border-radius: 100px; */
+	border-radius: 30px;
+}
+
+.grid-lily {
+	display: flex;
+}
+
+.grid-lily p {
+	width: 50%;
+	/* text-align: center; */
+	/* display: flex; */
+	/* align-content: center; */
+	margin: auto;
+}
+#lily {
+	background: #6736E4;
+	margin-top: 90px;
+
+}
+
+.dialogo1 {
+	font-size: 25px;
+}
+
+.lovely {
+	font-family: lovely;
+	font-size: 35px;
+	letter-spacing: 1px;
+}
+
+.inline {
+	display: inline;
+	letter-spacing: 4px;
+}
 /************************************************* ARTICOLI ******************************/
 .articoli-all {
-	display: flex;
+	/* display: flex; */
 	position: relative;
-	height: 85vh;
+	height: 185vh;
 	background-color: #5e7db0;
 	min-height: 30.25rem;
 	letter-spacing: 1px;
@@ -1217,12 +1345,13 @@ hr {
 
 .grid-container-articoli {
 	display: grid;
-	grid-template-columns: 100%;
-	grid-template-rows: 30% 30% 30%;
-	/* width: 100%; */
-	/* column-gap: 25px; */
+	/* grid-template-columns: 100%; */
+	grid-template-columns: 32% 32% 32%;
+	width: 100%;
+	column-gap: 25px;
 	/* margin: auto; */
 	margin-top: 25px;
+	padding: 40px;
 }
 
 .grid-container-articoli li {
@@ -1238,7 +1367,7 @@ hr {
 }
 
 .arg-sx-favole {
-	display: grid;
+	/* display: grid; */
 	/* grid-template-columns: 50% 50%; */
 	transition: 0.5s ease;
 	color: var(--bianco);
@@ -1247,7 +1376,7 @@ hr {
 	grid-template-columns: auto;
 	/* margin: auto; */
 	/* row-gap: 10px; */
-	width: 60%;
+	/* width: 60%; */
 	grid-template-rows: 30% 30%;
 }
 
@@ -1697,10 +1826,8 @@ hr {
 
 /*************************************** REGISTRAZIONE ******************************/
 /**********************************************************REGISTRAZIONE****************************************************************************/
-
-#mobile{
-	display:none;
-
+#mobile {
+	display: none;
 }
 
 .corpoReg {
@@ -1969,9 +2096,9 @@ hr {
 }
 
 .checkbox-container {
-	display: none;font-size: 18px;
+	display: none;
+	font-size: 18px;
 }
-
 
 #label-check {
 	font-weight: bold;
@@ -2320,10 +2447,10 @@ section .formArea div#professionalInfo {
 		grid-template-rows: 40% 40%;
 	}
 	.grid-item fieldset {
-		height: 265px;
+		height: 195px;
 		width: 95%;
 		display: grid;
-		grid-template-rows: 70% 30%;
+		grid-template-rows: 60% 40%;
 		row-gap: 25px;
 	}
 	.arg-sx {
@@ -2591,8 +2718,24 @@ section .formArea div#professionalInfo {
 		right: -97px;
 	}
 	#my-textarea {
-	width: 215px;
+		width: 215px;
+	}
 
+	/** favola lily responsive*/
+	.parallax > * {
+	height: calc(40% + 150px);
+	/* width: 80%; */
+	/* top: -70px; */
+}
+	.textSection {
+		font-size: 1.3em;
+		margin-bottom: 0;
+	}
+	.dialogo1 {
+		font-size: 20px;
+	}
+	.shuttleContainer > * {
+	height: 30vh;
 }
 }
 
@@ -2698,6 +2841,15 @@ section .formArea div#professionalInfo {
 	.row-lezioni {
 		width: 95%;
 	}
+	/** lily responsive*/
+	.parallax > * {
+	height: calc(55% + 62px);
+	/* width: 80%; */
+	/* top: -70px; */
+}.textSection {
+	font-size: 1.1em;
+}
+
 }
 
 @media screen and (max-width: 450px) {
@@ -2861,30 +3013,38 @@ section .formArea div#professionalInfo {
 	.titolo-test {
 		width: 80%;
 	}
-	
+
 	/**** responsive registrazione **/
-
-
-#hide{
-	display:none;
-}
-
-#mobile {
+	#hide {
+		display: none;
+	}
+	#mobile {
+		display: block;
+		background-color: white;
+		border-radius: 5px;
+		padding: 25px 20px 0px 20px;
+		margin: auto;
+		height: 290vh;
+	}
+	.sotto-titReg {
+		text-align: center;
+		font-size: 18px;
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+	/*lily responsive*/
+	.grid-lily {
 	display: block;
-	background-color: white;
-	border-radius: 5px;
-	padding: 25px 20px 0px 20px;
-	margin: auto;
-	height: 290vh;
-}
+}.grid-lily p {
+	 width: 100%; 
+	/* text-align: center; */
+	/* display: flex; */
+	/* align-content: center; */
+	/* margin: auto; */
+}.img-lily {
+	 width: 100%; 
 
-.sotto-titReg {
-	text-align:center;
-	font-size: 18px;
-	margin-top:5px;
-	margin-bottom: 5px;
 }
-
 }
 
 @media screen and (max-width: 425px) {
@@ -2944,6 +3104,11 @@ section .formArea div#professionalInfo {
 	.titolo-test {
 		width: 85%;
 	}
+	/*lily responsive*/
+	#lily {
+
+	margin-top: 90px;
+}
 }
 
 @media screen and (max-width: 375px) {
@@ -3040,8 +3205,11 @@ section .formArea div#professionalInfo {
 		text-align: inherit;
 		font-size: 18px;
 	}
-	
 	#mobile {
-	height: 335vh;
+		height: 335vh;
+	}
+	/*lily responsive*/
+	.textSection {
+	font-size: 1em;
 }
 }

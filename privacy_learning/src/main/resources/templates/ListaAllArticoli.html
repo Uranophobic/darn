@@ -92,67 +92,16 @@
 	</th:block>
 	<!--  ALTRIMENTI -->
 
-	<!--<th:block th:if="${session.isEmpty()} or ${!(session.userSession.email.equals('admin@gmail.com'))}">
 
-			<button class="search-button" onclick="ricerca()"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-					height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-					<path
-						d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-				</svg></button>
-			<input type="text" id="barra-ricerca" placeholder="Digita un hashtag">
-
-			<ul id="elenco">
-
-				<div class="grid-container">
-					<th:block th:each="art : ${tuttiArticoli}">
-						<li>
-							<div class="grid-item">
-
-								<div class="titolo" th:text="${art.getTitolo()}">titolo
-									argomento</div>
-								<hr class="riga2">
-								<div class="hashtag">
-
-									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-										class="bi bi-bookmarks" viewBox="0 0 16 16">
-										<path
-											d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4zm2-1a1 1 0 0 0-1 1v10.566l3.723-2.482a.5.5 0 0 1 .554 0L11 14.566V4a1 1 0 0 0-1-1H4z" />
-										<path
-											d="M4.268 1H12a1 1 0 0 1 1 1v11.768l.223.148A.5.5 0 0 0 14 13.5V2a2 2 0 0 0-2-2H6a2 2 0 0 0-1.732 1z" />
-									</svg>
-
-									<p class="meta-info" th:text="'#' + ${art.getMetaInfo()}"></p>
-
-								</div>
-
-								 anteprima dei link 
-								<a th:href="${art.getLink()}" class="embedly-card link" data-card-controls="1">
-									<a class="link" th:text="${art.getLink()}" th:href="${art.getLink()}"></a>
-
-
-
-							</div>
-						</li>
-
-
-
-					</th:block>
-				</div>
-			</ul>
-		</th:block>-->
 	<div class="articoli-all">
 		<div class="arg-sx-favole">
 			<div class="text-arg">
 				<h2>
-					<span><span class="crea" id="maiusc"> Aggiornati con
-							le ultime notizie</span></span> <span><span class="crea" id="normal">
-							Leggi una raccolta di articoli</span></span> <span><span class="crea"
-						id="normal"> Da noi selezionati</span></span> <span><span
-						class="crea" id="normal"> Che spaziano dalla protezione dei
-							dati personali</span></span> <span><span class="crea" id="normal">
-							Agli ultimi svilluppi tecnologici,</span></span> <span><span
-						class="crea" id="normal"> Offrendoti una panorammica
-							completa dell'attualitÃ </span></span>
+					<span><span class="crea" id="maiusc"> Aggiornati con le ultime notizie </span></span> 
+					<span><span class="crea" id="normal"> Dalla protezione dei dati personali ai recenti sviluppi tecnologici, offriamo una panoramica completa dell'attualità:</span></span> 
+					<span><span class="crea" id="normal"> la tua privacy e la sicurezza dei tuoi dati sono la nostra priorità!</span></span> 
+					<span><span class="crea" id="normal">Forniamo informazioni affidabili e approfondite su leggi, violazioni dei dati, politiche delle piattaforme digitali e innovazioni tecnologiche che influenzano la tua privacy. </span></span> 
+					<span><span class="crea" id="normal"> I nostri articoli offrono una prospettiva diversificata e ti aiutano a comprendere le sfide e le opportunità attuali della privacy.</span></span>
 
 				</h2>
 			</div>
@@ -237,8 +186,7 @@
 	</script>
 	<script>
 		var tl = gsap.timeline({
-			repeat : 3,
-			repeatDelay : 5
+		
 		});
 		tl.to(".crea", {
 			y : "0%",
