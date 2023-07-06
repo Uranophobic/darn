@@ -2,58 +2,93 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<meta charset="ISO-8859-1">
-	<link rel="stylesheet" href="../css/style3.css">
-	
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/style3.css">
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-	<link rel="stylesheet" href="https://www.ionos.it/digitalguide/path/to/font-awesome/css/font-awesome.min.css">
-	<!-- ICONSSCOUT -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-		integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
-	<!-- CSS -->
-	<link rel="stylesheet" href="css/style3.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<link rel="stylesheet"
+	href="https://www.ionos.it/digitalguide/path/to/font-awesome/css/font-awesome.min.css">
+<!-- ICONSSCOUT -->
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+	integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+	crossorigin="anonymous">
 
-	<!-- libreria per il typed jq-->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
-	<script src="https://code.jquery.com/jquery-3.6.0.js"
-		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<!-- CSS -->
+<link rel="stylesheet" href="css/style3.css">
 
-	<!-- ScrollReveal -->
-	<script src="https://unpkg.com/scrollreveal"></script>
-	<script src="/path/to/noframework.waypoints.min.js"></script>
+<!-- libreria per il typed jq-->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"
+	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+	crossorigin="anonymous"></script>
 
-	<script src="js/gsap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Flip.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Observer.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Draggable.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/EaselPlugin.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/MotionPathPlugin.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/PixiPlugin.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/TextPlugin.min.js"></script>
-	<title>Darn</title>
+<!-- ScrollReveal -->
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="/path/to/noframework.waypoints.min.js"></script>
+
+<script src="js/gsap.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Flip.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Observer.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Draggable.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/EaselPlugin.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/MotionPathPlugin.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/PixiPlugin.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/TextPlugin.min.js"></script>
+<title>Darn</title>
 </head>
 
 <body th:fragment="header">
 	<div class="navbar">
 		<div class="max-width">
-			<div class="logo">
-				<a th:href="@{/index2}" class="darn">DARN</a><i class="bi bi-exclamation-triangle-fill"></i>
-				<a th:href="@{/index2}" class="typing"></a>
-			</div>
+
+			<th:block th:if="${!session.isEmpty()}">
+				<div class="logo2">
+					<a th:href="@{/index2}" class="darn">DARN</a><i
+						class="bi bi-exclamation-triangle-fill"></i>
+				</div>
+			</th:block>
+
+			<th:block th:if="${session.isEmpty()}">
+				<div class="logo">
+					<a th:href="@{/index2}" class="darn">DARN</a><i
+						class="bi bi-exclamation-triangle-fill"></i> <a
+						th:href="@{/index2}" class="typing"></a>
+				</div>
+			</th:block>
+
 			<ul class="menu">
 				<li><a th:href="@{/index2}" class="active">Home</a></li>
-				<li><a th:href="@{/argomenti/studia-con-noi}">Studia con noi</a></li>
-				<li><a th:href="@{/favole/leggi-una-favola}">Leggi una favola</a></li>
-				<li><a th:href="@{/article/leggi-un-articolo}">Notizie di attualità</a></li>
-				<li><a th:if="${session.isEmpty()}" th:href="@{/login}">Ettettua il test</a></li>
-				<li><a th:if="${!session.isEmpty()}" th:href="@{/test}">Effettua il test</a></li>
-				<th:block th:if="${!session.isEmpty()} and (${session.userSession.email.equals('admin@gmail.com')})">
+				<li><a th:href="@{/argomenti/studia-con-noi}">Studia con
+						noi</a></li>
+				<li><a th:href="@{/favole/leggi-una-favola}">Leggi un
+						racconto</a></li>
+				<li><a th:href="@{/article/leggi-un-articolo}">Notizie di
+						attualità </a></li>
+				<li><a th:if="${session.isEmpty()}" th:href="@{/login}">Ettettua
+						il test</a></li>
+				<li><a th:if="${!session.isEmpty()}" th:href="@{/test}">Effettua
+						il test</a></li>
+				<th:block
+					th:if="${!session.isEmpty()} and (${session.userSession.email.equals('admin@gmail.com')})">
 					<a th:href="@{/admin/lista-utenti}">Utenti</a>
 					<a th:href="@{/admin/lista-meta_info}"> MetaInfo </a>
 				</th:block>
@@ -65,51 +100,47 @@
 
 				<th:block th:unless="${session.isEmpty()}">
 					<li><a class="icon" type="submit"
-							th:href="@{/profilo/{email} (email=${session.userSession.email})}"> Area Personale </a></li>
-					<li><a class="icon" type="submit" th:href="@{/users/logout}"> Logout</a></li>
+						th:href="@{/profilo/{email} (email=${session.userSession.email})}">
+							Area Personale </a></li>
+					<li><a class="icon" type="submit" th:href="@{/users/logout}">
+							Logout</a></li>
 				</th:block>
-				<i class="fas fa-times-circle menu-close" id="menu-close">
-				</i>
+				<i class="fas fa-times-circle menu-close" id="menu-close"> </i>
 			</ul>
 			<div class="menu-btn">
 				<i class="fas fa-bars" id="burger"></i>
 			</div>
 		</div>
 	</div>
-<script>
+	<script>
+		$(window).on("load", function() {
+			$("#page-loader").fadeOut("slow");
+		});
 
-						$(window).on("load", function () {
-							$("#page-loader").fadeOut("slow");
-						});
+		//typing animation script
+		var typed = new Typed(".typing", {
+			strings : [ "look at your privacy!!!" ],
+			typeSpeed : 120,
+			backSpeed : 80,
+			loop : true
+		});
+		//toggle menu/ navbar active//
+		$(".menu-btn").click(function() {
+			$(".navbar .menu").addClass("active");
+			$("#burger").hide();
+		});
 
-
-
-						//typing animation script
-						var typed = new Typed(".typing", {
-							strings: ["look at your privacy!!!"],
-							typeSpeed: 120,
-							backSpeed: 80,
-							loop: true
-						});
-						//toggle menu/ navbar active//
-						$(".menu-btn").click(function () {
-							$(".navbar .menu").addClass("active");
-							$("#burger").hide();
-						});
-
-						//nav menu close//
-						$("#menu-close").click(function () {
-							$(".navbar .menu").removeClass("active");
-							$("#burger").show();
-						});
-						//nav menu close icons//
-						$(".nav_link").click(function () {
-							$(".navbar .menu").removeClass("active");
-							$("#burger").show();
-						});
-
-
-					</script>
+		//nav menu close//
+		$("#menu-close").click(function() {
+			$(".navbar .menu").removeClass("active");
+			$("#burger").show();
+		});
+		//nav menu close icons//
+		$(".nav_link").click(function() {
+			$(".navbar .menu").removeClass("active");
+			$("#burger").show();
+		});
+	</script>
 </body>
 
 </html>

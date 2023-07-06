@@ -1,6 +1,6 @@
 function checkEmail() {
-    var input = document.getElementsByName("email")[0];
-    var button = document.getElementById("Registrati");
+     var input = document.getElementsByName("email")[0];
+    var button = document.getElementById("submitButton");
     var check = /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     var esito;
     if (!input.value.match(check)) {
@@ -19,43 +19,57 @@ function checkEmail() {
     return esito;
 }
 
-function checkPassword() {
-    var input = document.getElementsByName("pwd")[0];
-    var button = document.getElementById("Registrati");
-    var check = /^[A-Za-z0-9.]{3,16}$/;
+function checkPassword(event) {
+    var input = document.getElementsByName("password")[0];
+    var button = document.getElementById("submitButton");
+    var errorMessage = document.getElementById("errorMessage");
     var esito;
-    if (!input.value.match(check)) {
-        $('#pwd').css("border-bottom", "2px solid #BB0000");
-        $('#rsPassword').css("display", "inline");
-        $('#rsPassword').css("color", "#BB0000").html('Password non valida');
-        $('#pwd').css("color", "#BB0000");
+
+    // Verifica se la password non rispetta le caratteristiche richieste
+    if (input.value.length < 8 || input.value.length > 16 ||
+        !/[A-Z]/.test(input.value) ||
+        !/[0-9]/.test(input.value) ||
+        !/[!@#$%^&*]/.test(input.value)) {
+
+        // Mostra il messaggio di errore
+        $('#password').css("border-bottom", "2px solid #BB0000");
+        errorMessage.textContent = 'La password non rispetta le caratteristiche richieste';
         button.setAttribute("type", "button");
         esito = false;
-    } else if (input.value.match(check)) {
-        $('#pwd').css("border-bottom", "2px solid green");
-        $('#rsPassword').css("display", "none");
-        $('#pwd').css("color", "#1E1E24");
+    } else {
+        // La password rispetta tutte le regole
+        $('#password').css("border-bottom", "2px solid green");
+        errorMessage.textContent = '';
         esito = true;
     }
+
+    if (event.keyCode === 13) {
+        if (!esito) {
+            event.preventDefault();
+        }
+    }
+
     return esito;
 }
 
+
+
 function checkNome() {
     var input = document.getElementsByName("nome")[0];
-    var button = document.getElementById("Registrati");
+    var button = document.getElementById("submitButton");
     var check = /^[A-Za-z]{2,32}$/;
     var esito;
     if (!input.value.match(check)) {
-        $('#name').css("border-bottom", "2px solid #BB0000");
+        $('#nome').css("border-bottom", "2px solid #BB0000");
         $('#rsNome').css("display", "inline");
         $('#rsNome').css("color", "#BB0000").html('Nome non valido');
-        $('#name').css("color", "#BB0000");
+        $('#nome').css("color", "#BB0000");
         button.setAttribute("type", "button");
         esito = false;
     } else if (input.value.match(check)) {
-        $('#name').css("border-bottom", "2px solid green");
+        $('#nome').css("border-bottom", "2px solid green");
         $('#rsNome').css("display", "none");
-        $('#name').css("color", "#1E1E24");
+        $('#nome').css("color", "#1E1E24");
         esito = true;
     }
     return esito;
@@ -63,27 +77,27 @@ function checkNome() {
 
 function checkCognome() {
     var input = document.getElementsByName("cognome")[0];
-    var button = document.getElementById("Registrati");
+    var button = document.getElementById("submitButton");
     var check = /^[A-Za-z]{2,32}$/;
     var esito;
     if (!input.value.match(check)) {
-        $('#surname').css("border-bottom", "2px solid #BB0000");
+        $('#cognome').css("border-bottom", "2px solid #BB0000");
         $('#rsCognome').css("display", "inline");
         $('#rsCognome').css("color", "#BB0000").html('Cognome non valido');
-        $('#surname').css("color", "#BB0000");
+        $('#cognome').css("color", "#BB0000");
         button.setAttribute("type", "button");
         esito = false;
     } else if (input.value.match(check)) {
-        $('#surname').css("border-bottom", "2px solid green");
+        $('#cognome').css("border-bottom", "2px solid green");
         $('#rsCognome').css("display", "none");
-        $('#surname').css("color", "#1E1E24");
+        $('#cognome').css("color", "#1E1E24");
         esito = true;
     }
     return esito;
 }
 
 function checkRegistrationSubmit() {
-    var button = document.getElementById("Registrati");
+    var button = document.getElementById("submitButton");
     if (checkEmail() && checkPassword() && checkNome() && checkCognome()) {
         button.setAttribute("type", "submit");
     }

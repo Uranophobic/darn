@@ -2,11 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<meta charset="ISO-8859-1">
-	<script type="text/javascript" src="../js/ConvalidazioneCampi.js"></script>
-	<link rel="stylesheet" href="/css/stylesheet.css">
-	<link rel="icon" type="image/png" href="img/logo.png" />
-	<title>Privacy Literacy - Admin Page</title>
+<meta charset="UTF-8">
+<script type="text/javascript" src="../js/ConvalidazioneCampi.js"></script>
+<link rel="stylesheet" href="/css/stylesheet.css">
+<link rel="icon" type="image/png" href="img/logo.png" />
+<title>Privacy Literacy - Admin Page</title>
 </head>
 
 <body>
@@ -15,18 +15,21 @@
 	<div class="container-home">
 		<div class="background">
 			<!-- CONTROLLO CHE L'UTENTE SIA ADMIN -->
-			<th:block th:if="${!session.isEmpty()} and (${session.userSession.email.equals('admin@gmail.com')})">
-				<form th:action="@{/modificaFavola/{id} (id=${favola.id_favola})}" th:object="${favola}" method="post">
+			<th:block
+				th:if="${!session.isEmpty()} and (${session.userSession.email.equals('admin@gmail.com')})">
+				<form th:action="@{/modificaFavola/{id} (id=${favola.id_favola})}"
+					th:object="${favola}" method="post">
 
 					<div class="box-titolo">
 						<div class="titolo">
 							<input name=titolo th:value="${favola.titolofavola}">
 						</div>
 					</div>
-					<fieldset style="padding:1% 3% 1% 3%; margin:1% 10% 1% 10%;">
+					<fieldset style="padding: 1% 3% 1% 3%; margin: 1% 10% 1% 10%;">
 						<legend>
 							<select name="metainfo" id="metainfo">
-								<option selected="selected" disabled="disabled" th:value="${favola.getMeta_info()}"
+								<option selected="selected" disabled="disabled"
+									th:value="${favola.getMeta_info()}"
 									th:text="${favola.meta_info}"></option>
 								<th:block th:each="meta : ${metainfo}">
 									<option th:value="${meta.keyword}" th:text="${meta.keyword}"></option>
@@ -34,22 +37,24 @@
 							</select>
 						</legend>
 						<div class="box-argomento">
-							<input style="width: 100%;" name=descrizione th:value="${favola.testofavola}">
+							<input style="width: 100%;" name=descrizione
+								th:value="${favola.testofavola}">
 						</div>
-						<br>
-						<a>path immagine sfondo:</a>
-						<input name=image th:value="${favola.image_path}">
+						<br> <a>path immagine sfondo:</a> <input name=image
+							th:value="${favola.image_path}">
 					</fieldset>
 
 
-					<a type="submit" class="button" th:href="@{/admin/modificaFavola/{id} (id=${favola.id_favola})}">
-						Modifica </a>
-					<a type="submit" class="button" th:href="@{/favole/leggi-una-favola}">Annulla </a>
+					<a type="submit" class="button"
+						th:href="@{/admin/modificaFavola/{id} (id=${favola.id_favola})}">
+						Modifica </a> <a type="submit" class="button"
+						th:href="@{/favole/leggi-una-favola}">Annulla </a>
 				</form>
 			</th:block>
 
 			<!-- SE NON SI TRATTA DELL' UTENTE ADMIN -->
-			<th:block th:if="${session.isEmpty()} or ${!(session.userSession.email.equals('admin@gmail.com'))}">
+			<th:block
+				th:if="${session.isEmpty()} or ${!(session.userSession.email.equals('admin@gmail.com'))}">
 				<h1>NON HAI L'AUTORIZZAZIONE PER MODIFICARE QUESTO UTENTE</h1>
 			</th:block>
 		</div>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html xmlns:th="http//www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<link rel="stylesheet"
+	href="https://www.ionos.it/digitalguide/path/to/font-awesome/css/font-awesome.min.css">
+<!-- ICONSSCOUT -->
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+	integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+	crossorigin="anonymous">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../css/style3.css">
+
+<!-- libreria per il typed jq-->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"
+	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+	crossorigin="anonymous"></script>
+
+<!-- ScrollReveal -->
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="/path/to/noframework.waypoints.min.js"></script>
+
+<script src="js/gsap.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Flip.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Observer.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Draggable.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/EaselPlugin.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/MotionPathPlugin.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/PixiPlugin.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/TextPlugin.min.js"></script>
+
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script
+	scr="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script
+	scr="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="../js/ConvalidazioneCampi.js"></script>
+
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+
+<style>
+
+</style>
+</head>
+
+<body th:fragment="policy">
+	<div class="my-policy">
+		<h2 style="text-align: center">Informativa sulla Privacy Policy</h2>
+		<br>
+		<p>La presente informativa viene resa in ossequio all'art. 13 del
+			Regolamento 2016/679 (GDPR), ai sensi dell'art. 13 del d.lgs. n.
+			196/2003 (Codice in materia di protezione dei dati personali) agli
+			utenti che accedono al sito web DARN: Look At Your Privacy! ed è
+			relativa a tutti i dati personali trattati secondo le modalità di
+			seguito indicate.</p>
+		<br>
+		<h2>IL TITOLARE DEL TRATTAMENTO</h2>
+		<p>Il Titolare del trattamento dei dati personali raccolti è
+			Università degli Studi di Salerno, unisa.it</p>
+		<br>
+		<h2>DATI RACCOLTI</h2>
+		<p>
+			I dati personali trattati sono raccolti in quanto forniti
+			direttamente dall'interessato o forniti automaticamente. I dati
+			forniti direttamente dall'interessato sono tutti i dati personali che
+			siano forniti al Titolare del Trattamento con qualsiasi modalità,
+			direttamente dall'interessato. In particolare sono raccolti e
+			trattati i seguenti dati personali: nome, cognome, email, password,
+			data di nascita. <br> I dati raccolti automaticamente sono i
+			dati di navigazione. Tali dati, pur non essendo raccolti al fine di
+			essere associati all'identità dell'utente, potrebbero indirettamente,
+			mediante elaborazione e associazioni con dati raccolti dal Titolare,
+			consentire la sua identificazione.
+		</p>
+		<br>
+		<h2>BASE GIURIDICA E FINALITA' DEL TRATTAMENTO</h2>
+
+		<p>I dati sono trattati esclusivamente per le finalità per le
+			quali sono raccolti, come di seguito descritte.</p>
+		<br>
+
+		<p>Utilizziamo i dati forniti dagli interessati per: registrazione
+			e accesso al sito, valutazione e indagine sul livello di
+			consapevolezza sulla privacy di ogni utente iscritto al sito. Il
+			conferimento dei dati elencati nella sezione "Dati Raccolti" per le
+			finalità di cui sopra citate è obbligatorio per consentire all'utente
+			di accedere al servizio. Per tale ragione il consenso è obbligatorio
+			e l'eventuale rifiuto al trattamento ovvero il mancato, inesatto o
+			parziale conferimento dei dati potrebbe avere come conseguenza
+			l'impossibilità di una corretta erogazione del servizio.</p>
+		<br>
+		<h2>REVOCA DEL CONSENSO</h2>
+
+		<p>L'interessato può revocare il proprio consenso alla ricezione
+			di comunicazioni promozionali e commerciali immediatamente, inviando
+			richiesta all'indirizzo email nomeDiFantasia@gmail.com oppure
+			cliccando sull'apposito link di disiscrizione che potrà trovare nel
+			footer di ogni mail promozionale e commerciale ricevuta.</p>
+		<br>
+
+		<h2>MODALITA' DEL TRATTAMENTO</h2>
+
+		<p>
+			I dati personali sono trattati con strumenti automatizzati per il
+			tempo strettamente necessario a conseguire gli scopi per cui sono
+			stati raccolti, prevedendo in ogni caso la verifica annuale dei dati
+			conservati al fine di cancellare quelli ritenuti obsoleti, salvo che
+			la legge non preveda obblighi di archiviazione. Il trattamento dei
+			dati avviene di norma presso la sede della società DARN, da personale
+			o collaboratori esterni debitamente designati quali responsabili del
+			trattamento. L'elenco completo dei responsabili del trattamento e
+			degli Incaricati al trattamento dei dati personali può essere
+			richiesto inviando apposita richiesta all'indirizzo email
+			nomeDiFantasia@gmail.com. <br> L'iscrizione e il trattamento
+			relativo sono ritenuti validi fino alla disiscrizione da parte
+			dell'utente, presente in ogni email, oppure dopo 12 mesi dall'ultima
+			comunicazione di cui abbia evidenza di interazione diretta (click,
+			apertura, risposta). Specifiche misure di sicurezza sono osservate
+			per prevenire la perdita dei dati, usi illeciti o non corretti ed
+			accessi non autorizzati.
+
+		</p>
+		<br>
+		<h2>DIRITTI DELL'INTERESSATO</h2>
+		<p>Ai sensi dell'art. 7 del Codice della Privacy e dell'art. 13
+			GDPR ciascun utente ha diritto di ottenere la conferma dell'esistenza
+			o meno dei suoi dati personali, anche se non ancora registrati, e la
+			loro comunicazione in forma intellegibile. In particolare,
+			l'interessato ha diritto di ottenere da DARN l'indicazione:
+			dell'origine dei dati personali; della finalità e delle modalità di
+			trattamento; della logica applicata in caso di trattamento effettuato
+			con l'ausilio di strumenti elettronici/informatici; gli estremi
+			identificativi del titolare, dei responsabili e delrappresentante
+			designato; dei soggetti e delle categorie di soggetti ai quali i dati
+			possono esserecomunicati o che possono venirne a conoscenza in
+			qualità di rappresentante designato nel territorio dello Stato, di
+			responsabili o incaricati. Inoltre l'interessato ha diritto di
+			ottenere da DARN l'aggiornamento, la rettificazione ovvero
+			l'integrazione dei propri dati; la cancellazione, la trasformazione
+			in forma anonima o il blocco dei dati trattati in violazione di
+			legge; l'accesso ai propri dati e cioè la conferma che sia o meno in
+			corso un trattamento didati personali che lo riguardano; la
+			limitazione del trattamento, la portabilità del dato, cioè il diritto
+			di ricevere in formato strutturato i dati personali che lo
+			riguardano; diritto di reclamo all'Autorità di controllo. Infine
+			l'interessato ha il diritto di opporsi, in tutto o in parte, per
+			motivi legittimi al trattamento dei dati personali che lo riguardano,
+			ancorché pertinenti allo scopo della raccolta. In particolare
+			l'interessato ha il diritto di opporsi al trattamento di dati
+			personali che lo riguardano ai fini di invio di materiale
+			pubblicitario commerciale o di vendita diretta o per il compimento di
+			ricerche di mercato o di comunicazione commerciale. Le richieste di
+			cui ai punti precedenti dovranno essere inviate via email
+			all'indirizzo nomeDiFantasia@gmail.com.</p>
+
+		<br>
+		<h2>AGGIORNAMENTI E MODIFICHE</h2>
+		<p>DARN si riserva il diritto di modificare, integrare o
+			aggiornare periodicamente la presente Informativa in ossequio alla
+			normativa applicabile o ai provvedimenti adottati dal Garante per la
+			Protezione dei dati personali. Le suddette modifiche o integrazioni
+			saranno portate a conoscenza degli interessati mediante link alla
+			pagina di Privacy Policy presente nel sito web e saranno comunicate
+			direttamente agli interessati a mezzo email. Invitiamo gli utenti a
+			prendere visione della Privacy Policy con regolarits, per verificare
+			l'Informativa aggiornata e decidere se continuare o meno ad usufruire
+			dei servizi offerti. Maggiori informazioni
+			https://www.iperdigital.com/news/gdpr-come-scrivere-una-corretta-privacy-policy/</p>
+
+		
+	</div>
+<!--  privacy policy -->
+	<script>
+	// Funzione per verificare se l'utente ha scrollato fino alla fine del div
+	function isDivScrollAtBottom() {
+	  var container = document.querySelector('.my-policy');
+	  return container.scrollTop + container.clientHeight >= container.scrollHeight;
+	}
+
+	// Funzione per mostrare il checkbox quando l'utente ha scrollato fino alla fine del div
+	function showCheckbox() {
+	  var checkboxContainer = document.querySelector('.checkbox-container');
+	  checkboxContainer.style.display = 'block';
+	}
+
+	// Funzione per animare l'apparizione del checkbox con GSAP
+	function animateCheckbox() {
+	  var checkboxContainer = document.querySelector('.checkbox-container');
+	  gsap.from(checkboxContainer, { opacity: 0, duration: 1 });
+	}
+
+	// Event listener per controllare lo scroll del div
+	var container = document.querySelector('.my-policy');
+	container.addEventListener('scroll', function() {
+	  if (isDivScrollAtBottom()) {
+	    showCheckbox();
+	    animateCheckbox();
+	  }
+	});
+
+	</script>
+	
+</body>
+
+</html>

@@ -3,7 +3,7 @@
 
 <head>
 
-<meta charset="UTF-8" />
+<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -55,60 +55,79 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/TextPlugin.min.js"></script>
 <style>
-@import "compass/css3";
+@import
+	url('https://fonts.googleapis.com/css?family=Kanit&display=swap');
 
-.square {
-	background: none;
-	border: none;
-	display: inline-block;
-	font: 14px Gotham HTF Bold, sans-serif;
-	overflow: hidden;
-	padding: 22px 30px 22px 30px;
+.container {
+	width: 60%;
+	margin: auto;
+}
+
+.myradio__input {
+	opacity: 0;
 	position: absolute;
-	text-transform: uppercase;
-	transition: background .4s ease;
-	vertical-align: middle;
-	white-space: nowrap;
-	margin: auto 45%;
-	top: 40%;
-	color: white;
-	font-size: 24px;
-	text-align: center;
-	font-weight: bold;
-	letter-spacing: 1px;
 }
 
-.l1, .l2, .l3, .l4 {
+.myradio__label {
+	border-radius: 9999px;
+	padding: 3px 15px 3px 40px;
+	cursor: pointer;
+	position: relative;
+	transition: all 0.5s;
+	font-size: 1rem;
+	margin: 2rem 0;
+}
+
+.myradio__label::before, .myradio__label::after {
+	content: "";
+	border-radius: 9999px;
+	width: 16px;
+	height: 16px;
+	margin: 3px 0;
 	position: absolute;
-	background: green;
+	z-index: 1;
 }
 
-.l1 {
-	left: 0;
-	bottom: 0;
-	height: 100%;
-	width: 2px;
+.myradio__label::before {
+	background-color: #dcdcdc;
+	border: 2px solid #dcdcdc;
+	top: 4px;
+	left: -30px;
+	transition: all 0.5s;
 }
 
-.l2 {
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 2px;
+.myradio__label::after {
+	background-color: #fff;
+	top: 6px;
+	left: -28px;
+	transition: all 0.15s;
+	transition-timing-function: ease-out;
 }
 
-.l3 {
-	right: 0;
-	top: 0;
-	height: 100%;
-	width: 2px;
+.myradio__label:hover {
+	background-color: rgba(114, 86, 248, .1);
 }
 
-.l4 {
-	bottom: 0;
-	right: 0;
-	width: 100%;
-	height: 2px;
+.myradio__label:hover::before {
+	border: 2px solid #7256f8;
+}
+
+.myradio__input:checked ~ .myradio__label::before {
+	background-color: #7256f8;
+	border: 2px solid #7256f8;
+}
+
+.myradio__input:checked ~ .myradio__label::after {
+	width: 8px;
+	height: 8px;
+	top: 10px;
+	left: -24px;
+}
+
+@media ( max-width : 575.98px) {
+	.container {
+		text-align: left;
+	}
 }
 </style>
 
@@ -119,30 +138,41 @@
 
 
 <body>
+	<div class="container">
+		<form>
+			<div class="myradio">
+				<input type="radio" name="myRadio" id="one" class="myradio__input"
+					checked> <label for="one" class="myradio__label"><span>L’insieme
+						di attività volte a prevenire, rilevare, limitare e contrastare
+						gli effetti degli attacchi condotti nel e tramite il cyber-space
+						ovvero il danno di uno o più dei suoi elementi costitutivi</span> </label>
+			</div>
+			<div class="myradio">
+				<input type="radio" name="myRadio" id="two" class="myradio__input">
+				<label for="two" class="myradio__label">Two L’insieme di
+					attività volte a prevenire, rilevare, limitare e contrastare gli
+					effetti degli attacchi condotti nel e tramite il cyber-space ovvero
+					il danno di uno o più dei suoi elementi costitutivi </label>
+			</div>
+			<div class="myradio">
+				<input type="radio" name="myRadio" id="three" class="myradio__input">
+				<label for="three" class="myradio__label">Three L’insieme di
+					attività volte a prevenire, rilevare, limitare e contrastare gli
+					effetti degli attacchi condotti nel e tramite il cyber-space ovvero
+					il danno di uno o più dei suoi elementi costitutivi </label>
+			</div>
+			<div class="myradio">
+				<input type="radio" name="myRadio" id="four" class="myradio__input">
+				Four L’insieme di attività volte a prevenire, rilevare, limitare e
+				contrastare gli effetti degli attacchi condotti nel e tramite il
+				cyber-space ovvero il danno di uno o più dei suoi elementi
+				costitutivi </label>
+			</div>
+		</form>
 
-	<button class="square">
-		ACCEDI <span class="l1"></span> <span class="l2"></span> <span
-			class="l3"></span> <span class="l4"></span>
-	</button>
-	<script>
-  		TweenLite.defaultEase = Linear.easeNone;
 
+	</div>
 
-		//show the square only once js has run
-		//visibility set to hidden in css panel
-		TweenLite.set(".square", {visibility:"visible"});
-
-
-
-		var tl = new TimelineMax();
-		tl
-		.from(".l2", 1, {width:0})
-		.from(".l3", 1, {height:0})
-		.from(".l4", 1, {width:0})
-		.from(".l1", 1, {height:0})
-		
-		tl.timeScale(1) //play faster
-</script>
 </body>
 
 </html>

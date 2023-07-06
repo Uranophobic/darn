@@ -2,9 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="/css/stylesheet.css">
-	<title>Privacy Literacy - Admin Page</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="/css/stylesheet.css">
+<title>Privacy Literacy - Admin Page</title>
 </head>
 
 <body>
@@ -16,7 +16,8 @@
 	<br>
 	<br>
 	<div th:insert="~{fragments/header::header}"></div>
-	<th:block th:if="${!session.isEmpty()} and (${session.userSession.email.equals('admin@gmail.com')})">
+	<th:block
+		th:if="${!session.isEmpty()} and (${session.userSession.email.equals('admin@gmail.com')})">
 		<form th:action="@{/all-domande}" th:object="${domanda}" method="POST">
 			<div class="box-titolo">
 				<p class="titAdmin">CREA una nuova domanda</p>
@@ -29,7 +30,8 @@
 
 					<fieldset>
 						<legend>Testo*</legend>
-						<input type="text" name="testo" placeholder="Inserisci il testo della domanda"
+						<input type="text" name="testo"
+							placeholder="Inserisci il testo della domanda"
 							required="required">
 					</fieldset>
 					<fieldset>
@@ -42,23 +44,29 @@
 					</fieldset>
 					<fieldset>
 						<legend>Risposta 1:</legend>
-						<input type="text" name="risposta1" placeholder="Inscrisci la prima risposta">
+						<input type="text" name="risposta1"
+							placeholder="Inscrisci la prima risposta">
 					</fieldset>
 					<fieldset>
 						<legend>Risposta 2:</legend>
-						<input type="text" name="risposta2" placeholder="Inscrisci la seconda risposta">
+						<input type="text" name="risposta2"
+							placeholder="Inscrisci la seconda risposta">
 					</fieldset>
 					<fieldset>
 						<legend>Risposta 3:</legend>
-						<input type="text" name="risposta3" placeholder="Inscrisci la terza risposta">
+						<input type="text" name="risposta3"
+							placeholder="Inscrisci la terza risposta">
 					</fieldset>
 					<fieldset>
 						<legend>Risposta 4:</legend>
-						<input type="text" name="risposta4" placeholder="Inscrisci la quarta risposta">
+						<input type="text" name="risposta4"
+							placeholder="Inscrisci la quarta risposta">
 					</fieldset>
 					<fieldset>
-						<legend>Inserisci l'indice della risposta corretta(Da 1 a 4):</legend>
-						<input type="text" name="rispostaCorr" placeholder="Inscrisci l'indice della risposta corretta">
+						<legend>Inserisci l'indice della risposta corretta(Da 1 a
+							4):</legend>
+						<input type="text" name="rispostaCorr"
+							placeholder="Inscrisci l'indice della risposta corretta">
 					</fieldset>
 					<!-- vanno stampati tutti i tipi di test in una specie di tabellina come se fosse una leggenda -->
 					<!--	<fieldset>
@@ -94,7 +102,8 @@
 
 
 				<div class="buttonArg">
-					<button class="button" type="submit" formaction="/admin/addDomanda/{id} (id=${dom.id_domanda})"
+					<button class="button" type="submit"
+						formaction="/admin/addDomanda/{id} (id=${dom.id_domanda})"
 						formmethod="post">Conferma</button>
 				</div>
 				<!--  	<a type="submit" class="button" th:href="@{/test/viewTest/{id} (id=${dom.id_test})"> Annulla </a>-->
@@ -106,7 +115,8 @@
 
 
 	</th:block>
-	<th:block th:if="${session.isEmpty()} or ${!session.userSession.email.equals('admin@gmail.com')}">
+	<th:block
+		th:if="${session.isEmpty()} or ${!session.userSession.email.equals('admin@gmail.com')}">
 		NON HAI L'AUTORIZZAZIONE PER POTER ACCEDERE A QUESTA PAGINA
 	</th:block>
 	<div th:insert="fragments/footer::footer"></div>
