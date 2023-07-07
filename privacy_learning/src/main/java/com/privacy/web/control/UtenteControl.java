@@ -230,8 +230,7 @@ public class UtenteControl {
 
 	@GetMapping("/modifica")
 	public String modifica(Model model) {
-		// mi serve solo per aprire modifica utente
-		return "editUtente";
+		return "modificaUtente";
 	}
 
 	@PostMapping("/modifica/{email}")
