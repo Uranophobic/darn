@@ -1563,6 +1563,7 @@ hr {
 	display: flex;
 	align-content: center;
 	justify-content: center;
+	margin-bottom: 25px;
 }
 
 .button-modifica {
@@ -1619,13 +1620,32 @@ hr {
 .risultati {
 	color: white;
 }
+.risultati table{
+	font-size: 20px;
+	color:white;
+}
+
+.link-profilo{
+	text-decoration:underline; 
+	font-size: 25px; 
+	color:white;
+	font-weight:bold; 
+	margin-top: 20px;
+}
+.intestazione{
+	font-size: 25px;
+	font-weight: bold;
+}
+.text-ris{
+	font-size:22px;
+	text-align:center;
+}
 
 .risultati span {
-	font-size: 18px;
+	font-size: 35px;
 	color: #5082D7;
 	font-weight: 600;
 }
-
 .risultati table {
 	border: 1px solid black;
 }
@@ -1638,6 +1658,16 @@ hr {
 	border: 1px solid black;
 }
 
+.text-perc{
+
+	display: flex;
+	margin: auto;
+	text-align: center;
+	align-content: center;
+	width: 40%;
+	align-items: center;
+
+}
 /************************************************ 	LOGIN ***************************************/
 .login-container {
 	position: relative;
@@ -2848,6 +2878,15 @@ section .formArea div#professionalInfo {
 	.personal-info-mod {
 		width: 70%;
 	}
+	/** risultati**/
+	.text-perc {
+	display: flex;
+	margin: auto;
+	text-align: center;
+	align-content: center;
+	width: 71%;
+	align-items: center;
+}
 }
 
 @media screen and (max-width: 450px) {
@@ -3100,6 +3139,31 @@ section .formArea div#professionalInfo {
 	.p-mod {
 		width: 100%;
 	}
+	/* risultati respons*/
+	.risultati span {
+	font-size: 23px;
+}.text-ris {
+	font-size: 17px;
+}
+.text-perc {
+
+	width: 100%;
+
+}
+.titolo2 {
+	width: 100%;
+
+
+	font-size: 38px;
+
+}.intestazione {
+	font-size: 20px;
+
+}
+.risultati table {
+	font-size: 16px;
+
+}
 }
 
 @media screen and (max-width: 425px) {

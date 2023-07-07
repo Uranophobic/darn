@@ -66,83 +66,106 @@
 	<div th:insert="fragments/header::header"></div>
 	<br>
 	<div class="profilo-page">
-		<div class="background">
-			<form th:action="@{/test/{email}}" th:object="${testuser}"
-				method="POST">
 
-				<div th:if="${session.isEmpty()}">
-					<!-- Se la sessione Ã¨ vuota vuol dire che non Ã¨ stato fatto l'accesso  quindi non puÃ² fare il test  -->
-					<p>Per poter accedere a questa sezione effettua prima il login</p>
-					<div class="login">
-						<a type="submit" class="button" th:href="@{/login}"> LOGIN </a>
-					</div>
+		<form th:action="@{/test/{email}}" th:object="${testuser}"
+			method="POST">
+
+			<div th:if="${session.isEmpty()}">
+				<!-- Se la sessione Ã¨ vuota vuol dire che non Ã¨ stato fatto l'accesso  quindi non puÃ² fare il test  -->
+				<p>Per poter accedere a questa sezione effettua prima il login</p>
+				<div class="login">
+					<a type="submit" class="button" th:href="@{/login}"> LOGIN </a>
 				</div>
+			</div>
 
 
-				<div class="risultati" th:if="${!session.isEmpty()}">
-					<p class="titolo2">I tuoi risultati</p>
-					<p>
-						Hai completato il test: <span
-							th:text="${session.userSession.livello}"></span>
+			<div class="risultati" th:if="${!session.isEmpty()}">
+				<p class="titolo2">I tuoi risultati</p>
+				<p class="text-ris">
+					Hai completato appena completato il test di livello <span
+						th:text="${session.userSession.livello}"></span>
+				</p>
+				<div class="text-perc">
+				<p class="text-ris">
+					Hai ottenuto una percentuale pari a
 					</p>
-					<p>
-						Hai ottenuto una percentuale del: <span
-							th:text="' '+${perc} + '%'"></span>
-					</p>
-					<p>Ecco una panoramica sull'andamento del test che hai appena
-						effettuato.</p>
-					<br>
-					<p>
-						Le domande a cui hai <span style="color: green"> risposto
-							correttamente:</span>
-					</p>
-					<br>
-					<table style="border: 2px solid green">
-						<tr>
-							<td>Domanda</td>
-							<td>Risposta Corretta</td>
-							<td>Risposta Utente</td>
-						</tr>
-						<th:block th:each="s: ${rispCorrette}">
-							<tr>
-
-								<td th:text="${s.testo_domanda}"></td>
-								<td th:text="${s.risposta_corretta}"></td>
-								<td th:text="${s.risposta_utente}"></td>
-							</tr>
-						</th:block>
-					</table>
-
-
-
-
-
-					<br>
-					<p>
-						Le domande a cui <span style="color: red;">NON hai risposto
-							correttamente:</span>
-					</p>
-					<table style="border: 2px solid red">
-						<tr>
-							<td>Domanda</td>
-							<td>Risposta Utente</td>
-						</tr>
-						<th:block th:each="s: ${rispInCorrette}">
-							<tr>
-
-								<td th:text="${s.testo_domanda}"></td>
-								<td th:text="${s.risposta_utente}"></td>
-							</tr>
-						</th:block>
-					</table>
-
-
+				<p th:if="${perc}<40"><span class="parg" style="color: red"
+												th:text="${session.userSession.percentuale} + '%'"></span></p>
+				<p th:if="${perc}>40 and ${perc}<80"><span class="parg" style="color: yellow"
+												th:text="${session.userSession.percentuale} + '%'"></span></p>
+				<p th:if=" ${perc}>80"><span class="parg" style="color: greenyellow"
+												th:text="${session.userSession.percentuale} + '%'"></span></p>
+			</div>
+			
+				<div class="but-mod">
+					<a
+						th:href="@{/profilo/{email} (email=${session.userSession.email})}"
+						type="submit" class="link-profilo"> Torna al profilo > </a>
 
 
 
 				</div>
 
-			</form>
+				<br> <br>
+				<p class="titolo2">Panoramica sul test appena effettuato</p>
+				<br>
+				<p class="text-ris">
+					Le domande a cui hai <span style="color: greenyellow">
+						risposto correttamente:</span>
+				</p>
+				<br>
+				<table style="border: 2px solid greenyellow">
+					<tr class="intestazione">
+						<td>Domanda</td>
+						<td>Risposta Corretta</td>
+					</tr>
+					<th:block th:each="s: ${rispCorrette}">
+						<tr>
+							<td th:text="${s.testo_domanda}"></td>
+							<td th:text="${s.risposta_corretta}"></td>
+						</tr>
+					</th:block>
+				</table>
+
+
+
+
+
+				<br> <br>
+				<p class="text-ris">
+					Le domande a cui <span style="color: red;">NON hai risposto
+						correttamente:</span>
+				</p>
+				<table style="border: 2px solid red">
+					<tr class="intestazione">
+						<td>Domanda</td>
+						<td>Risposta Corretta</td>
+					</tr>
+					<th:block th:each="s: ${rispCorrette}">
+						<tr>
+							<td th:text="${s.testo_domanda}"></td>
+							<td th:text="${s.risposta_corretta}"></td>
+						</tr>
+					</th:block>
+				</table>
+
+
+
+
+
+			</div>
+
+		</form>
+
+		<div class="but-mod">
+			<a th:href="@{/profilo/{email} (email=${session.userSession.email})}"
+				type="submit" class="link-profilo"> <span>Torna al
+					profilo ></span>
+
+			</a>
+
+
+
 		</div>
 	</div>
 	<div th:insert="fragments/footer::footer"></div>
