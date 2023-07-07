@@ -2031,8 +2031,7 @@ hr {
 	background: #5082D7;
 }
 
-@
-keyframes animate { 100% {
+@keyframes animate { 100% {
 	transform: scaleX(1);
 }
 
