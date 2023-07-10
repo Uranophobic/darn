@@ -3,8 +3,57 @@
 
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="/css/stylesheet.css">
-<title>Privacy Literacy - Profilo</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DARN: Look at your privacy!</title>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<link rel="stylesheet"
+	href="https://www.ionos.it/digitalguide/path/to/font-awesome/css/font-awesome.min.css">
+<!-- ICONSSCOUT -->
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+	integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+	crossorigin="anonymous">
+
+<!-- CSS -->
+<link rel="stylesheet" href="/css/style3.css">
+
+<!-- libreria per il typed jq-->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"
+	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+	crossorigin="anonymous"></script>
+
+<!-- ScrollReveal -->
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="/path/to/noframework.waypoints.min.js"></script>
+
+<script src="js/gsap.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Flip.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Observer.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Draggable.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/EaselPlugin.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/MotionPathPlugin.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/PixiPlugin.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/TextPlugin.min.js"></script>
+
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 <script src="js/gsap.min.js"></script>
@@ -30,97 +79,8 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/PixiPlugin.min.js"></script>
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/TextPlugin.min.js"></script>
-
-
-<style>
-.container-lezione p {
-	line-height: 40px;
-	letter-spacing: 1px;
-	color: white;
-}
-
-.container-lezione {
-	text-align: justify;
-	text-justify: inter-word;
-	margin: auto;
-}
-
-.box-scroll {
-	padding: 1em 2em;
-	box-sizing: border-box;
-	line-height: 1.5;
-}
-
-.scrollpage {
-	max-width: 45vw;
-	margin: 0 auto;
-	padding: 0.2em 1.5em;
-	overflow-y: auto;
-}
-
-.progress-bar {
-	height: 8px;
-	background: red;
-	width: 0%;
-	position: fixed;
-	top: 0;
-	left: 0;
-	transition: all 0s linear;
-	z-index: 1;
-}
-
-.lez-button {
-	width: 100%;
-	text-align: right;
-	margin-top: 40px;
-	margin-bottom: 40px;
-	cursor: pointer;
-}
-
-.b {
-	width: 50%;
-	margin: auto;
-	text-align: center;
-	margin-bottom: 20px;
-	font-size: 35px;
-	color: #14bd14;
-	opacity: 0;
-	font-weight: 600;
-	text-decoration: underline;
-}
-
-.up-arrow {
-	color: antiquewhite;
-	/* float: right; */
-	display: flex;
-	justify-content: end;
-}
-
-.info {
-	font-size: 18px;
-	font-weight: 300;
-	background-color: rgba(0, 251, 0, 0.4);
-	text-align: center;
-	display: flex;
-	color: white;
-	opacity: 0;
-}
-
-.conferma-lez {
-	padding: 10px;
-	background-color: #5082D7;
-	border: none;
-	border-radius: 4px;
-	/* width: 150px; */
-	/* height: 25px; */
-	font-size: 20px;
-	color: white;
-	font-weight: bold;
-	/* letter-spacing: 1px; */
-	cursor: pointer;
-}
-</style>
 </head>
+
 
 
 <body>
@@ -130,9 +90,9 @@
 	<!-- linea del progresso-->
 	<div class="progress-bar" id="myBar"></div>
 
-	<div class="background ">
+	<div class="profilo-page">
 		<th:block th:if="${argoment}!=null">
-			<p class="titolo" th:text="${argoment.titolo}"></p>
+			<p class="titolo2" th:text="${argoment.titolo}"></p>
 			<hr class="riga2">
 			<br>
 

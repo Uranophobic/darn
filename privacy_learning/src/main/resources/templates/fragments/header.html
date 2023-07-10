@@ -84,19 +84,20 @@
 				<li><a th:href="@{/article/leggi-un-articolo}">Notizie di
 						attualità </a></li>
 				<li><a th:if="${session.isEmpty()}" th:href="@{/login}">Ettettua
+						il test</a>
+				<a th:if="${!session.isEmpty()}" th:href="@{/test}">Effettua
 						il test</a></li>
-				<li><a th:if="${!session.isEmpty()}" th:href="@{/test}">Effettua
-						il test</a></li>
-				<th:block
-					th:if="${!session.isEmpty()} and (${session.userSession.email.equals('admin@gmail.com')})">
-					<a th:href="@{/admin/lista-utenti}">Utenti</a>
-					<a th:href="@{/admin/lista-meta_info}"> MetaInfo </a>
-				</th:block>
-
-
 				<th:block th:if="${session.isEmpty()}">
 					<li><a type="submit" th:href="@{/login}"> Login </a></li>
 				</th:block>
+				<th:block
+					th:if="${!session.isEmpty()} and (${session.userSession.email.equals('admin@gmail.com')})">
+					<li><a th:href="@{/admin/lista-utenti}">Utenti</a></li>
+					<li><a th:href="@{/admin/lista-meta_info}"> MetaInfo </a></li>
+				</th:block>
+
+
+
 
 				<th:block th:unless="${session.isEmpty()}">
 					<li><a class="icon" type="submit"

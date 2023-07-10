@@ -70,19 +70,17 @@
 
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-
-
 </head>
 
 
 <body>
 	<div th:insert="~{fragments/header::header}"></div>
 	<br>
-	<form th:action="@{/users/all}" th:object="${user}" method="POST">
-		<div class="profilo-page">
-			<div class="corpoReg" id="hide">
 
+	<div class="profilo-page">
+		<div class="corpoReg" id="hide">
 
+			<form th:action="@{/users/all}" th:object="${user}" method="POST">
 				<div class="containerReg">
 					<p class="titReg">Registrazione</p>
 
@@ -121,7 +119,6 @@
 							<div class="check fa fa-check"></div>
 						</div>
 					</div>
-
 
 
 					<div class="form-outer" id="hide">
@@ -181,18 +178,14 @@
 								</div>
 
 							</div>
-
 							<!--box prime 5 domande -->
-							<div class="page " id="seconda">
+							<div class="page ">
 								<div class="title">Compila il questionario</div>
-
-								<!-- dovrei ripetere questo div per ogni domanda-->
-
-
 								<div class="field2">
 
 									<th:block th:each="dom, domStat: ${questionario}">
 										<div th:if="${domStat.count<=5}" th:remove="tag">
+
 											<div class="questionario-box">
 												<div class="campo-reg">
 													<p class="idDomanda" th:text="${dom.id_domanda} + ')'"></p>
@@ -225,39 +218,6 @@
 										</div>
 									</th:block>
 								</div>
-								<!-- <th:block th:each="dom : ${questionario1}">
-									<div class="box-domande">
-
-										<div class="campo-reg">
-											<p class="idDomanda" th:text="${dom.id_domanda} + ')'"></p>
-											<p class="domanda" th:text="${dom.testo}"></p>
-										</div>
-
-										<div class="spaceradio">
-											<input type="radio" th:name="'valore'+${dom.id_domanda}" id="mai"
-												value="mai" placeholder="perniente" required />
-											<p th:text="${dom.risposta1}"></p>
-										</div>
-										<div class="spaceradio">
-											<input type="radio" th:name="'valore'+${dom.id_domanda}" id="raramente"
-												value="raramente" placeholder="poco" required />
-											<p th:text="${dom.risposta2}"></p>
-										</div>
-										<div class="spaceradio">
-											<input type="radio" th:name="'valore'+${dom.id_domanda}" id="spesso"
-												value="spesso" placeholder="abbastanza" required />
-											<p th:text="${dom.risposta3}"></p>
-										</div>
-										<div class="spaceradio">
-											<input type="radio" th:name="'valore'+${dom.id_domanda}" id="sempre"
-												value="sempre" placeholder="tanto" required />
-											<p th:text="${dom.risposta4}"></p>
-										</div>
-
-									</div>
-								</th:block>
- -->
-
 
 
 								<div class="field btns">
@@ -267,9 +227,8 @@
 							</div>
 
 							<!--box ultime 5 domande -->
-							<div class="page " id="terza">
+							<div class="page ">
 								<div class="title">Compila il questionario</div>
-								<!-- dovrei ripetere questo div per ogni domanda-->
 								<div class="field2">
 
 									<th:block th:each="dom, domStat: ${questionario}">
@@ -341,6 +300,8 @@
 									<button type="button" class="next-2 next">Next</button>
 								</div>
 							</div>
+
+							<!--box accetta condizioni e privacy -->
 							<!--privcy policy -->
 							<div class="page " id="quarta">
 								<div class="title">Leggi ed accetta l'informativa</div>
@@ -369,142 +330,139 @@
 
 								<div class="field btns">
 									<button class="prev-3 prev">Previous</button>
-									<button id="submitButton" type="submit"
-										formaction="/users/registrazione" formmethod="post"
-										onclick="checkRegistrationSubmit()">Registrati</button>
+									<button type="submit" formaction="/users/registrazione"
+										formmethod="post" onclick="checkRegistrationSubmit()">Registrati</button>
 								</div>
 							</div>
 
 						</div>
 					</div>
 				</div>
-
-
-
-			</div>
-
-
-			<!-- visualizzazione su schermi mobile -->
-			<div id="mobile">
-				<h1 class="titReg">Registrazione</h1>
-				<p class="sotto-titReg">Inserisci i tuoi dati personali</p>
-				<div class="questionario-box">
-					<div class="campo-reg">Email</div>
-					<input class="inputRegistrazione" type="email" name="email"
-						title="L'email deve essere nel seguente formato: example@gmail.com"
-						id="email" placeholder="Email" onkeyup="checkEmail()" required>
-				</div>
-
-				<div class="questionario-box">
-					<div class="campo-reg">Password</div>
-					<input class="inputRegistrazione" type="text" name="password"
-						id="password" placeholder="Password"
-						title="La password deve essere lunga da 8 a 16 caratteri e contenere almeno un carattere maiuscolo, un numero e un carattere speciale"
-						onkeydown="checkPassword(event)" required>
-				</div>
-
-				<div class="questionario-box">
-					<div class="campo-reg">Nome</div>
-					<input class="inputRegistrazione" type="text" name="nome" id="nome"
-						placeholder="Nome" required>
-				</div>
-
-				<div class="questionario-box">
-					<div class="campo-reg">Cognome</div>
-					<input class="inputRegistrazione" type="text" name="cognome"
-						id="cognome" placeholder="Cognome" required>
-				</div>
-
-				<div class="questionario-box">
-					<div class="campo-reg">Data di nascita</div>
-					<input class="inputRegistrazione" type="date" name="dataNascita"
-						id="data-Nascita" placeholder="Data di Nascita" required>
-				</div>
-				<h1 class="titReg">Questionario</h1>
-				<p class="sotto-titReg">Compila un breve questionario
-					conoscitivo</p>
-				<th:block th:each="dom: ${questionario}">
-					<div th:if="${domStat.count<=8}" th:remove="tag">
-						<div class="questionario-box">
-							<div class="campo-reg">
-								<p class="idDomanda" th:text="${dom.id_domanda} + ')'"></p>
-								<p class="domanda" th:text="${dom.testo}"></p>
-							</div>
-
-							<div class="spaceradio">
-								<input type="radio" th:name="'valore'+${dom.id_domanda}"
-									id="mai" value="mai" placeholder="perniente" required />
-								<p th:text="${dom.risposta1}"></p>
-							</div>
-							<div class="spaceradio">
-								<input type="radio" th:name="'valore'+${dom.id_domanda}"
-									id="raramente" value="raramente" placeholder="poco" required />
-								<p th:text="${dom.risposta2}"></p>
-							</div>
-							<div class="spaceradio">
-								<input type="radio" th:name="'valore'+${dom.id_domanda}"
-									id="spesso" value="spesso" placeholder="abbastanza" required />
-								<p th:text="${dom.risposta3}"></p>
-							</div>
-							<div class="spaceradio">
-								<input type="radio" th:name="'valore'+${dom.id_domanda}"
-									id="sempre" value="sempre" placeholder="tanto" required />
-								<p th:text="${dom.risposta4}"></p>
-							</div>
-						</div>
-					</div>
-
-				</th:block>
-				<th:block th:each="dom, domStat: ${questionario}">
-					<div th:if="${domStat.count==9}" th:remove="tag">
-						<div class="questionario-box">
-							<div class="campo-reg">
-								<p class="idDomanda" th:text="${dom.id_domanda} + ')'"></p>
-								<p class="domanda" th:text="${dom.testo}"></p>
-							</div>
-
-							<div class="spaceradio">
-								<input onclick="abilitaTextArea()" type="radio"
-									th:name="'valore'+${dom.id_domanda}" id="si" value="si"
-									placeholder="si" required />
-								<p th:text="${dom.risposta1}"></p>
-							</div>
-							<div class="spaceradio">
-								<input onclick="disabilitaTextArea()" type="radio"
-									th:name="'valore'+${dom.id_domanda}" id="no" value="no"
-									placeholder="no" required />
-								<p th:text="${dom.risposta2}"></p>
-							</div>
-							<textarea id="my-textarea"
-								placeholder="Se si, vuoi raccontarci cosa hai fatto per contrastarlo?">
-												
-												
-												</textarea>
-						</div>
-					</div>
-				</th:block>
-				<h1 class="titReg">Informativa sulla Privacy Policy</h1>
-				<p class="sotto-titReg">Leggi ed accetta le condizioni sulla
-					privacy</p>
-				<span th:insert="~{fragments/privacy::policy}"></span>
-
-				<div class="checkbox-container">
-					<input type="checkbox" id="myCheckbox" required> <label
-						id="label-check" for="myCheckbox"> Accetta le condizioni e
-						l'infomativa sulla privacy policy </label>
-				</div>
-
-				<div id="errorDiv" class="error-message">Devi prima leggere e
-					accettare le condizione e l'informativa sulla privacy policy!</div>
-				<span id="errorMessage" style="color: #BB0000"></span>
-				<button id="submitButton" type="submit"
-					formaction="/users/registrazione" formmethod="post"
-					onclick="checkRegistrationSubmit()">Registrati</button>
-			</div>
-
 		</div>
-	</form>
+		<!-- visualizzazione su schermi mobile -->
+		<div id="mobile">
+			<h1 class="titReg">Registrazione</h1>
+			<p class="sotto-titReg">Inserisci i tuoi dati personali</p>
+			<div class="questionario-box">
+				<div class="campo-reg">Email</div>
+				<input class="inputRegistrazione" type="email" name="email"
+					title="L'email deve essere nel seguente formato: example@gmail.com"
+					id="email" placeholder="Email" onkeyup="checkEmail()" required>
+			</div>
 
+			<div class="questionario-box">
+				<div class="campo-reg">Password</div>
+				<input class="inputRegistrazione" type="text" name="password"
+					id="password" placeholder="Password"
+					title="La password deve essere lunga da 8 a 16 caratteri e contenere almeno un carattere maiuscolo, un numero e un carattere speciale"
+					onkeydown="checkPassword(event)" required>
+			</div>
+
+			<div class="questionario-box">
+				<div class="campo-reg">Nome</div>
+				<input class="inputRegistrazione" type="text" name="nome" id="nome"
+					placeholder="Nome" required>
+			</div>
+
+			<div class="questionario-box">
+				<div class="campo-reg">Cognome</div>
+				<input class="inputRegistrazione" type="text" name="cognome"
+					id="cognome" placeholder="Cognome" required>
+			</div>
+
+			<div class="questionario-box">
+				<div class="campo-reg">Data di nascita</div>
+				<input class="inputRegistrazione" type="date" name="dataNascita"
+					id="data-Nascita" placeholder="Data di Nascita" required>
+			</div>
+			<h1 class="titReg">Questionario</h1>
+			<p class="sotto-titReg">Compila un breve questionario conoscitivo</p>
+			<th:block th:each="dom: ${questionario}">
+				<div th:if="${domStat.count<=8}" th:remove="tag">
+					<div class="questionario-box">
+						<div class="campo-reg">
+							<p class="idDomanda" th:text="${dom.id_domanda} + ')'"></p>
+							<p class="domanda" th:text="${dom.testo}"></p>
+						</div>
+
+						<div class="spaceradio">
+							<input type="radio" th:name="'valore'+${dom.id_domanda}" id="mai"
+								value="mai" placeholder="perniente" required />
+							<p th:text="${dom.risposta1}"></p>
+						</div>
+						<div class="spaceradio">
+							<input type="radio" th:name="'valore'+${dom.id_domanda}"
+								id="raramente" value="raramente" placeholder="poco" required />
+							<p th:text="${dom.risposta2}"></p>
+						</div>
+						<div class="spaceradio">
+							<input type="radio" th:name="'valore'+${dom.id_domanda}"
+								id="spesso" value="spesso" placeholder="abbastanza" required />
+							<p th:text="${dom.risposta3}"></p>
+						</div>
+						<div class="spaceradio">
+							<input type="radio" th:name="'valore'+${dom.id_domanda}"
+								id="sempre" value="sempre" placeholder="tanto" required />
+							<p th:text="${dom.risposta4}"></p>
+						</div>
+					</div>
+				</div>
+
+			</th:block>
+			<th:block th:each="dom, domStat: ${questionario}">
+				<div th:if="${domStat.count==9}" th:remove="tag">
+					<div class="questionario-box">
+						<div class="campo-reg">
+							<p class="idDomanda" th:text="${dom.id_domanda} + ')'"></p>
+							<p class="domanda" th:text="${dom.testo}"></p>
+						</div>
+
+						<div class="spaceradio">
+							<input onclick="abilitaTextArea()" type="radio"
+								th:name="'valore'+${dom.id_domanda}" id="si" value="si"
+								placeholder="si" required />
+							<p th:text="${dom.risposta1}"></p>
+						</div>
+						<div class="spaceradio">
+							<input onclick="disabilitaTextArea()" type="radio"
+								th:name="'valore'+${dom.id_domanda}" id="no" value="no"
+								placeholder="no" required />
+							<p th:text="${dom.risposta2}"></p>
+						</div>
+						<textarea id="my-textarea"
+							placeholder="Se si, vuoi raccontarci cosa hai fatto per contrastarlo?">
+
+
+												</textarea>
+					</div>
+				</div>
+			</th:block>
+			<h1 class="titReg">Informativa sulla Privacy Policy</h1>
+			<p class="sotto-titReg">Leggi ed accetta le condizioni sulla
+				privacy</p>
+			<span th:insert="~{fragments/privacy::policy}"></span>
+
+			<div class="checkbox-container">
+				<input type="checkbox" id="myCheckbox" required> <label
+					id="label-check" for="myCheckbox"> Accetta le condizioni e
+					l'infomativa sulla privacy policy </label>
+			</div>
+
+			<div id="errorDiv" class="error-message">Devi prima leggere e
+				accettare le condizione e l'informativa sulla privacy policy!</div>
+			<span id="errorMessage" style="color: #BB0000"></span>
+			<button id="submitButton" type="submit"
+				formaction="/users/registrazione" formmethod="post"
+				onclick="checkRegistrationSubmit()">Registrati</button>
+		</div>
+
+
+
+		</form>
+
+	</div>
+	</div>
+	<!--  script per la text area -->
 	<script>
 //Funzione per mostrare il messaggio di avviso
 function showErrorMessage() {

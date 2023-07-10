@@ -1620,25 +1620,28 @@ hr {
 .risultati {
 	color: white;
 }
-.risultati table{
+
+.risultati table {
 	font-size: 20px;
-	color:white;
+	color: white;
 }
 
-.link-profilo{
-	text-decoration:underline; 
-	font-size: 25px; 
-	color:white;
-	font-weight:bold; 
+.link-profilo {
+	text-decoration: underline;
+	font-size: 25px;
+	color: white;
+	font-weight: bold;
 	margin-top: 20px;
 }
-.intestazione{
+
+.intestazione {
 	font-size: 25px;
 	font-weight: bold;
 }
-.text-ris{
-	font-size:22px;
-	text-align:center;
+
+.text-ris {
+	font-size: 22px;
+	text-align: center;
 }
 
 .risultati span {
@@ -1646,6 +1649,7 @@ hr {
 	color: #5082D7;
 	font-weight: 600;
 }
+
 .risultati table {
 	border: 1px solid black;
 }
@@ -1658,15 +1662,236 @@ hr {
 	border: 1px solid black;
 }
 
-.text-perc{
-
+.text-perc {
 	display: flex;
 	margin: auto;
 	text-align: center;
 	align-content: center;
 	width: 40%;
 	align-items: center;
+}
 
+/******************************* PAGINA LEZIONI********************/
+
+
+.sottotitolo {
+	color: white;
+	padding: 20px;
+	margin-bottom: 15px;
+	font-size: 24px;
+}
+
+
+.dot-line {
+	border-color: greenyellow;
+	border-style: dashed;
+	margin-top: 50px;
+	margin-bottom: 50px;width: 800px;
+
+}
+.lez-page {
+	color: white;
+	height: fit-content;
+	width: 85%;
+	margin: auto;
+	padding: 25px;
+}
+
+.back-noborder {
+	/* background-color: white; */
+	/* border-radius: 5px; */
+	/* margin: auto; */
+	/* width: 65%; */
+	/* padding: 20px; */
+	/* border: 1px solid #F8C01B; */
+	display: block;
+	height: auto;
+	padding: 20px 5%;
+	margin-bottom: 25px;
+	/* background-color: rgba(255, 255, 255, 0.8); */
+	width: 70%;
+	margin: auto;
+	border: 5px;
+	border-radius: 5px;
+	height: auto;
+}
+
+
+
+.link-arg {
+	font-size: 22px;
+	font-weight: bold;
+	/* border-bottom: ; */
+	text-decoration: underline;
+	color: white;
+}
+
+.meta-arg {
+	font-size: 18px;
+	font-weight: 300;
+	padding-left: 10px;
+	color: white;
+}
+
+.tab-lez {
+	width: 95%;
+	margin: auto;
+}
+
+.arg-stud {
+	font-size: 22px;
+	font-weight: 400;
+	background: rgba(255, 255, 255, 0.8);
+	/* border: ; */
+	border-radius: 30px;
+	padding-left: 10px;
+}
+
+svg.stepper-svg .circle-red ellipse {
+	fill: transparent;
+	stroke: darkred;
+	stroke-dasharray: 0, 5;
+	stroke-dashoffset: 150;
+	stroke-linecap: round;
+}
+
+svg.stepper-svg .circle ellipse {
+	fill: transparent;
+	stroke: green;
+	stroke-dasharray: 0, 5;
+	stroke-dashoffset: 150;
+	stroke-linecap: round;
+}
+
+svg.stepper-svg .icon path {
+	stroke: white;
+	fill: transparent;
+	fill-opacity: 0;
+}
+
+svg.stepper-svg .icon ellipse {
+	stroke: green;
+	fill: transparent;
+	fill-opacity: 0;
+}
+
+.stepper-label-wrapper {
+	display: flex;
+	align-items: center;
+}
+
+svg.stepper-line path {
+	fill: none;
+	fill-opacity: 0;
+	stroke: white;
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-dasharray: 0, 5;
+}
+
+.col-feedback {
+	display: grid;
+	justify-content: center;
+	/* width: 53%; */
+	/* grid-template: auto; */
+	grid-template-columns: 100%;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.col-feedback span {
+	margin: auto;
+}
+
+.col-feedback svg {
+	margin: auto;
+}
+/*studio lezione*/
+.container-lezione p {
+	line-height: 40px;
+	letter-spacing: 1px;
+	color: white;
+}
+
+.container-lezione {
+	text-align: justify;
+	text-justify: inter-word;
+	margin: auto;
+}
+
+.box-scroll {
+	padding: 1em 2em;
+	box-sizing: border-box;
+	line-height: 1.5;
+}
+
+.scrollpage {
+	max-width: 70vw;
+	margin: 0 auto;
+	padding: 0.2em 1.5em;
+	overflow-y: auto;
+}
+
+.progress-bar {
+	height: 8px;
+	background: red;
+	width: 0%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	transition: all 0s linear;
+	z-index: 1;
+}
+
+.lez-button {
+	width: 100%;
+	text-align: right;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	cursor: pointer;
+}
+
+.b {
+	width: 50%;
+	margin: auto;
+	text-align: center;
+	margin-bottom: 20px;
+	font-size: 35px;
+	color: #14bd14;
+	opacity: 0;
+	font-weight: 600;
+	text-decoration: underline;
+}
+
+.up-arrow {
+	color: antiquewhite;
+	/* float: right; */
+	display: flex;
+	justify-content: end;
+}
+
+.info {
+	font-size: 18px;
+	font-weight: 300;
+	background-color: rgba(0, 251, 0, 0.4);
+	text-align: center;
+	display: flex;
+	color: white;
+	opacity: 0;
+}
+
+.conferma-lez {
+	padding: 10px;
+	background-color: #5082D7;
+	border: none;
+	border-radius: 4px;
+	/* width: 150px; */
+	/* height: 25px; */
+	font-size: 20px;
+	color: white;
+	font-weight: bold;
+	/* letter-spacing: 1px; */
+	cursor: pointer;
 }
 /************************************************ 	LOGIN ***************************************/
 .login-container {
@@ -2169,7 +2394,6 @@ hr {
 
 .domprivacy-test {
 	margin: 10px;
-	text-align: center;
 	font-size: 22px;
 }
 
@@ -2177,7 +2401,7 @@ hr {
 	list-style-type: none;
 	width: 85%;
 	margin: auto;
-	text-align: justify;
+	text-align: left;
 }
 
 /**********************************************************TEST vechcio ****************************************************************************/
@@ -2760,6 +2984,13 @@ section .formArea div#professionalInfo {
 	.shuttleContainer>* {
 		height: 30vh;
 	}
+	/*responsive lezioni*/
+	.tab-lez {
+		width: 100%;
+	}
+	.sottotitolo {
+		padding: 5px;
+	}
 }
 
 @media screen and (max-width: 768px) {
@@ -2880,13 +3111,13 @@ section .formArea div#professionalInfo {
 	}
 	/** risultati**/
 	.text-perc {
-	display: flex;
-	margin: auto;
-	text-align: center;
-	align-content: center;
-	width: 71%;
-	align-items: center;
-}
+		display: flex;
+		margin: auto;
+		text-align: center;
+		align-content: center;
+		width: 71%;
+		align-items: center;
+	}
 }
 
 @media screen and (max-width: 450px) {
@@ -3141,28 +3372,45 @@ section .formArea div#professionalInfo {
 	}
 	/* risultati respons*/
 	.risultati span {
-	font-size: 23px;
-}.text-ris {
-	font-size: 17px;
-}
-.text-perc {
-
+		font-size: 23px;
+	}
+	.text-ris {
+		font-size: 17px;
+	}
+	.text-perc {
+		width: 100%;
+	}
+	.titolo2 {
+		width: 100%;
+		font-size: 38px;
+	}
+	.intestazione {
+		font-size: 20px;
+	}
+	.risultati table {
+		font-size: 16px;
+	}
+	/*reponsive lezioni*/
+	.lez-page {
 	width: 100%;
+	padding:0;
+}
+	.sottotitolo {
+		padding: 0;
+		font-size: 16px;
+		text-align:center;
+	}
+	.dot-line {
+
+	width: 250px;
+}
+.scrollpage {
+	max-width: 90vw;
+	padding:0;
 
 }
-.titolo2 {
-	width: 100%;
-
-
-	font-size: 38px;
-
-}.intestazione {
-	font-size: 20px;
-
-}
-.risultati table {
-	font-size: 16px;
-
+.box-scroll {
+ padding: 0;
 }
 }
 

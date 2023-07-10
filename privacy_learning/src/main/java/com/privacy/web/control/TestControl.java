@@ -210,7 +210,6 @@ public class TestControl {
 								ProgressoStudio prog = progServ.findByEmailAndArgomento(u.getEmail(),
 										args.get(z).getTitolo());
 								if (prog == null) {
-									System.out.println(" fare un cazzo");
 									ProgressoStudio p = new ProgressoStudio();
 									p.setArg_dastudiare(args.get(z).getTitolo());
 									p.setArg_studiato(false);
