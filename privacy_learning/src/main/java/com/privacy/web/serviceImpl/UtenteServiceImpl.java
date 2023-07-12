@@ -67,4 +67,33 @@ public class UtenteServiceImpl implements UtenteService {
 		
 	}
 
+	@Override
+	public List<Utente> findUtenteByLivello(String livello) {
+		
+		return utenteRep.findUtenteByLivello(livello);
+	}
+
+	@Override
+	public List<Utente> findUtenteByPercentuale40() {
+		return utenteRep.findUtenteByPercentuale40();
+	}
+
+	@Override
+	public List<Utente> findUtenteByPercentuale60() {
+		
+		return utenteRep.findUtenteByPercentuale60();
+	}
+
+	@Override
+	public List<Utente> findUtenteByPercentuale80() {
+		return utenteRep.findUtenteByPercentuale80();
+	}
+
+	@Override
+	public List<Utente> findUtenteByPercentuale100() {
+		return utenteRep.findUtenteByPercentuale100();
+	}
+
+	
+
 }

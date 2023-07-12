@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<link rel="stylesheet"
+	href="https://www.ionos.it/digitalguide/path/to/font-awesome/css/font-awesome.min.css">
+<!-- ICONSSCOUT -->
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+	integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+	crossorigin="anonymous">
+
+<!-- CSS -->
+<link rel="stylesheet" href="/css/style3.css">
+
+<!-- libreria per il typed jq-->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"
+	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+	crossorigin="anonymous"></script>
+
+<!-- ScrollReveal -->
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="/path/to/noframework.waypoints.min.js"></script>
+
+<script src="js/gsap.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Flip.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Observer.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Draggable.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/EaselPlugin.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/MotionPathPlugin.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/PixiPlugin.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/TextPlugin.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+<script
+	src="https://az414866.vo.msecnd.net/cmsroot/cmsscripts/custom/libs/drawsvgplugin.min.js"></script>
+
+<style>
+.tab {
+	overflow: hidden;
+	border-radius: 5px;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+	/* background-color: inherit; */
+	/* float: left; */
+	outline: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	transition: 0.3s;
+	font-size: 17px;
+	width: 33%;
+	/* font-size: ; */
+	background-color: transparent;
+	color: white !important;
+	font-size: 32px;
+	font-family: Poppins;
+	text-align: center;
+	border: none; border-bottom : 6px solid white;
+	border-radius: 5px;
+	border-bottom: 6px solid white;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+	background-color: #5E7DB0;
+	border-radius: 5px;
+	border-bottom: 6px solid red;
+}
+
+/* Create an active/current tablink class */
+.tab button.active2 {
+	border-color: red;
+}
+
+/* Style the tab content */
+.tabcontent {
+	display: none;
+	padding: 6px 12px;
+}
+</style>
+</head>
+
+
+<body>
+	<div th:insert="~{fragments/header::header}"></div>
+
+	<div class="profilo-page">
+		<!--  ACCESSO AMMINISTRATORE -->
+
+		<th:block
+			th:if="${!session.isEmpty()} and ${session.userSession.email.equals('admin@gmail.com')}">
+
+
+			<div class="bordo">
+
+
+				<p class="tit-amm">ADMIN - PAGE</p>
+
+
+				<div class="tab">
+					<button class="tablinks active2"
+						onclick="risorsa_scelta(event, 'Utenti')">Utenti</button>
+					<button class="tablinks" onclick="risorsa_scelta(event, 'Risorse')">Risorse</button>
+					<button class="tablinks" onclick="risorsa_scelta(event, 'Meta-Info')">Meta-Info</button>
+				</div>
+
+				<div id="Utenti" class="tabcontent " style="display: block;">
+					<p class="tit-amm">Utenti</p>
+					<div class="tabella">
+						<div class="testata tit-amm2"> Utenti iscritti</div>
+
+						<table cellspacing="1">
+							<tr>
+								<th>Email</th>
+								<th>Password</th>
+								<th>Nome</th>
+								<th>Cognome</th>
+								<th>Data di Nascita</th>
+								<th>Livello</th>
+								<th>Percentuale</th>
+
+							</tr>
+
+							<tr th:each="user : ${allUtenti}">
+								<td th:text="${user.email}"></td>
+								<td th:text="${user.password}"></td>
+								<td th:text="${user.nome}"></td>
+								<td th:text="${user.cognome}"></td>
+								<td th:text="${user.dataNascita}"></td>
+								<td th:text="${user.livello}"></td>
+								<td th:text="${user.percentuale}"></td>
+
+
+							</tr>
+
+
+
+						</table>
+					</div>
+					<div class="grid-template" id="hide">
+
+						<p>Percentuale di utenti che non hanno ancora effettuato il
+							test</p>
+						<p>Percentuale di utenti che hanno effettuato il livello Base</p>
+						<p>Percentuale di utenti che hanno effettuato il livello Medio</p>
+						<p>Percentuale di utenti che hanno effettuato il livello Alto</p>
+
+
+						<!--  percentuale di utenti che hanno livello "Nessuno" -->
+						<div class="grafico-circolare" id="graf1">
+							<span class="conteggio-perc" id="cont1" th:text="${percNessuno}"></span>
+						</div>
+
+						<!--  percentuale di utenti che hanno livello "Base" -->
+						<div class="grafico-circolare" id="graf2">
+							<span class="conteggio-perc" id="cont2" th:text="${percBase}"></span>
+						</div>
+
+						<!--  percentuale di utenti che hanno livello "Media" -->
+						<div class="grafico-circolare" id="graf3">
+							<span class="conteggio-perc" id="cont3" th:text="${percMedio}"></span>
+						</div>
+
+
+
+						<!--  percentuale di utenti che hanno livello "Alta" -->
+						<div class="grafico-circolare" id="graf4">
+							<span class="conteggio-perc" id="cont4" th:text="${percAlto}"></span>
+						</div>
+
+
+					</div>
+					
+					
+	<!--  visualizzazione mobile  -->
+	
+	<div class="grid-template" id="hideMaxi">
+
+						<p>Percentuale di utenti che non hanno ancora effettuato il
+							test</p><!--  percentuale di utenti che hanno livello "Nessuno" -->
+						<div class="grafico-circolare" id="graf1">
+							<span class="conteggio-perc" id="cont1" th:text="${percNessuno}"></span>
+						</div>
+						<p>Percentuale di utenti che hanno effettuato il livello Base</p><!--  percentuale di utenti che hanno livello "Base" -->
+						<div class="grafico-circolare" id="graf2">
+							<span class="conteggio-perc" id="cont2" th:text="${percBase}"></span>
+						</div>
+
+						<p>Percentuale di utenti che hanno effettuato il livello Medio</p><!--  percentuale di utenti che hanno livello "Media" -->
+						<div class="grafico-circolare" id="graf3">
+							<span class="conteggio-perc" id="cont3" th:text="${percMedio}"></span>
+						</div>
+
+						<p>Percentuale di utenti che hanno effettuato il livello Alto</p>
+
+
+						<!--  percentuale di utenti che hanno livello "Alta" -->
+						<div class="grafico-circolare" id="graf4">
+							<span class="conteggio-perc" id="cont4" th:text="${percAlto}"></span>
+						</div>
+
+
+					</div>
+	
+<!--  fine visualzzazione mobile -->
+
+
+					<div class="grid-template" id="hide">
+						<p>Percentuale di utenti che hanno ottenuto una percentuale
+							minore uguale a 40%</p>
+						<p>Percentuale di utenti che hanno ottenuto una percentuale
+							fra 40% e 60%</p>
+						<p>Percentuale di utenti che hanno ottenuto una percentuale
+							fra 60% e 80%</p>
+						<p>Percentuale di utenti che hanno ottenuto una percentuale
+							maggiore di 80%</p>
+
+
+						<!--  percentuale di utenti  con 40% -->
+						<div class="grafico-circolare" id="graf5">
+							<span class="conteggio-perc" id="cont5" th:text="${percQuaranta}"></span>
+						</div>
+
+						<!--  percentuale di utenti  con 60% -->
+						<div class="grafico-circolare" id="graf6">
+							<span class="conteggio-perc" id="cont6" th:text="${percSessanta}"></span>
+						</div>
+
+						<!--  percentuale di utenti  con 80% -->
+						<div class="grafico-circolare" id="graf7">
+							<span class="conteggio-perc" id="cont7" th:text="${percOttanta}"></span>
+						</div>
+
+						<!--  percentuale di utenti  con 100% -->
+						<div class="grafico-circolare" id="graf8">
+							<span class="conteggio-perc" id="cont8" th:text="${percCento}"></span>
+						</div>
+					</div>
+					
+<!--  visualizzazione mobile  -->
+<div class="grid-template" id="hideMaxi">
+						<p>Percentuale di utenti che hanno ottenuto una percentuale
+							minore uguale a 40%</p><!--  percentuale di utenti  con 40% -->
+						<div class="grafico-circolare" id="graf5">
+							<span class="conteggio-perc" id="cont5" th:text="${percQuaranta}"></span>
+						</div>
+						<p>Percentuale di utenti che hanno ottenuto una percentuale
+							fra 40% e 60%</p>
+						<!--  percentuale di utenti  con 60% -->
+						<div class="grafico-circolare" id="graf6">
+							<span class="conteggio-perc" id="cont6" th:text="${percSessanta}"></span>
+						</div>
+						<p>Percentuale di utenti che hanno ottenuto una percentuale
+							fra 60% e 80%</p><!--  percentuale di utenti  con 80% -->
+						<div class="grafico-circolare" id="graf7">
+							<span class="conteggio-perc" id="cont7" th:text="${percOttanta}"></span>
+						</div>
+						<p>Percentuale di utenti che hanno ottenuto una percentuale
+							maggiore di 80%</p>
+
+
+						
+
+
+						
+
+						<!--  percentuale di utenti  con 100% -->
+						<div class="grafico-circolare" id="graf8">
+							<span class="conteggio-perc" id="cont8" th:text="${percCento}"></span>
+						</div>
+					</div>
+<!-- fine -->
+				</div>
+
+			</div>
+
+			<div id="Risorse" class="tabcontent">
+				<p class="tit-amm">Risorse</p>
+				
+				<div class="flex">
+				 <a th:href="@{/admin/all-operation/{email}/nuovo-argomento (email=${session.userSession.email})}"><button class="custom-btn btn-4"><span>Aggiungi un argomento studio</span></button> </a>
+				<a th:href="@{/admin/all-operation/{email}/nuovo-articolo (email=${session.userSession.email})}"> <button class="custom-btn btn-4"><span>Aggiungi un'articolo</span></button></a>
+				<a th:href="@{/admin/all-operation/{email}/nuova-domanda (email=${session.userSession.email})}"> <button class="custom-btn btn-4"><span>Aggiungi una nuova domanda</span></button></a>
+				</div>
+				
+				<div class="tabella">
+						<div class="testata tit-amm2"> Argomenti Studio</div>
+
+						<table cellspacing="1">
+							<tr>
+								<th>Titolo</th>
+								<th>Descrizione</th>
+								<th>Meta-Info</th>
+								<th>Operazioni</th>
+							</tr>
+
+							<tr th:each="arg : ${allArg}">
+								<td th:text="${arg.titolo}"></td>
+								<td th:text="${arg.descrizione.substring(0,100).concat('...')}"></td>
+								<td th:text="${arg.meta_info}"></td>
+								<td>
+								
+								
+								<a th:href="@{/admin/all-operation/{email}/modifica-argomento/{id} (email=${session.userSession.email}, id=${arg.id_studio})}"><button class="custom-btn btn-3"><span> Modifica</span></button>  </a>
+								
+								<button class="custom-btn btn-3"><span>Elimina</span> </button> </td>
+
+
+
+							</tr>
+
+
+
+						</table>
+					</div>
+					
+					
+				
+				<div class="tabella">
+						<div class="testata tit-amm2"> Articoli di attualita'</div>
+
+						<table cellspacing="1">
+							<tr>
+								<th>Titolo</th>
+								<th>Fonte</th>
+								<th>Meta-Info</th>
+										<th>Operazioni</th>
+							</tr>
+
+							<tr th:each="art : ${allArt}">
+								<td th:text="${art.titolo}"></td>
+								<td th:text="${art.link}"></td>
+								<td th:text="${art.meta_info}"></td>
+								<td>
+								
+								
+								 <a th:href="@{/admin/all-operation/{email}/modifica-articolo/{id} (email=${session.userSession.email}, id=${art.id_articolo})}">
+								 <button class="custom-btn btn-3"><span> Modifica</span></button> </a>
+								  <button class="custom-btn btn-3"><span>Elimina</span> </button> </td>
+
+
+
+							</tr>
+
+
+
+						</table>
+					</div>
+					
+						<div class="tabella">
+						<div class="testata tit-amm2">Domande nel test privacy</div>
+
+						<table cellspacing="1">
+							<tr>
+								<th>Testo</th>
+						
+							
+								<th>Id-Test</th>
+								<th>Tipo Test</th>
+							</tr>
+
+							<tr th:each="t : ${allTest}">
+								<td th:text="${t.id_test}"></td>
+								<td th:text="${t.tipo_test}"></td>
+								<td>
+								
+								
+								 <button class="custom-btn btn-3"><span> Modifica</span></button>  
+								 
+								 <button class="custom-btn btn-3"><span>Elimina</span> </button> </td>
+
+
+
+							</tr>
+
+
+
+						</table>
+					</div>
+					
+					
+						<div class="tabella">
+						<div class="testata tit-amm2">Domande nel test privacy</div>
+
+						<table cellspacing="1">
+							<tr>
+								<th>Testo</th>
+						
+								<th>Risposta Corretta</th>
+								<th>Id-Test</th>
+								<th>Meta-Info</th>
+								<th>Operazioni</th>
+							</tr>
+
+							<tr th:each="d : ${allDomande}">
+								<td th:text="${d.testo}"></td>
+							
+								<td ><label> Risposta Corretta </label><span th:text="${d.risposta_corretta}"></span></td>
+								<td ><label> Id Test </label><span th:text="${d.id_test}"></span></td>
+								<td th:text="${d.meta_info}"></td>
+								<td>
+								
+								
+								<a th:href="@{/admin/all-operation/{email}/modifica-domanda/{id}/{test} (email=${session.userSession.email}, id=${d.id_domanda}, test=${d.id_test})}"> <button class="custom-btn btn-3"><span> Modifica</span></button>  </a>
+								 
+								 <button class="custom-btn btn-3"><span>Elimina</span> </button> </td>
+
+
+
+							</tr>
+
+
+
+						</table>
+					</div>
+			</div>
+
+			<div id="Meta-Info" class="tabcontent">
+				<p class="tit-amm">Meta-Info</p>
+				<div class="tabella">
+						<div class="testata tit-amm2"> Meta - Info</div>
+
+						<table cellspacing="1">
+							<tr>
+								<th>Keyword</th>
+						
+							</tr>
+
+							<tr th:each="meta: ${allMeta}">
+								<td th:text="${meta.keyword}"></td>
+							
+							
+								
+								
+								
+
+
+							</tr>
+
+
+
+						</table>
+					</div>
+					
+			</div>
+	</div>
+
+	<script>
+function risorsa_scelta(evt, nome_risorsa) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active2", "");
+  }
+  document.getElementById(nome_risorsa).style.display = "block";
+  evt.currentTarget.className += " active2";
+}
+</script>
+
+
+
+	</th:block>
+	</div>
+	<script th:inline="javascript">
+//Recupera il valore di percNessuno 
+/*<![CDATA[*/
+	var percNessuno = /*[[${percNessuno}]]*/'/*[[${percNessuno}]]*/';
+
+
+
+	var percBase = /*[[${percBase}]]*/'/*[[${percBase}]]*/';
+
+
+
+	var percMedio= /*[[${percMedio }]]*/'/*[[${percMedio}]]*/';
+
+
+
+	var percAlto= /*[[${percAlto}]]*/'/*[[${percAlto}]]*/';
+
+
+
+
+	var percQuaranta= /*[[${percQuaranta}]]*/'/*[[${percQuaranta}]]*/';
+
+ 
+
+ 	var percSessanta= /*[[${percSessanta}]]*/'/*[[${percSessanta}]]*/';
+
+ 
+
+	var percOttanta= /*[[${percOttanta}]]*/'/*[[${percOttanta}]]*/';
+	
+	var percCento= /*[[${percCento}]]*/'/*[[${percCento}]]*/';
+/*]]>*/
+ 
+
+gsap.to("#graf1", {
+    "--p1": percNessuno + '%',
+    duration: 4,
+    ease: 'expo.out'
+});
+
+gsap.from("#cont1", {
+    textContent: 0,
+    modifiers: {
+        textContent: textContent => textContent.toFixed()
+    }
+});
+
+gsap.to("#graf2", {
+    "--p2": percBase + '%',
+    duration: 4,
+    ease: 'expo.out'
+});
+
+gsap.from("#cont2", {
+    textContent: 0,
+    modifiers: {
+        textContent: textContent => textContent.toFixed()
+    }
+});
+
+gsap.to("#graf3", {
+    "--p3": percMedio + '%',
+    duration: 4,
+    ease: 'expo.out'
+});
+
+gsap.from("#cont3", {
+    textContent: 0,
+    modifiers: {
+        textContent: textContent => textContent.toFixed()
+    }
+});
+
+gsap.to("#graf4", {
+    "--p4": percAlto + '%',
+    duration: 4,
+    ease: 'expo.out'
+});
+
+gsap.from("#cont4", {
+    textContent: 0,
+    modifiers: {
+        textContent: textContent => textContent.toFixed()
+    }
+});
+
+<!-- seconda riga -->
+gsap.to("#graf5", {
+    "--p5": percQuaranta + '%',
+    duration: 4,
+    ease: 'expo.out'
+});
+
+gsap.from("#cont5", {
+    textContent: 0,
+    modifiers: {
+        textContent: textContent => textContent.toFixed()
+    }
+});
+
+
+gsap.to("#graf6", {
+    "--p6": percSessanta + '%',
+    duration: 4,
+    ease: 'expo.out'
+});
+
+gsap.from("#cont6", {
+    textContent: 0,
+    modifiers: {
+        textContent: textContent => textContent.toFixed()
+    }
+});
+
+
+gsap.to("#graf7", {
+    "--p7": percOttanta + '%',
+    duration: 4,
+    ease: 'expo.out'
+});
+
+gsap.from("#cont7", {
+    textContent: 0,
+    modifiers: {
+        textContent: textContent => textContent.toFixed()
+    }
+});
+
+gsap.to("#graf8", {
+    "--p8": percCento + '%',
+    duration: 4,
+    ease: 'expo.out'
+});
+
+gsap.from("#cont8", {
+    textContent: 0,
+    modifiers: {
+        textContent: textContent => textContent.toFixed()
+    }
+});
+</script>
+	<div th:insert="fragments/footer::footer"></div>
+</body>
+
+</html>

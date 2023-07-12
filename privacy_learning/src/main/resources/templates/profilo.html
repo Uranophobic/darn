@@ -66,12 +66,15 @@
 	<div th:insert="~{fragments/header::header}"></div>
 
 	<div class="profilo-page">
-		<br>
-		<p class="titolo2">La tua area personale</p>
-		<div class="bordo">
+		
 			<!-- utente -->
 			<th:block
 				th:if="${!session.isEmpty()} and ${!session.userSession.email.equals('admin@gmail.com')}">
+				
+				<br>
+		<p class="titolo2">La tua area personale</p>
+		<div class="bordo">
+				
 				<div class="background2">
 
 
@@ -294,10 +297,63 @@
 							<span>LEZIONI</span>
 						</button></a>
 
-				</fieldset>
+				</fieldset></div>
+
 			</th:block>
+			
+			
+			
+			<!--  ACCESSO AMMINISTRATORE -->
+			
+			<th:block
+				th:if="${!session.isEmpty()} and ${session.userSession.email.equals('admin@gmail.com')}">
+			
+			<p class="tit-amm"> ADMIN - PAGE </p>
+		<div class="bordo">
+	
+			<div class="box-titolo">
+				<div class="titolo">lista degli utenti</div>
+			</div>
+			<div class="utentelist">
+
+				<table>
+					<thead>
+						<tr>
+							<th>nome</th>
+							<th>cognome</th>
+							<th>email</th>
+							<th>data</th>
+							<th>percentuale</th>
+							<th>livello</th>
+							<th>azioni</th>
+							<!-- livello, punteggio vogliamo metterlo? vogliamo inserire anche "azioni" dove ci saranno bottoni per modificare ed eliminare l'utente?-->
+						</tr>
+
+
+					</thead>
+					<tbody>
+						<tr th:each="user : ${allUtenti}">
+							<td th:text="${user.nome}">nome</td>
+							<td th:text="${user.cognome}">cognome</td>
+							<td th:text="${user.email}">email</td>
+							<td th:text="${user.dataNascita}">data di nascita</td>
+							<td th:text="${user.percentuale}">percentuale</td>
+							<td th:text="${user.livello}">livello</td>
+							<td><a style="align-content: center;"
+								th:href="@{/users/delete/{id}(id=${user.email})}" class="button">
+									Elimina </a></td>
+
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
-	</div>
+		</div>
+			
+			
+			</th:block>
+			</div>	
+		
 	<div th:insert="fragments/footer::footer"></div>
 </body>
 

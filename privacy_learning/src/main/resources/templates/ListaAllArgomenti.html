@@ -3,7 +3,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="../css/style3.css">
-<title>Privacy Literacy - Argomenti</title>
+<title>Darn: Look At Your Privacy!</title>
 
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -58,14 +58,14 @@
 	<div th:insert="~{fragments/header::header}"></div>
 
 
-	<th:block
+	<!-- <th:block
 		th:if="${!session.isEmpty()} and ${session.userSession.email.equals('admin@gmail.com')}"
 		th:each="arg : ${argomentiView}">
 
 		<a type="button" class="button" th:href="@{/admin/creaArg}">
 			Aggiungi </a>
 
-		<!-- CONTROLLO SE L'UTENTE SIA ADMIN -->
+		CONTROLLO SE L'UTENTE SIA ADMIN
 
 		<fieldset>
 			<legend th:text="${arg.meta_info}">Meta-Info</legend>
@@ -82,7 +82,7 @@
 		</fieldset>
 	</th:block>
 
-	<!--  ALTRIMENTI -->
+	 ALTRIMENTI -->
 
 	<div class="argomenti-all">
 

@@ -18,4 +18,9 @@ public interface UtenteService {
 	Utente findUtenteByEmailAndPassword(String email, String password);
 	void deleteById(String email);
 	void updateByEmail(String email);
+	List<Utente> findUtenteByLivello(String livello);
+	List<Utente> findUtenteByPercentuale40();
+	List<Utente> findUtenteByPercentuale60();
+	List<Utente> findUtenteByPercentuale80();
+	List<Utente> findUtenteByPercentuale100();
 }

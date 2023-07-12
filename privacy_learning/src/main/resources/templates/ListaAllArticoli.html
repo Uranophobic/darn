@@ -59,38 +59,6 @@
 <body>
 	<div th:insert="~{fragments/header::header}"></div>
 
-	<br>
-
-	<a class="button"
-		th:if="${!session.isEmpty()} and ${session.userSession.email.equals('admin@gmail.com')}"
-		th:href="@{/admin/createArticolo}"> Aggiungi </a>
-	<th:block
-		th:if="${!session.isEmpty()} and (${session.userSession.email.equals('admin@gmail.com')})"
-		th:each="art : ${tuttiArticoli}">
-		<div class="argomenti-all">
-			<div class="box-titolo">
-				<div class="titolo">Curiosit&agrave; e Novit&agrave;</div>
-			</div>
-			<br>
-			<!-- CONTROLLO SE L'UTENTE SIA ADMIN -->
-
-
-			<div class="testo-articolo">
-				<br>
-				<h3 th:text="${art.getTitolo()}">Titolo articolo</h3>
-				<p th:text="${art.getMetaInfo()}">metainfo</p>
-				<br> <a target="_blank" style="color: blue;"
-					th:href="${art.getLink()}" th:value="${art.getLink()}">Contenuto
-					articolo</a> <br> <br> <a class=button
-					th:href="@{/admin/fixedArticolo/{id}(id=${art.getId_articolo()})}">Modifica</a>
-				<a class=button
-					th:href="@{/admin/deleteArticolo/{id}(id=${art.getId_articolo()})}">Elimina</a>
-			</div>
-
-
-		</div>
-	</th:block>
-	<!--  ALTRIMENTI -->
 
 
 	<div class="articoli-all">

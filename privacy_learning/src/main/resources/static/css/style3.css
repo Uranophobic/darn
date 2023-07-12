@@ -90,6 +90,10 @@ body {
 	background: var(--sfondo);
 	font-family: 'Montserrat', sans-serif;
 }
+
+#hideMaxi {
+	display: none;
+}
 /********** bottoni *******************/
 .custom-btn {
 	width: 130px;
@@ -128,7 +132,7 @@ body {
 	height: 100%;
 }
 
-.btn-3:before, .btn-3:after {
+.btn-3:before, .btn-3:after, .btn-4:before, .btn-4:after {
 	position: absolute;
 	content: "";
 	right: 0;
@@ -137,26 +141,26 @@ body {
 	transition: all 0.3s ease;
 }
 
-.btn-3:before {
+.btn-3:before, .btn-4:before {
 	height: 0%;
 	width: 2px;
 }
 
-.btn-3:after {
+.btn-3:after, .btn-4:after {
 	width: 0%;
 	height: 2px;
 }
 
-.btn-3:hover {
+.btn-3:hover, .btn-4:hover {
 	background: transparent;
 	box-shadow: none;
 }
 
-.btn-3:hover:before {
+.btn-3:hover:before, .btn-4:hover:before {
 	height: 100%;
 }
 
-.btn-3:hover:after {
+.btn-3:hover:after, .btn-4:hover:after {
 	width: 100%;
 }
 
@@ -165,7 +169,13 @@ body {
 	font-weight: 900;
 }
 
-.btn-3 span:before, .btn-3 span:after {
+.btn-4 span:hover {
+	color: rgba(2, 126, 251, 1);
+	font-weight: 900;
+}
+
+.btn-3 span:before, .btn-3 span:after, .btn-4 span:before, .btn-4 span:after
+	{
 	position: absolute;
 	content: "";
 	left: 0;
@@ -174,12 +184,12 @@ body {
 	transition: all 0.3s ease;
 }
 
-.btn-3 span:before {
+.btn-3 span:before, .btn-4 span:before {
 	width: 2px;
 	height: 0%;
 }
 
-.btn-3 span:after {
+.btn-3 span:after, .btn-4 span:after {
 	width: 0%;
 	height: 2px;
 }
@@ -192,6 +202,368 @@ body {
 	width: 100%;
 }
 
+.btn-4 span:hover:before {
+	height: 100%;
+}
+
+.btn-4 span:hover:after {
+	width: 100%;
+}
+/************************************************AMMINISTRATORE ***************************************/
+.tit-amm {
+	width: 70%;
+	margin: auto;
+	text-align: center;
+	padding: 10px;
+	color: white;
+	font-size: 65px;
+	font-weight: 600;
+	font-family: bit;
+	letter-spacing: 10px;
+}
+
+.tit-amm2 {
+	text-align: left;
+	padding: 10px;
+	color: white;
+	font-size: 30px;
+	font-weight: 600;
+	font-family: bit;
+	letter-spacing: 5px;
+}
+
+/**tabella utenti*/
+.testata {
+	background-color: #327a81;
+}
+
+.tabella {
+	border: 1px solid #327a81;
+	border-radius: 10px;
+	box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+	max-width: calc(100% - 2em);
+	/* margin: 1em auto; */
+	overflow: scroll;
+	width: 100%;
+	max-height: 70vh;
+	margin: auto;
+	margin-bottom: 50px;
+	margin-top: 50px;
+
+}
+
+.tabella  table {
+	width: 100%;
+}
+
+.tabella  table td, .tabella  table th {
+	color: #2b686e;
+	padding: 10px;
+}
+
+.tabella  table td {
+	text-align: center;
+	vertical-align: middle;
+}
+
+.tabella table th {
+	background-color: #daeff1;
+	font-weight: 800;
+	font-size: 20px;
+}
+
+.tabella table tr:nth-child(2n) {
+	background-color: white;
+}
+
+.tabella table tr:nth-child(2n+1) {
+	background-color: #edf7f8;
+}
+
+@media screen and (max-width: 700px) {
+	.tabella table, .tabella tr, .tabella td {
+		display: block;
+		width: 100%;
+	}
+	.tabella  td:first-child {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		/* width: 100px; */
+	}
+	.tabella  td:not(:first-child) {
+		clear: both;
+		margin-left: 100px;
+		padding: 4px 20px 4px 90px;
+		position: relative;
+		text-align: left;
+	}
+	.tabella  td:not(:first-child):before {
+		color: #91ced4;
+		content: "";
+		display: block;
+		left: 0;
+		position: absolute;
+	}
+	.tabella  tr {
+		padding: 10px 0;
+		position: relative;
+	}
+	.tabella  tr:first-child {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.testata {
+		display: none;
+	}
+	.tabella {
+		border: none;
+		box-shadow: none;
+		overflow: scroll;
+	}
+	
+	.tabella tbody {
+	width: 100%;
+	margin: auto;
+	display: block;
+}
+	.tabella td:first-child {
+		background-color: #c8e7ea;
+		border-bottom: 1px solid #91ced4;
+		border-radius: 10px 10px 0 0;
+		position: relative;
+		top: 0;
+		transform: translateY(0);
+		width: 100%;
+	}
+	.tabella td:not(:first-child) {
+		margin: 0;
+		padding: 5px 1em;
+		width: 100%;
+	}
+	.tabella td:not(:first-child):before {
+		font-size: 0.8em;
+		padding-top: 0.3em;
+		position: relative;
+	}
+	.tabella td:last-child {
+		padding-bottom: 1rem !important;
+	}
+	.tabella tr {
+		background-color: white !important;
+		border: 1px solid #6cbec6;
+		border-radius: 10px;
+		box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+		margin: 0.5rem 0;
+		padding: 0;
+	}
+	.tab {
+		margin-bottom: 19px;
+	}
+	.tab button {
+		padding: 10px 10px;
+		transition: 0.3s;
+		width: 32%;
+		font-size: 19px;
+	}
+	.tab {
+		margin-bottom: 19px;
+	}
+	.tab button {
+		padding: 10px 10px;
+		transition: 0.3s;
+		width: 32%;
+		font-size: 19px;
+	}
+}
+/** GRAFICO A TORTA ADMIN*/
+.grafico-circolare {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	text-align: center;
+	position: relative;
+	display: grid;
+	/* text-align: center; */
+	/* align-items: center; */
+	/* align-self: center; */
+	margin: auto;
+}
+
+#graf1 {
+	--p1: 0;
+	background: conic-gradient(grey var(--p1, 0), 0, darkred)
+}
+
+#graf2 {
+	--p2: 0;
+	background: conic-gradient(grey var(--p2, 0), 0, darkred)
+}
+
+#graf3 {
+	--p3: 0;
+	background: conic-gradient(grey var(--p3, 0), 0, darkred)
+}
+
+#graf4 {
+	--p4: 0;
+	background: conic-gradient(grey var(--p4, 0), 0, darkred)
+}
+
+#graf5 {
+	--p5: 0;
+	background: conic-gradient(grey var(--p5, 0), 0, darkred)
+}
+
+#graf6 {
+	--p6: 0;
+	background: conic-gradient(grey var(--p6, 0), 0, darkred)
+}
+
+#graf7 {
+	--p7: 0;
+	background: conic-gradient(grey var(--p7, 0), 0, darkred)
+}
+
+#graf8 {
+	--p8: 0;
+	background: conic-gradient(grey var(--p8, 0), 0, darkred)
+}
+
+.conteggio-perc {
+	text-align: center;
+	margin: auto;
+	background: white;
+	width: calc(100% - 50px);
+	height: calc(100% - 50px);
+	border-radius: 50%;
+	display: grid;
+	align-content: center;
+	position: relative;
+	font-size: 40px;
+	font-family: bit;
+	font-weight: 900;
+}
+
+.grid-template {
+	display: grid;
+	grid-template-columns: 23% 23% 23% 23%;
+	column-gap: 20px;
+	width: 90%;
+	margin: auto;
+	/* margin-top: 35px; */
+	text-align: center;
+	align-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.grid-template p {
+	font-size: 25px;
+	color: white;
+	font-family: Poppins;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	padding: 10px;
+}
+
+/****operazioni admin***/
+.op-admin {
+	/* display: flex; */
+	position: relative;
+	height: 100vh;
+	background-color: #5e7db0;
+	min-height: 45rem;
+	letter-spacing: 1px;
+	margin-top: 74px;
+	/* width: 85%; */
+	padding: 50px;
+}
+
+.op-admin2 {
+	/* display: flex; */
+	position: relative;
+	height: 200vh;
+	background-color: #5e7db0;
+	min-height: 45rem;
+	letter-spacing: 1px;
+	margin-top: 74px;
+	/* width: 85%; */
+	padding: 50px;
+}
+
+.op-admin3 {
+	/* display: flex; */
+	position: relative;
+	height: 125vh;
+	background-color: #5e7db0;
+	min-height: 45rem;
+	letter-spacing: 1px;
+	margin-top: 74px;
+	/* width: 85%; */
+	padding: 50px;
+}
+
+.legend-admin {
+	font-weight: bold;
+	font-size: 30px;
+	color: white;
+	font-family: bit;
+	margin-left: 15px;
+	padding: 15px 25px 5px 25px;
+}
+
+.field-admin {
+	width: 75%;
+	margin: auto;
+	margin-bottom: 20px;
+	color: white;
+	display: grid;
+	padding: 25px;
+	padding-bottom: 10px;
+}
+
+.field-admin label, .field-admin p {
+	font-weight: bold;
+	/* padding: 0px; */
+	/* width: 50%; */
+	/* text-align: right; */
+	padding-bottom: 10px;
+	font-size: 22px;
+}
+
+.field-admin input {
+	/* padding-bottom: 10px; */
+	padding: 10px;
+	margin-bottom: 20px;
+}
+
+.field-admin textarea {
+	/* padding-bottom: 10px; */
+	padding: 10px;
+	margin-bottom: 20px;
+	height: 250px;
+}
+
+.field-admin select {
+	/* padding-bottom: 10px; */
+	padding: 10px;
+	margin-bottom: 20px;
+}
+
+.btn-4 {
+	background: rgb(95, 125, 176);
+	background: linear-gradient(0deg, rgba(95, 125, 176, 1) 0%,
+		rgb(46, 142, 238) 100%);
+	width: 300px;
+	height: 42px;
+	line-height: 42px;
+	padding: 0;
+	border: none;
+	margin: 10px;
+}
 /************************************************ HEADER ***************************************/
 .scroll-up {
 	position: fixed;
@@ -1650,15 +2022,8 @@ hr {
 	font-weight: 600;
 }
 
-.risultati table {
-	border: 1px solid black;
-}
-
-.risultati th {
-	border: 1px solid black;
-}
-
-.risultati td {
+.tab-risultati tbody, .tab-risultati tr, .tab-risultati td {
+	background: transparent !important;
 	border: 1px solid black;
 }
 
@@ -1672,8 +2037,6 @@ hr {
 }
 
 /******************************* PAGINA LEZIONI********************/
-
-
 .sottotitolo {
 	color: white;
 	padding: 20px;
@@ -1681,14 +2044,14 @@ hr {
 	font-size: 24px;
 }
 
-
 .dot-line {
 	border-color: greenyellow;
 	border-style: dashed;
 	margin-top: 50px;
-	margin-bottom: 50px;width: 800px;
-
+	margin-bottom: 50px;
+	width: 800px;
 }
+
 .lez-page {
 	color: white;
 	height: fit-content;
@@ -1716,8 +2079,6 @@ hr {
 	height: auto;
 }
 
-
-
 .link-arg {
 	font-size: 22px;
 	font-weight: bold;
@@ -1736,6 +2097,10 @@ hr {
 .tab-lez {
 	width: 95%;
 	margin: auto;
+}
+
+.tab-lez tr, .tab-lez tbody, .tab-lez td {
+	background: transparent !important;
 }
 
 .arg-stud {
@@ -3184,6 +3549,7 @@ section .formArea div#professionalInfo {
 	blockquote q {
 		letter-spacing: 4px;
 		line-height: 10px;
+		font-size: 1.6rem;
 	}
 	.argomenti-dx-fav {
 		margin-top: 0;
@@ -3237,9 +3603,17 @@ section .formArea div#professionalInfo {
 	}
 	/*resp-arg*/
 	.arg-sx {
-		width: 95%;
-		grid-template-rows: 53% 30%;
+		width: 40%;
+		grid-template-rows: 58% 30%;
 		margin: 0;
+	}
+	.griglia-args {
+		display: grid;
+		grid-template-columns: auto;
+		width: 55%;
+	}
+	.grid-item {
+		width: 80%;
 	}
 	.grid-container {
 		grid-template-columns: auto;
@@ -3269,7 +3643,7 @@ section .formArea div#professionalInfo {
 		margin-top: 0;
 	}
 	.articoli-all {
-		height: 120vh;
+		height: 165vh;
 		/* row-gap: 15px; */
 	}
 	/*login-responsive*/
@@ -3329,13 +3703,13 @@ section .formArea div#professionalInfo {
 		display: none;
 	}
 	#mobile {
-		display: block;
-		background-color: white;
-		border-radius: 5px;
-		padding: 25px 20px 0px 20px;
-		margin: auto;
-		height: 290vh;
-	}
+	display: block;
+	background-color: white;
+	border-radius: 5px;
+	padding: 25px 20px 0px 20px;
+	margin: auto;
+	height: 265vh;
+}
 	.sotto-titReg {
 		text-align: center;
 		font-size: 18px;
@@ -3392,25 +3766,58 @@ section .formArea div#professionalInfo {
 	}
 	/*reponsive lezioni*/
 	.lez-page {
-	width: 100%;
-	padding:0;
-}
+		width: 100%;
+		padding: 0;
+	}
 	.sottotitolo {
 		padding: 0;
 		font-size: 16px;
-		text-align:center;
+		text-align: center;
 	}
 	.dot-line {
+		width: 250px;
+	}
+	.scrollpage {
+		max-width: 90vw;
+		padding: 0;
+	}
+	.box-scroll {
+		padding: 0;
+	}
 
-	width: 250px;
+	/*amministratore-responsive*/
+	.tit-amm {
+		width: 100%;
+		font-size: 36px;
+		letter-spacing: 8px;
+	}
+	.tab {
+		margin-bottom: 19px;
+	}
+	.tab button {
+	padding: 10px 10px !important;
+	transition: 0.3s !important;
+	width: 32% !important;
+	font-size: 19px !important;
 }
-.scrollpage {
-	max-width: 90vw;
-	padding:0;
+	#hideMaxi {
+		display: block;
+	}
+	.checkbox-container {
+	display: none;
+	font-size: 18px;
+}
 
+#label-check {
+	font-weight: bold;
+	font-size: 16px;
+	color: red;
 }
-.box-scroll {
- padding: 0;
+
+#errorDiv {
+	display: none;
+	color: red;
+	margin-bottom: 10px;
 }
 }
 

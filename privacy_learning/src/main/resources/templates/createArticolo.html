@@ -3,54 +3,105 @@
 
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="../css/stylesheet.css">
-<title>Privacy Literacy - Admin Page</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DARN: Look at your privacy!</title>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<link rel="stylesheet"
+	href="https://www.ionos.it/digitalguide/path/to/font-awesome/css/font-awesome.min.css">
+<!-- ICONSSCOUT -->
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+	integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+	crossorigin="anonymous">
+
+<!-- CSS -->
+<link rel="stylesheet" href="/css/style3.css">
+
+<!-- libreria per il typed jq-->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"
+	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+	crossorigin="anonymous"></script>
+
+<!-- ScrollReveal -->
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="/path/to/noframework.waypoints.min.js"></script>
+
+<script src="js/gsap.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Flip.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Observer.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Draggable.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/EaselPlugin.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/MotionPathPlugin.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/PixiPlugin.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/TextPlugin.min.js"></script>
+
+
 </head>
 
 <body>
 	<div th:insert="~{fragments/header::header}"></div>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
+<th:block
+		th:if="${!session.isEmpty()} or ${session.userSession.email.equals('admin@gmail.com')}">
 	<form th:action="@{/studia-con-noi}" th:object="${argomento}"
 		method="POST">
-		<div class="box-titolo">
-			<p class="titAdmin">CREA UN NUOVO ARGOMENTO</p>
-		</div>
-
-		<div class="background">
-
-			<div class="boxArg">
-
-				<fieldset>
-					<legend>Titolo*</legend>
-					<input type="text" name="titolo"
+		
+		<div class="op-admin">
+	
+			<p class="tit-amm2">Nuovo articolo</p>
+	
+	<fieldset class="field-admin">
+	<legend class="legend-admin"> Inserisci un nuovo articolo</legend>
+	<label> Titolo dell'articolo</label>
+	<input type="text" name="titolo"
 						placeholder="Inserisci il titolo dell'articolo" maxlength="60"
 						min="2" required="required">
-				</fieldset>
-				<fieldset>
-					<legend>Meta-Info*</legend>
-					<select name="metainfo" id="metainfo" required="required">
+						<label> Fonte dell'articolo</label>
+						<input type="text" name="link"
+						placeholder="Inscrisci il link del video dell'articolo">
+						<label> Scegli l'etichetta che rappresenta l'argomento</label>
+						<select name="metainfo" id="metainfo" required="required">
 						<th:block th:each="meta : ${metainfo}">
 							<option th:value="${meta.keyword}" th:text="${meta.keyword}"></option>
 						</th:block>
 					</select>
-				</fieldset>
-				<fieldset>
-					<legend>Link-Video</legend>
-					<input type="text" name="link"
-						placeholder="Inscrisci il link del video dell'articolo (FACOLTATIVO)">
-				</fieldset>
+					<div class="buttonArg">
+				<button class="custom-btn btn-3" type="submit"
+					formaction="/admin/addArticolo" formmethod="post">Conferma</button>
 			</div>
-			<div class="buttonArg">
-				<button class="button" type="submit" formaction="/admin/addArticolo"
-					formmethod="post">Conferma</button>
-			</div>
-		</div>
+	</fieldset>
+
+		
+	</div>
+		
+		
+		
 	</form>
+	</th:block>
+	<th:block
+		th:if="${session.isEmpty()} or ${!session.userSession.email.equals('admin@gmail.com')}">
+		<p class="titolo-test" style="background: white">
+		Spiacenti, non hai l'autorizzazione per accedere a quest'area. <br>
+		Torna alla <a th:href="@{index2}">Homepage</a></p>
+	</th:block>
 	<div th:insert="fragments/footer::footer"></div>
 </body>
 

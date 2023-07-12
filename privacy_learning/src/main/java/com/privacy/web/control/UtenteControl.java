@@ -76,8 +76,7 @@ public class UtenteControl {
 	@PostMapping("/registrazione")
 	public String provarisposte(@ModelAttribute("user") Utente user, HttpServletRequest request,
 			HttpServletResponse response, Model model, HttpSession userSession) throws Exception {
-		if (Check.checkName(request.getParameter("nome")) && Check.checkSurname(request.getParameter("cognome"))
-				&& Check.checkEmail(request.getParameter("email"))) {
+		
 			user.setNome(request.getParameter("nome"));
 			user.setCognome(request.getParameter("cognome"));
 			user.setEmail(request.getParameter("email"));
@@ -138,20 +137,7 @@ public class UtenteControl {
 				e.printStackTrace();
 			}
 
-		} else {
-			if (!Check.checkName(request.getParameter("nome"))) {
-				response.getWriter().write("1: nome non corretto");
-			}
-			if (!Check.checkSurname(request.getParameter("cognome"))) {
-				response.getWriter().write("2: cognome non corretto");
-			}
-			if (!Check.checkEmail(request.getParameter("email"))) {
-				response.getWriter().write("3: email non corretta");
-			}
-			String descrizione = "Siamo spiacenti si è verificato un errore con la registrazione. Riprova!";
-			model.addAttribute("descrizione", descrizione);
-			return "redirect:/error";
-		}
+		
 		userSession.setAttribute("userSession", user);
 		return "profilo";
 	}
@@ -212,7 +198,7 @@ public class UtenteControl {
 
 					// ed eventuali argomenti da studare
 					model.addAttribute("argDaStudiare", progServ.findByEmail(user.getEmail()));
-					return "profilo";
+					return "redirect:/index2";
 
 				} else {
 					response.getWriter().write("4: utente non valido");

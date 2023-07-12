@@ -28,6 +28,6 @@ public class Articolo {
 	private String titolo;
 
 	@Column(name = "meta_info")
-	private String metaInfo;
+	private String meta_info;
 
 }
