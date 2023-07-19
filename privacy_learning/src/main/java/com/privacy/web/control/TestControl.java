@@ -110,19 +110,21 @@ public class TestControl {
 		if (allS.size() > 0) {
 			for (int i = 0; i < allS.size(); i++) {
 				salvServ.delete(allS.get(i));
+				u.setPercentuale(0); //in teoria dovrebbe starci pure questo
 			}
 		}
 
 		// lo trasformo in int
 		int id = Integer.parseInt(livello);
 
-		// cerco tute le domande di quel livello
+		// cerco tutte le domande di quel livello
 		List<Domanda> domTest = domServ.findByIdTest(id);
 
 		/// mi vado a salvare tutte le risposte che ha dato l'utente
-
 		for (int i = 0; i < domTest.size(); i++) {
+			
 			Salvataggio s = new Salvataggio();
+			
 			s.setEmail_utente(u.getEmail());
 			s.setId_test(id);
 
@@ -133,8 +135,7 @@ public class TestControl {
 			int idRisp = Integer.parseInt(request.getParameter("valore" + domTest.get(i).getId_domanda()));
 			s.setId_risposta(idRisp);
 
-			// dopo di che mi vado a vedere se è la rispsota 1, 2, 3 oppure la 4 e me la
-			// setto
+			// dopo di che mi vado a vedere se è la rispsota 1, 2, 3 oppure la 4 e me la setto
 			if (idRisp == 1) {
 				s.setRisposta_utente(domTest.get(i).getRisposta1());
 			} else if (idRisp == 2) {
@@ -152,7 +153,7 @@ public class TestControl {
 
 			String idRispCorretta = String.valueOf(domTest.get(i).getRisposta_corretta()).toString();
 
-			if (!idRispCorretta.equals("")) { // se risp corretta non è vuoto allora succede questo
+			if (!idRispCorretta.equals("")) { // se risp corretta non è vuoto allora me la setto
 				if (idRispCorretta.equals("1")) {
 					s.setRisposta_corretta(domTest.get(i).getRisposta1());
 				} else if (idRispCorretta.equals("2")) {
@@ -163,9 +164,9 @@ public class TestControl {
 					s.setRisposta_corretta(domTest.get(i).getRisposta4());
 				}
 			}
+			
 			// mi salvo anche la meta info della domanda (mi servirà in futuro per capire
-			// quale
-			// argomento deve studiare l'utente
+			// quale argomento deve studiare l'utente)
 			s.setMeta_info(domTest.get(i).getMeta_info());
 			salvServ.save(s);
 		}
@@ -220,7 +221,6 @@ public class TestControl {
 
 								
 								} else if (prog != null) {
-									//System.out.println("non fare un cazzo");
 									prog.setArg_studiato(false);
 									progServ.save(prog);
 								}

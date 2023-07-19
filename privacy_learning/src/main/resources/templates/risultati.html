@@ -90,11 +90,11 @@
 					Hai ottenuto una percentuale pari a
 					</p>
 				<p th:if="${perc}<40"><span class="parg" style="color: red"
-												th:text="${session.userSession.percentuale} + '%'"></span></p>
+												th:text="${perc} + '%'"></span></p>
 				<p th:if="${perc}>40 and ${perc}<80"><span class="parg" style="color: yellow"
-												th:text="${session.userSession.percentuale} + '%'"></span></p>
-				<p th:if=" ${perc}>80"><span class="parg" style="color: greenyellow"
-												th:text="${session.userSession.percentuale} + '%'"></span></p>
+												th:text="${perc} + '%'"></span></p>
+				<p th:if=" ${perc}>=80"><span class="parg" style="color: greenyellow"
+												th:text="${perc} + '%'"></span></p>
 			</div>
 			
 				<div class="but-mod">
@@ -119,7 +119,7 @@
 						<td>Domanda</td>
 						<td>Risposta Corretta</td>
 					</tr>
-					<th:block th:each="s: ${rispInCorrette}">
+					<th:block th:each="s: ${rispCorrette}">
 						<tr>
 							<td th:text="${s.testo_domanda}"></td>
 							<td th:text="${s.risposta_corretta}"></td>
@@ -141,7 +141,7 @@
 						<td>Domanda</td>
 						<td>Risposta Corretta</td>
 					</tr>
-					<th:block th:each="s: ${rispCorrette}">
+					<th:block th:each="s: ${rispInCorrette}">
 						<tr>
 							<td th:text="${s.testo_domanda}"></td>
 							<td th:text="${s.risposta_corretta}"></td>

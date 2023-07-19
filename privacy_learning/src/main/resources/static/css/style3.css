@@ -3082,8 +3082,8 @@ section .formArea div#professionalInfo {
 
 	/*	responsive-favole*/
 	.favola-mast {
-		height: 30vh;
-	}
+	height: 50vh;
+}
 }
 
 @media screen and (max-width: 978px) {
@@ -3608,12 +3608,14 @@ section .formArea div#professionalInfo {
 		margin: 0;
 	}
 	.griglia-args {
-		display: grid;
-		grid-template-columns: auto;
-		width: 55%;
-	}
+	display: grid;
+	grid-template-columns: auto;
+	width: 95%;
+	/* margin: auto; */
+}
 	.grid-item {
 		width: 80%;
+		margin:auto;
 	}
 	.grid-container {
 		grid-template-columns: auto;

@@ -1,6 +1,5 @@
 package com.privacy.web.serviceImpl;
 
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,11 +13,6 @@ import com.privacy.web.service.TestService;
 public class TestServiceImpl implements TestService {
 	@Autowired
 	private TestRepository testRep;
-
-	@Override
-	public List<Test> findAllTest() {
-		return (List<Test>) testRep.findAll();
-	}
 
 	@Override
 	public Test findById(int id) {
@@ -35,5 +29,8 @@ public class TestServiceImpl implements TestService {
 		return testRep.returnIdByTipo(tipo);
 	}
 
-	
+	@Override
+	public List<Test> findAllTest() {
+		return (List<Test>) testRep.findAll();
+	}
 }
