@@ -53,7 +53,18 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/PixiPlugin.min.js"></script>
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/TextPlugin.min.js"></script>
-
+<style>
+.prova {
+	font-size: 28px;
+	top: -60px;
+	position: absolute;
+	color: white;
+	font-family: tale;
+	width: 105%;
+	margin: auto;
+	margin-left: -23px;
+}
+</style>
 </head>
 
 <body>
@@ -93,31 +104,36 @@
 		<div class="titolo-fav">Che storia leggerai oggi?</div>
 		<hr class="riga2">
 		<br>
+		<br>
+		<br>
+		<br>
 		<section class="favola-mast">
 			<div class="favola-mast_container">
-
-				<a>
+<div>
+				<p class="prova"> Il giardino Incantato</p>
+				<a th:href="@{/favole/Matteo-e-il-suo-giardino-incantato}">
 					<div class="img-favola">
 						<div class="absolute-bg"
-							style="background-image: url('https://source.unsplash.com/3IEZsaXmzzs/1500x1200');"></div>
+							style="background-image: url('https://img.freepik.com/free-vector/hand-drawn-flat-design-enchanted-forest-illustration_23-2149373397.jpg?w=740&t=st=1690274767~exp=1690275367~hmac=ce708ba43050ae64a2b08e90f94cfe8678252ed3fa32d7f725c045ef5c0f39ef');"></div>
 					</div>
-				</a> 
+				</a>  
+				</div>
+				<div>
+				<p class="prova">Il diario segreto di Lily</p>
 				<a th:href="@{/favole/Lily-e-il-diario-segreto}">
-					<div class="img-favola">
+					<div class="img-favola">	
 						<div class="absolute-bg"
-							style="background-image: url('https://th.bing.com/th/id/OIG.ouIz6UGyM_OLL3ySezXv?pid=ImgGn');">
+							style="background-image: url('https://img.freepik.com/free-vector/young-woman-reading-book-concept-cartoon-hand-drawn-cartoon-art-illustration_56104-1042.jpg?w=740&t=st=1690273655~exp=1690274255~hmac=ea0f6454c346fe0f002e4dca2244ef66d609455deb059ff38b58095aa093b29d');">
+						
 						</div>
 					</div>
-				</a>
-				<a th:href="@{/favole/Matteo-e-il-suo-giardino-incantato}">
+				</a></div>
+				
+			<div>
+				<p class="prova">La sconfitta del mostro Cyber-Bullo</p>
 				<div class="img-favola">
 					<div class="absolute-bg"
-						style="background-image: url('https://source.unsplash.com/BIZv8MWH00s/1500x1200');"></div>
-				</div>
-				</a>
-				<div class="img-favola">
-					<div class="absolute-bg"
-						style="background-image: url('https://source.unsplash.com/z55CR_d0ayg/1500x1200');"></div>
+						style="background-image: url('https://img.freepik.com/free-vector/cyber-bullying-concept_23-2148595215.jpg?w=740&t=st=1690273365~exp=1690273965~hmac=9cfccf82b50302c910229dcd5d0bb2a53675fbf4f8243b56c015bad6b573b9bf');"></div>
 				</div>
 
 			</div>
